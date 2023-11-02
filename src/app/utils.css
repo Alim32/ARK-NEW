@@ -1,0 +1,115 @@
+.td-none {
+    text-decoration: none;
+}
+
+.td-underline {
+    text-decoration: underline;
+}
+
+.ls-none {
+    list-style: none;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.mbb-l {
+    mix-blend-mode: lighten !important;
+}
+
+.ls-normal {
+    letter-spacing: normal;
+}
+
+.ls-wide {
+    letter-spacing: 0.1em;
+}
+
+.ls-wider {
+    letter-spacing: 0.25em;
+}
+
+.ls-widest {
+    letter-spacing: 0.5em;
+}
+
+.va-bot {
+    vertical-align: bottom;
+}
+
+.va-mid {
+    vertical-align: middle;
+}
+
+.ws-nowrap {
+    white-space: nowrap;
+}
+
+.ww-break {
+    word-wrap: break-word;
+}
+
+.fr {
+    float: right;
+}
+
+.breathe-animation {
+    transition: linear;
+    animation-name: breathe;
+    animation-duration: 5.25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bleep-animation {
+    transition: linear;
+    animation-name: bleep;
+    animation-duration: 2.25s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes bleep {
+    0% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.text-white-30{
+    color: rgb(255,255,255,0.3) !important;
+}
+.text-white-40 {
+    color: rgb(255,255,255,0.4) !important;
+}
+.text-white-50 {
+    color: rgb(255,255,255,0.5) !important;
+}
+.text-white-60 {
+    color: rgb(255,255,255,0.6) !important;
+}
+.text-white-70 {
+    color: rgb(255,255,255,0.7) !important;
+}
