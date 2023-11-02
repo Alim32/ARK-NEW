@@ -1376,6 +1376,9 @@ video {
 .pl-7 {
   padding-left: 1.75rem;
 }
+.pl-\[100px\] {
+  padding-left: 100px;
+}
 .pr-5 {
   padding-right: 1.25rem;
 }
