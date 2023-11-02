@@ -1409,6 +1409,9 @@ video {
 .pt-\[60px\] {
   padding-top: 60px;
 }
+.pl-\[90px\] {
+  padding-left: 90px;
+}
 .text-left {
   text-align: left;
 }
@@ -2203,6 +2206,10 @@ progress { /* for FF target directly the element */
 
   .lg\:pt-\[15vh\] {
     padding-top: 15vh;
+  }
+
+  .lg\:pl-0 {
+    padding-left: 0px;
   }
 
   .lg\:text-3xl {

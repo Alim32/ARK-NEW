@@ -19,7 +19,7 @@ const NFTBlock = ({
                     <source src={video} type="video/mp4" />
                 </video>
                 <div className='flex flex-row lg:justify-evenly justify-start lg:-mt-[90px] -mt-[70px] w-100'>
-                    <div className='flex flex-col lg:items-center items-start lg:px-0 px-5 pl-[100px]'>
+                    <div className='flex flex-col lg:items-center items-start lg:px-0 px-5 lg:pl-0 pl-[90px]'>
                         <p className="flex flex-row lg:text-white/60 text-white lg:font-base font-bold text-lg text-center mb-5 lg:tracking-[0.5em]">
                             {title}
                             <span className='text-base font-normal text-white-30 ml-3 lg:hidden flex'>${price}</span>
