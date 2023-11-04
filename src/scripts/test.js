@@ -34,7 +34,7 @@ export function OpenModal(id) {
                 if (amount <= 10) {
                     clearInterval(interval);
                 }
-            }, 7);
+            }, 6);
         } else {
             $(`#${id}`).fadeIn(500);
         }
@@ -58,7 +58,7 @@ export function CloseModal(id) {
                 clearInterval(interval);
                 document.getElementById(`${id}`).style.display = "none";
             }
-        }, 7);
+        }, 6);
     } else {
         $(`#${id}`).fadeOut(500);        
     }
