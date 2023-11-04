@@ -15,7 +15,7 @@ const Modal = ({
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>                   
                 </div>
                 <div className='flex flex-row justify-between'>
-                    <video autoPlay={true} muted={true} loop={true} playsInline={true} className={"2xl:max-w-[340x] xl:max-w-[300px] lg:max-w-[260px] max-w-[220px] mx-auto mt-10 mbb-l " + customcss}>
+                    <video autoPlay={true} muted={true} loop={true} playsInline={true} className={"2xl:max-w-[240x] xl:max-w-[200px] lg:max-w-[160px] max-w-[120px] mx-auto mt-10 mbb-l " + customcss}>
                         <source src={video} type="video/mp4" />
                     </video>
                 </div>

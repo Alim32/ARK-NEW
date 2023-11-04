@@ -897,6 +897,9 @@ video {
 .max-w-sm{
   max-width: 24rem;
 }
+.max-w-\[120px\]{
+  max-width: 120px;
+}
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2036,6 +2039,9 @@ progress { /* for FF target directly the element */
   .lg\:max-w-\[320px\]{
     max-width: 320px;
   }
+  .lg\:max-w-\[160px\]{
+    max-width: 160px;
+  }
   .lg\:flex-1{
     flex: 1 1 0%;
   }
@@ -2133,6 +2139,9 @@ progress { /* for FF target directly the element */
   .xl\:max-w-\[340px\]{
     max-width: 340px;
   }
+  .xl\:max-w-\[200px\]{
+    max-width: 200px;
+  }
   .xl\:px-32{
     padding-left: 8rem;
     padding-right: 8rem;
@@ -2167,6 +2176,9 @@ progress { /* for FF target directly the element */
   }
   .\32xl\:max-w-\[380x\]{
     max-width: 380x;
+  }
+  .\32xl\:max-w-\[240x\]{
+    max-width: 240x;
   }
 }
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
