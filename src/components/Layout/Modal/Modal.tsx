@@ -11,7 +11,7 @@ const Modal = ({
         <div className='modal-overlay' id={id+"overlay"}>
             <div className="modal" id={id}>
                 <div className='flex flex-row justify-between lg:items-start items-center w-100 px-[50px] pt-[35px]'>
-                    <h2 className='text-white'>{title}</h2>
+                    <h4 className='text-white'>{title}</h4>
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>                   
                 </div>
                 <div className='flex flex-row justify-between'>
