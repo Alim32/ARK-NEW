@@ -1277,6 +1277,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.px-\[15px\]{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -1360,6 +1364,9 @@ video {
 }
 .pt-\[60px\]{
   padding-top: 60px;
+}
+.pt-\[20px\]{
+  padding-top: 20px;
 }
 .text-left{
   text-align: left;
@@ -2099,6 +2106,10 @@ progress { /* for FF target directly the element */
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+  .lg\:px-\[50px\]{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -2113,6 +2124,9 @@ progress { /* for FF target directly the element */
   }
   .lg\:pt-\[15vh\]{
     padding-top: 15vh;
+  }
+  .lg\:pt-\[35px\]{
+    padding-top: 35px;
   }
   .lg\:text-3xl{
     font-size: 1.875rem;

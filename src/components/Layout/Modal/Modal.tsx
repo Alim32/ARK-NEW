@@ -10,7 +10,7 @@ const Modal = ({
     return (        
         <div className='modal-overlay' id={id+"overlay"}>
             <div className="modal" id={id}>
-                <div className='flex flex-row justify-evenly lg:items-start items-center w-100 px-[50px] pt-[35px]'>
+                <div className='flex flex-row justify-evenly lg:items-start items-center w-100 lg:px-[50px] px-[15px] lg:pt-[35px] pt-[20px]'>
                     <h4 className='text-white'>{title}</h4>
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>                   
                 </div>
