@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { ScrollVisibility } from '@/components/ScrollVisibility';
-import { ScrollToNft } from '@/scripts/test.js';
+import { Modal } from '@/components/Layout/Modal';
+import { ScrollToNft, OpenModal, CloseModal } from '@/scripts/test.js';
 
 const NFTBlock = ({
     id,
@@ -13,7 +14,7 @@ const NFTBlock = ({
     sharescore,
 }: any) => {
     return (
-        <div id={id} className='overflow-hidden flex flex-row justify-evenly lg:h-[650px] h-[610px]'>
+        <div id={id} className='overflow-hidden flex flex-row justinpfy-evenly lg:h-[650px] h-[610px]'>
             <div className='flex flex-col'>
                 <video autoPlay={true} muted={true} loop={true} playsInline={true} className="2xl:max-w-[380x] xl:max-w-[340px] lg:max-w-[320px] max-w-[285px] mx-auto">
                     <source src={video} type="video/mp4" />
@@ -25,7 +26,7 @@ const NFTBlock = ({
                             <span className='text-base font-normal text-white-30 ml-3 lg:hidden flex'>${price}</span>
                         </p>
                         <p className='text-white-60 lg:hidden block mb-5 max-w-[75vw] lg:mr-0 -mr-[200px]'>Earn daily rewards for a passive income. Realize your winnings or reinvest.</p>
-                        <button className='btn-white px-3 pb-[1px] font-bold text-base w-fit lg:mx-auto z-10'>Learn More</button>
+                        <button className='btn-white px-3 pb-[1px] font-bold text-base w-fit lg:mx-auto z-10' onClick={() => OpenModal(id + "modal")}>Learn More</button>
                     </div>
                 </div>
             </div>
@@ -39,7 +40,7 @@ const NFTBlock = ({
                         <progress className='rotate-180 h-[5px] w-[200px]' value={sharescore} max="100"></progress>
                         <p className='rotate-180 text-white-30 ml-3'>Shares</p>
                     </div>
-                </div>                
+                </div>
                 <div className='info-box flex flex-col items-center justify-center mt-[125px] w-[95px] mx-auto  lg:flex hidden'>
                     <p className='text-lg text-white'>{price}</p>
                     <p className='text-lg text-white-30 mb-0'>USDT</p>
@@ -95,12 +96,19 @@ export default function Home() {
                                 <NFTBlock id="nft2" sharescore={90} boostscore={95} title="PLATINUM" video="/video/nft_platinum.mp4" price="10,000" shares="0.17%" />
                                 <NFTBlock id="nft3" sharescore={85} boostscore={90} title="GOLD" video="/video/nft_gold.mp4" price="4,000" shares="0.08%" />
                                 <NFTBlock id="nft4" sharescore={75} boostscore={77} title="SILVER" video="/video/nft_silver_o.mp4" price="1,000" shares="0.02%" />
-                                <NFTBlock id="nft5" sharescore={80} boostscore={70} title="BRONZE" video="/video/nft_bronze.mp4" price="500" shares="0.01%" />
-                                <NFTBlock id="nft6" sharescore={75} boostscore={65} title="TIN" video="/video/nft_tin.mp4" price="250" shares="0.005%" />
+                                <NFTBlock id="nft5" sharescore={75} boostscore={70} title="BRONZE" video="/video/nft_bronze.mp4" price="500" shares="0.01%" />
+                                <NFTBlock id="nft6" sharescore={70} boostscore={65} title="TIN" video="/video/nft_tin.mp4" price="250" shares="0.005%" />
                                 <NFTBlock id="nft7" sharescore={65} boostscore={60} title="COPPER" video="/video/nft_copper.mp4" price="100" shares="0.0025%" />
                             </div>
                         </div>
                     </ScrollVisibility>
+                    <Modal id={"nft1modal"} title="Diamond NFT" closeEvent={() => CloseModal("nft1modal")} video={"/video/nft_platinum.mp4"} />
+                    <Modal id={"nft2modal"} title="Platinum NFT" closeEvent={() => CloseModal("nft2modal")} video={"/video/nft_platinum.mp4"} />
+                    <Modal id={"nft3modal"} title="Gold NFT" closeEvent={() => CloseModal("nft3modal")} video={"/video/nft_gold.mp4"} />
+                    <Modal id={"nft4modal"} title="Silver NFT" closeEvent={() => CloseModal("nft4modal")} video={"/video/nft_silver_o.mp4"} />
+                    <Modal id={"nft5modal"} title="Bronze NFT" closeEvent={() => CloseModal("nft5modal")} video={"/video/nft_bronze.mp4"} />
+                    <Modal id={"nft6modal"} title="Tin NFT" closeEvent={() => CloseModal("nft6modal")} video={"/video/nft_tin.mp4"} />
+                    <Modal id={"nft7modal"} customcss="brightness-150" title="Copper NFT" closeEvent={() => CloseModal("nft7modal")} video={"/video/nft_copper.mp4"} />                    
                 </div>
             </div>
         </>

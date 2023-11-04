@@ -1,4 +1,4 @@
-// File: C:\Users\Alex\source\repos\ARK\ARK NEW HOME\src\app\legacy\page.tsx
+// File: C:\Users\alexd\source\repos\ARK\ARK NEW HOME\src\app\legacy\page.tsx
 import * as entry from '../../../../src/app/legacy/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

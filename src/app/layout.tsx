@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './utils.css';
 import { Sidebar } from '@/components/Layout/Sidebar';
+import { Modal } from '@/components/Layout/Modal';
 
 export const metadata: Metadata = {
     title: 'Ark Fi - DeFi Simplified',
