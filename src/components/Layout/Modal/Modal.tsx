@@ -20,11 +20,11 @@ const Modal = ({
                     </video>
                     <div className='flex flex-col rotate-90 h-[0px] mt-[200px] -mx-[50px]'>
                         <div className='flex flex-row items-center mb-[8.5px]'>
-                            <progress className='rotate-180 h-[5px] w-[150px]' value={100} max="100"></progress>
+                            <progress className='rotate-180 h-[5px] lg:w-[150px] w-[100px]' value={100} max="100"></progress>
                             <p className='rotate-180 text-white-30 text-sm ml-3'>Boost</p>
                         </div>
                         <div className='flex flex-row items-center'>
-                            <progress className='rotate-180 h-[5px] w-[150px]' value={100} max="100"></progress>
+                            <progress className='rotate-180 h-[5px] lg:w-[150px] w-[100px]' value={100} max="100"></progress>
                             <p className='rotate-180 text-white-30 text-sm ml-3'>Shares</p>
                         </div>
                     </div>
