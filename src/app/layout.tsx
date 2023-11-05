@@ -6,6 +6,7 @@ import { Sidebar } from '@/components/Layout/Sidebar';
 import { Mobilebar } from '@/components/Layout/Mobilebar';
 import { Modal } from '@/components/Layout/Modal';
 
+
 export const metadata: Metadata = {
     title: 'Ark Fi - DeFi Simplified',
     description: 'Ark Finance',
@@ -15,7 +16,7 @@ export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
-}) {
+}) {    
     return (
         <html lang='en' className='scroll-smooth'>
             <body className=''>

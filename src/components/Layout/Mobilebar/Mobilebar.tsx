@@ -1,44 +1,44 @@
-'use client';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const Mobilebar = () => {
-    const { push } = useRouter();
+    const pathname = usePathname();
 
     return (
         <nav className="mobilebar">
             <div className="flex flex-row items-center justify-evenly pt-2">
-                <a href={"/legacy"}>
+                <Link href={"/legacy"}>
                     <Image
                         src={"/icons/tab_nft.png"}
                         height={30}
                         width={30}
-                        className='mobile-icon mb-[5px]'
+                        className={`mobile-icon mb-[5px] ${pathname == "/legacy" ? "active" : ""}`}
                         id='mobtablegacy'
                         alt={"home"}
                     />
-                </a>
-                <a href={"/"}>
-                    <Image 
+                </Link>
+                <Link href={"/"}>
+                    <Image
                         src={"/icons/ark_a.svg"}
                         height={30}
                         width={30}
-                        className='mobile-icon'
+                        className={`mobile-icon ${pathname == "/" ? "active" : ""}`}
                         id='mobtabhome'
                         alt={"home"}
                     />
-                </a>
-                <a href={"/menu"}>
+                </Link>
+                <Link href={"/menu"}>
                     <Image
                         src={"/icons/tab_more.png"}
                         height={30}
                         width={30}
-                        className='mobile-icon mb-[7px]'
+                        className={`mobile-icon mb-[7px] ${pathname == "/menu" ? "active" : ""}`}
                         id='mobtabmenu'
                         alt={"home"}
                     />
-                </a>
+                </Link>
             </div>
         </nav>
     );
