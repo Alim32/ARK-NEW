@@ -29,9 +29,11 @@ if (typeof window != "undefined") {
     window.onload = function (e) {  
         var pathname = location.pathname.replaceAll("/", "");
         pathname = pathname == "" ? "home" : pathname;
-        document.getElementById(`tab${pathname}`)?.classList.add("active");
-        document.getElementById(`mobtab${pathname}`)?.classList.add("active");
-        console.log(pathname);
+
+        setTimeout(function () {
+            document.getElementById(`tab${pathname}`)?.classList.add("active");
+            document.getElementById(`mobtab${pathname}`)?.classList.add("active");
+        }, 750);
     };
 }
 
