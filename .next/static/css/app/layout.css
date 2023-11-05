@@ -618,6 +618,12 @@ video {
 .mb-\[50px\]{
   margin-bottom: 50px;
 }
+.mb-\[5px\]{
+  margin-bottom: 5px;
+}
+.mb-\[7px\]{
+  margin-bottom: 7px;
+}
 .mb-\[8\.5px\]{
   margin-bottom: 8.5px;
 }
@@ -1513,6 +1519,10 @@ video {
   --tw-brightness: brightness(1.5);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.grayscale{
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1694,9 +1704,9 @@ h4 {
     bottom: 1.5%;
     width: 95%;
     left: 2.5%;
-    padding: 0.5rem;
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
+    padding: 0.25rem 0.75rem;
+    -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
     border-radius: 73px;
 }
 
@@ -1798,6 +1808,22 @@ progress { /* for FF target directly the element */
         border: none;
         border-top: solid 2px rgb(235 235 235 / 20%);
     }
+}
+
+.mobile-icon{
+    padding-bottom:7.5px;
+}
+
+.mobile-icon.active{
+    border-bottom: solid 2px white !important;
+}
+
+.grayscale-50{
+    filter:grayscale(0.5);
+}
+
+.grayscale-75 {
+    filter: grayscale(0.75);
 }
 
 .last\:mr-0:last-child{

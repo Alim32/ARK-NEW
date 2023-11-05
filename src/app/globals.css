@@ -156,8 +156,8 @@ h4 {
     bottom: 1.5%;
     width: 95%;
     left: 2.5%;
-    padding: 0.5rem;
-    backdrop-filter: blur(8px);
+    padding: 0.25rem 0.75rem;
+    backdrop-filter: blur(25px);
     border-radius: 73px;
 }
 
@@ -270,4 +270,20 @@ progress { /* for FF target directly the element */
         border: none;
         border-top: solid 2px rgb(235 235 235 / 20%);
     }
+}
+
+.mobile-icon{
+    padding-bottom:7.5px;
+}
+
+.mobile-icon.active{
+    border-bottom: solid 2px white !important;
+}
+
+.grayscale-50{
+    filter:grayscale(0.5);
+}
+
+.grayscale-75 {
+    filter: grayscale(0.75);
 }

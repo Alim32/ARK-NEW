@@ -21,9 +21,9 @@ export default function RootLayout({
             <body className=''>
                 <main className='overflow-hidden mx-auto lg:pt-[15vh] pt-[60px]'>
                     {children}
-                </main>
-                <Sidebar />
+                </main>                
                 <Mobilebar />
+                <Sidebar />
             </body>
         </html>
     );
