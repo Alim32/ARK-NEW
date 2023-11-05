@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './utils.css';
 import { Sidebar } from '@/components/Layout/Sidebar';
+import { Mobilebar } from '@/components/Layout/Mobilebar';
 import { Modal } from '@/components/Layout/Modal';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
                     {children}
                 </main>
                 <Sidebar />
+                <Mobilebar />
             </body>
         </html>
     );

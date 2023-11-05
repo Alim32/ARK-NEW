@@ -531,6 +531,10 @@ video {
 .m-auto{
   margin: auto;
 }
+.-mx-\[50px\]{
+  margin-left: -50px;
+  margin-right: -50px;
+}
 .mx-1{
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -550,10 +554,6 @@ video {
 .my-7{
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
-}
-.-mx-\[50px\]{
-  margin-left: -50px;
-  margin-right: -50px;
 }
 .-mb-px{
   margin-bottom: -1px;
@@ -831,6 +831,9 @@ video {
 .w-\[100\%\]{
   width: 100%;
 }
+.w-\[100px\]{
+  width: 100px;
+}
 .w-\[200px\]{
   width: 200px;
 }
@@ -846,9 +849,6 @@ video {
 }
 .w-full{
   width: 100%;
-}
-.w-\[150px\]{
-  width: 150px;
 }
 .min-w-0{
   min-width: 0px;
@@ -895,11 +895,11 @@ video {
 .max-w-\[400px\]{
   max-width: 400px;
 }
-.max-w-\[40vw\]{
-  max-width: 40vw;
-}
 .max-w-\[450px\]{
   max-width: 450px;
+}
+.max-w-\[45vw\]{
+  max-width: 45vw;
 }
 .max-w-\[600px\]{
   max-width: 600px;
@@ -909,9 +909,6 @@ video {
 }
 .max-w-sm{
   max-width: 24rem;
-}
-.max-w-\[45vw\]{
-  max-width: 45vw;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -1241,9 +1238,9 @@ video {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
-.px-\[50px\]{
-  padding-left: 50px;
-  padding-right: 50px;
+.px-\[35px\]{
+  padding-left: 35px;
+  padding-right: 35px;
 }
 .py-1{
   padding-top: 0.25rem;
@@ -1276,10 +1273,6 @@ video {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.px-\[15px\]{
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .\!pb-0{
   padding-bottom: 0px !important;
@@ -1359,14 +1352,11 @@ video {
 .pt-6{
   padding-top: 1.5rem;
 }
-.pt-\[35px\]{
-  padding-top: 35px;
+.pt-\[20px\]{
+  padding-top: 20px;
 }
 .pt-\[60px\]{
   padding-top: 60px;
-}
-.pt-\[20px\]{
-  padding-top: 20px;
 }
 .text-left{
   text-align: left;
@@ -1697,6 +1687,30 @@ h4 {
     }
 }
 
+.mobilebar {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(27, 28, 50, 0.8);
+    position: fixed;
+    z-index: 999;
+    bottom: 1.5%;
+    width: 95%;
+    left: 2.5%;
+    padding: 0.5rem;
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    border-radius: 73px;
+}
+
+@media(max-width:1279px) {
+    .mobilebar {
+        display: block !important;
+    }
+}
+@media(min-width:1280px) {
+    .mobilebar {
+        display: none !important;
+    }
+}
+
 progress {
     background: transparent;
     border: none; /* Needed for Firefox */
@@ -1942,6 +1956,9 @@ progress { /* for FF target directly the element */
   .md\:min-w-\[45\%\]{
     min-width: 45%;
   }
+  .md\:max-w-\[450px\]{
+    max-width: 450px;
+  }
   .md\:flex-row{
     flex-direction: row;
   }
@@ -1996,23 +2013,13 @@ progress { /* for FF target directly the element */
 }
 
 @media (min-width: 1024px){
-  .lg\:fixed{
-    position: fixed;
-  }
   .lg\:mx-4{
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  .lg\:mx-auto{
-    margin-left: auto;
-    margin-right: auto;
-  }
   .lg\:my-10{
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-  }
-  .lg\:-mt-\[90px\]{
-    margin-top: -90px;
   }
   .lg\:mb-0{
     margin-bottom: 0px;
@@ -2026,26 +2033,17 @@ progress { /* for FF target directly the element */
   .lg\:mb-20{
     margin-bottom: 5rem;
   }
-  .lg\:mr-0{
-    margin-right: 0px;
-  }
   .lg\:mt-10{
     margin-top: 2.5rem;
   }
   .lg\:block{
     display: block;
   }
-  .lg\:flex{
-    display: flex;
-  }
-  .lg\:hidden{
-    display: none;
-  }
-  .lg\:h-\[650px\]{
-    height: 650px;
-  }
   .lg\:h-full{
     height: 100%;
+  }
+  .lg\:w-\[150px\]{
+    width: 150px;
   }
   .lg\:min-w-\[600px\]{
     min-width: 600px;
@@ -2056,8 +2054,8 @@ progress { /* for FF target directly the element */
   .lg\:max-w-\[160px\]{
     max-width: 160px;
   }
-  .lg\:max-w-\[320px\]{
-    max-width: 320px;
+  .lg\:max-w-\[300px\]{
+    max-width: 300px;
   }
   .lg\:flex-1{
     flex: 1 1 0%;
@@ -2068,14 +2066,8 @@ progress { /* for FF target directly the element */
   .lg\:items-start{
     align-items: flex-start;
   }
-  .lg\:items-center{
-    align-items: center;
-  }
   .lg\:justify-between{
     justify-content: space-between;
-  }
-  .lg\:justify-evenly{
-    justify-content: space-evenly;
   }
   .lg\:gap-0{
     gap: 0px;
@@ -2098,17 +2090,13 @@ progress { /* for FF target directly the element */
   .lg\:p-5{
     padding: 1.25rem;
   }
-  .lg\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
+  .lg\:px-\[50px\]{
+    padding-left: 50px;
+    padding-right: 50px;
   }
   .lg\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-  .lg\:px-\[50px\]{
-    padding-left: 50px;
-    padding-right: 50px;
   }
   .lg\:pb-0{
     padding-bottom: 0px;
@@ -2136,20 +2124,39 @@ progress { /* for FF target directly the element */
     font-size: 6rem;
     line-height: 1;
   }
-  .lg\:tracking-\[0\.5em\]{
-    letter-spacing: 0.5em;
-  }
-  .lg\:text-white\/60{
-    color: rgb(255 255 255 / 0.6);
-  }
 }
 
 @media (min-width: 1280px){
+  .xl\:fixed{
+    position: fixed;
+  }
+  .xl\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .xl\:-mt-\[90px\]{
+    margin-top: -90px;
+  }
   .xl\:mb-10{
     margin-bottom: 2.5rem;
   }
+  .xl\:mr-0{
+    margin-right: 0px;
+  }
+  .xl\:block{
+    display: block;
+  }
+  .xl\:flex{
+    display: flex;
+  }
+  .xl\:hidden{
+    display: none;
+  }
   .xl\:h-16{
     height: 4rem;
+  }
+  .xl\:h-\[650px\]{
+    height: 650px;
   }
   .xl\:w-16{
     width: 4rem;
@@ -2160,8 +2167,27 @@ progress { /* for FF target directly the element */
   .xl\:max-w-\[200px\]{
     max-width: 200px;
   }
-  .xl\:max-w-\[340px\]{
-    max-width: 340px;
+  .xl\:max-w-\[300px\]{
+    max-width: 300px;
+  }
+  .xl\:flex-row{
+    flex-direction: row;
+  }
+  .xl\:items-start{
+    align-items: flex-start;
+  }
+  .xl\:items-center{
+    align-items: center;
+  }
+  .xl\:justify-between{
+    justify-content: space-between;
+  }
+  .xl\:justify-evenly{
+    justify-content: space-evenly;
+  }
+  .xl\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .xl\:px-32{
     padding-left: 8rem;
@@ -2188,6 +2214,12 @@ progress { /* for FF target directly the element */
   .xl\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+  .xl\:tracking-\[0\.5em\]{
+    letter-spacing: 0.5em;
+  }
+  .xl\:text-white\/60{
+    color: rgb(255 255 255 / 0.6);
   }
 }
 

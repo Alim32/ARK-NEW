@@ -14,19 +14,19 @@ const NFTBlock = ({
     sharescore,
 }: any) => {
     return (
-        <div id={id} className='overflow-hidden flex flex-row justinpfy-evenly lg:h-[650px] h-[610px]'>
+        <div id={id} className='overflow-hidden flex flex-row justinpfy-evenly xl:h-[650px] h-[610px]'>
             <div className='flex flex-col'>
-                <video autoPlay={true} muted={true} loop={true} playsInline={true} className="2xl:max-w-[380x] xl:max-w-[340px] lg:max-w-[320px] max-w-[285px] mx-auto">
+                <video autoPlay={true} muted={true} loop={true} playsInline={true} className="2xl:max-w-[380x] xl:max-w-[300px] lg:max-w-[300px] max-w-[285px] mx-auto">
                     <source src={video} type="video/mp4" />
                 </video>
-                <div className='flex flex-row lg:justify-evenly justify-start lg:-mt-[90px] -mt-[70px] w-100'>
-                    <div className='flex flex-col lg:items-center items-start lg:px-0 px-5 lg:pl-0 pl-[90px]'>
-                        <p className="flex flex-row lg:text-white/60 text-white lg:font-base font-bold text-lg text-center mb-5 lg:tracking-[0.5em]">
+                <div className='flex flex-row xl:justify-evenly justify-start xl:-mt-[90px] -mt-[70px] w-100'>
+                    <div className='flex flex-col xl:items-center items-start xl:px-0 px-5 lg:pl-0 pl-[90px]'>
+                        <p className="flex flex-row xl:text-white/60 text-white xl:font-base font-bold text-lg text-center mb-5 xl:tracking-[0.5em]">
                             {title}
-                            <span className='text-base font-normal text-white-30 ml-3 lg:hidden flex'>${price}</span>
+                            <span className='text-base font-normal text-white-30 ml-3 xl:hidden flex'>${price}</span>
                         </p>
-                        <p className='text-white-60 lg:hidden block mb-5 max-w-[75vw] lg:mr-0 -mr-[200px]'>Earn daily rewards for a passive income. Realize your winnings or reinvest.</p>
-                        <button className='btn-white px-3 pb-[1px] font-bold text-base w-fit lg:mx-auto z-10' onClick={() => OpenModal(id + "modal")}>Learn More</button>
+                        <p className='text-white-60 xl:hidden block mb-5 md:max-w-[450px] max-w-[75vw] xl:mr-0 -mr-[200px]'>Earn daily rewards for a passive income. Realize your winnings or reinvest.</p>
+                        <button className='btn-white px-3 pb-[1px] font-bold text-base w-fit xl:mx-auto z-10' onClick={() => OpenModal(id + "modal")}>Learn More</button>
                     </div>
                 </div>
             </div>
@@ -41,11 +41,11 @@ const NFTBlock = ({
                         <p className='rotate-180 text-white-30 ml-3'>Shares</p>
                     </div>
                 </div>
-                <div className='info-box flex flex-col items-center justify-center mt-[125px] w-[95px] mx-auto  lg:flex hidden'>
+                <div className='info-box flex flex-col items-center justify-center mt-[125px] w-[95px] mx-auto  xl:flex hidden'>
                     <p className='text-lg text-white'>{price}</p>
                     <p className='text-lg text-white-30 mb-0'>USDT</p>
                 </div>
-                <div className='info-box flex flex-col items-center justify-center mt-3 w-[95px] mx-auto  lg:flex hidden'>
+                <div className='info-box flex flex-col items-center justify-center mt-3 w-[95px] mx-auto  xl:flex hidden'>
                     <p className='text-lg text-white'>Shares</p>
                     <p className='text-lg text-white-30 mb-0'>{shares}</p>
                 </div>
@@ -61,7 +61,7 @@ const NFTTab = ({
     active = ""
 }: any) => {
     return (
-        <div id={'nfttab' + id} className={'flex flex-col mt-[25px] legacy cursor-pointer lg:block hidden ' + active} onClick={() => ScrollToNft(id)}>
+        <div id={'nfttab' + id} className={'flex flex-col mt-[25px] legacy cursor-pointer xl:block hidden ' + active} onClick={() => ScrollToNft(id)}>
             <h4 className='text-white-60 flex flex-row items-center'>{name} <span className='text-base text-white-30 ml-3'>${price}</span></h4>
             <p className='text-white-30 max-w-[400px] block'>I am ready to share and educate.
                 I want a piece of the future of Ark Fi
@@ -72,10 +72,10 @@ const NFTTab = ({
 export default function Home() {
     return (
         <>
-            <div className='container h-100 w-100 mx-auto lg:px-0 px-3'>
-                <div className="flex lg:flex-row flex-col lg:justify-between justify-center lg:items-start items-center">
+            <div className='container h-100 w-100 mx-auto xl:px-0 px-3'>
+                <div className="flex xl:flex-row flex-col xl:justify-between justify-center xl:items-start items-center">
                     <div>
-                        <div className='flex flex-col position lg:fixed relative'>
+                        <div className='flex flex-col position xl:fixed relative'>
                             <h1 className="text-white my-5 mt-4">
                                 Legacy NFT
                             </h1>
