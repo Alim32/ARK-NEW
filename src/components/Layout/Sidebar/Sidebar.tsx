@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import $ from 
 
 const Sidebar = () => {
     const { push } = useRouter();
@@ -25,17 +26,13 @@ const Sidebar = () => {
     );
 };
 
-if (typeof window != "undefined") {
-    window.onload = function (e) {  
-        var pathname = location.pathname.replaceAll("/", "");
-        pathname = pathname == "" ? "home" : pathname;
 
-        setTimeout(function () {
-            document.getElementById(`tab${pathname}`)?.classList.add("active");
-            document.getElementById(`mobtab${pathname}`)?.classList.add("active");
-        }, 750);
-    };
-}
+document.addEventListener('DOMContentLoaded', function () {
+    var pathname = location.pathname.replaceAll("/", "");
+    pathname = pathname == "" ? "home" : pathname;
 
+    document.getElementById(`tab${pathname}`)?.classList.add("active");
+    document.getElementById(`mobtab${pathname}`)?.classList.add("active");
+}, false);
 
 export default Sidebar;
