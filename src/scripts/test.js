@@ -47,7 +47,7 @@ export function CloseModal(id) {
     document.body.style.overflow = "visible";    
 
     if (window.innerWidth < 1250) {
-        document.getElementById(`${id}`).style.top = "5%";
+        document.getElementById(`${id}`).style.top = "10%";
 
         var amount = 10;
         var interval = setInterval(function () {
