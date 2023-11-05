@@ -2050,6 +2050,9 @@ progress { /* for FF target directly the element */
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+  .md\:tracking-\[0\.1em\]{
+    letter-spacing: 0.1em;
+  }
 }
 
 @media (min-width: 1024px){

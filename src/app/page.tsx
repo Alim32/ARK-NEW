@@ -7,7 +7,7 @@ export default function Home() {
             <ScrollVisibility>
                 <div className='container h-100 w-100 mx-auto'>
                     <div className="flex flex-col justify-center items-center">
-                        <h1 className="text-white text-center ls-wide my-5 mt-4">
+                        <h1 className="text-white text-center md:tracking-[0.1em] my-5 mt-4">
                             <span className='text-white-30 mr-[1rem]'>$</span>
                             <span>100,000</span>
                             <span className='text-white-30'>.60</span>
