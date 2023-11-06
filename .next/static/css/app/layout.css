@@ -1373,6 +1373,9 @@ video {
 .pt-\[60px\]{
   padding-top: 60px;
 }
+.pb-10{
+  padding-bottom: 2.5rem;
+}
 .text-left{
   text-align: left;
 }
