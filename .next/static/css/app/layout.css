@@ -1292,6 +1292,9 @@ video {
 .pb-0{
   padding-bottom: 0px;
 }
+.pb-10{
+  padding-bottom: 2.5rem;
+}
 .pb-14{
   padding-bottom: 3.5rem;
 }
@@ -1372,9 +1375,6 @@ video {
 }
 .pt-\[60px\]{
   padding-top: 60px;
-}
-.pb-10{
-  padding-bottom: 2.5rem;
 }
 .text-left{
   text-align: left;
