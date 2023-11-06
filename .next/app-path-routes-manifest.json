@@ -1,0 +1,9 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/vault/page": "/vault",
+  "/network/page": "/network",
+  "/menu/page": "/menu",
+  "/foundation/page": "/foundation",
+  "/legacy/page": "/legacy"
+}
