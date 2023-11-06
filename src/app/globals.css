@@ -321,3 +321,20 @@ progress { /* for FF target directly the element */
 .grayscale-75 {
     filter: grayscale(0.75);
 }
+
+.main-menu-icon {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.main-menu-1 {
+    width: 32.5%;
+}
+
+hr {
+    height: 1px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 1.25rem 0;
+    border: none;
+}   
