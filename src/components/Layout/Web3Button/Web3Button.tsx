@@ -32,7 +32,7 @@ const Web3Button = ({
                         height={1000}
                         alt="ARC ARK"
                     />
-                    <button className='btn-white px-5 md:text-xl text-base pt-1 pb-2 2xl:-mt-[150px] md:-mt-[100px] -mt-[10px]' onClick={() => UseButton()}>Connect</button>
+                    <button className='btn-white px-5 md:text-xl text-base pt-1 pb-2 2xl:-mt-[150px] md:-mt-[100px] -mt-[10px] mb-[75px]' onClick={() => UseButton()}>Connect</button>
                 </div>
             </div>
         </ScrollVisibility>
