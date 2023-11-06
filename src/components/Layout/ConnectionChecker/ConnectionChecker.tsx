@@ -3,10 +3,16 @@ import { useAccount } from 'wagmi'
 
 const ConnectionChecker = ({
     callback,
-}: any) => {
-    const { isConnected } = useAccount();
+}: any) => {    
+    const connected = localStorage.getItem("wagmi.connected");
 
-    callback(isConnected)
+    if (connected) {
+        const { isConnected } = useAccount();
+
+        if (isConnected) {
+            callback(false)
+        }
+    }
 
     return (        
         <div></div>

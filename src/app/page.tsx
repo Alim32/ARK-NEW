@@ -8,7 +8,8 @@ import { Web3Button } from '@/components/Layout/Web3Button';
 import { ConnectionChecker } from '@/components/Layout/ConnectionChecker';
 
 export default function Home() {
-    const [IsConnected, setIsConnected] = useState(true);
+    const [IsConnected, setIsConnected] = useState(false);
+    const [connAttempt, setConnAttempt] = useState(false);
 
     return (
         <>
@@ -36,7 +37,7 @@ export default function Home() {
                         </div>
                     </ScrollVisibility>
                     :
-                    <Web3Button />
+                    <Web3Button callback={setConnAttempt} />
                 }
             </WagmiConfig>
         </>

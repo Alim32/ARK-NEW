@@ -6,14 +6,19 @@ const Web3Button = ({
 }: any) => {
     const { open } = useWeb3Modal();
 
-    function UseButton() {
-        open();
-        console.log("hoeren")
-        callback(false);
+    function UseButton() {             
+        open();     
+        callback(true);
     }
 
     return (
-        <button className='btn-obvious' onClick={() => UseButton()}> Open Connect Modal</button >
+        <div className='container h-100 w-100 mx-auto'>
+            <div className="flex flex-col"> 
+                <h1 className="text-white">Welcome</h1>
+                <button className='btn-obvious' onClick={() => UseButton()}> Open Connect Modal</button>
+            </div>
+
+        </div>
     );
 };
 
