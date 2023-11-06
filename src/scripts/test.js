@@ -2,6 +2,16 @@ import $ from 'jquery';
 
 var activeTab = 1;
 
+export const formatter = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+});
+
+export const formatterNoDec = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+});
+
 export function ScrollToNft(id) {
     var scrollVal = id < 7 ? id + 1 : id;
 
