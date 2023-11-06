@@ -1562,6 +1562,19 @@ html, body {
     height: 100%;
 }
 
+.btn-obvious{
+    position:fixed;
+    z-index:9;
+    top:40%;
+    left:43%;
+    background: var(--bg);
+    color: white;
+    padding:2rem;
+    font-size:2rem;
+    border: solid 3px var(--purple);
+    border-radius:25px;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, span, strong {
     font-family: Montserrat;
 }

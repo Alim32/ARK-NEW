@@ -1,8 +1,13 @@
-'use client';
-import Image from 'next/image';
+"use client";
 import { ScrollVisibility } from '@/components/ScrollVisibility';
 import { Modal } from '@/components/Layout/Modal';
 import { ScrollToNft, OpenModal, CloseModal } from '@/scripts/test.js';
+import wagmiConfig from "@/app/web3/wagmiConfig";
+import { WagmiConfig } from 'wagmi'
+import { useState } from 'react';
+import { Web3Button } from '@/components/Layout/Web3Button';
+import { ConnectionChecker } from '@/components/Layout/ConnectionChecker';
+
 
 const NFTBlock = ({
     id,
@@ -70,8 +75,14 @@ const NFTTab = ({
     );
 };
 export default function Home() {
+    const [IsConnected, setIsConnected] = useState(true);
+
     return (
         <>
+            <WagmiConfig config={wagmiConfig}>
+                <ConnectionChecker callback={setIsConnected} />
+                {IsConnected
+                    ?
             <div className='container h-100 w-100 mx-auto xl:px-0 px-3'>
                 <div className="flex xl:flex-row flex-col xl:justify-between justify-center xl:items-start items-center">
                     <div>
@@ -110,7 +121,11 @@ export default function Home() {
                     <Modal id={"nft6modal"} title="Tin NFT" closeEvent={() => CloseModal("nft6modal")} video={"/video/nft_tin.mp4"} />
                     <Modal id={"nft7modal"} customcss="brightness-150" title="Copper NFT" closeEvent={() => CloseModal("nft7modal")} video={"/video/nft_copper.mp4"} />                    
                 </div>
-            </div>
+                    </div>
+                    :
+                    <Web3Button />
+                }
+            </WagmiConfig>
         </>
     );
 }
