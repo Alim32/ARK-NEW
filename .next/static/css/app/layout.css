@@ -1727,7 +1727,7 @@ h4 {
 .mobilebar {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(27, 28, 50, 0.8);
     position: fixed;
-    z-index: 999;
+    z-index: 99;
     bottom: 1.5%;
     width: 95%;
     left: 2.5%;
