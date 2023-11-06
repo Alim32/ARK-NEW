@@ -18,11 +18,7 @@ html, body {
     height: 100%;
 }
 
-.btn-obvious{
-    position:fixed;
-    z-index:9;
-    top:40%;
-    left:43%;
+.btn-purple{
     background: var(--bg);
     color: white;
     padding:2rem;
@@ -164,6 +160,13 @@ h4 {
     .container-fluid {
         margin-left: 15%;
         max-width: 85%;
+    }
+}
+
+@media(max-width:1500px) and (min-width:1280px){
+    .container{
+        max-width:75%;
+        margin-right:6.5%
     }
 }
 

@@ -531,6 +531,9 @@ video {
 .m-auto{
   margin: auto;
 }
+.m-0{
+  margin: 0px;
+}
 .-mx-\[50px\]{
   margin-left: -50px;
   margin-right: -50px;
@@ -701,6 +704,27 @@ video {
 }
 .mt-\[85px\]{
   margin-top: 85px;
+}
+.-mt-5{
+  margin-top: -1.25rem;
+}
+.-mt-\[100px\]{
+  margin-top: -100px;
+}
+.-mt-\[150px\]{
+  margin-top: -150px;
+}
+.-mt-\[50px\]{
+  margin-top: -50px;
+}
+.-mt-\[25px\]{
+  margin-top: -25px;
+}
+.-mt-\[0px\]{
+  margin-top: -0px;
+}
+.-mt-\[10px\]{
+  margin-top: -10px;
 }
 .block{
   display: block;
@@ -1105,6 +1129,9 @@ video {
 .rounded-md{
   border-radius: 0.375rem;
 }
+.rounded-\[10px\]{
+  border-radius: 10px;
+}
 .border{
   border-width: 1px;
 }
@@ -1280,6 +1307,14 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-\[1px\]{
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.py-\[2px\]{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -1363,6 +1398,18 @@ video {
 }
 .pt-\[60px\]{
   padding-top: 60px;
+}
+.pb-\[2px\]{
+  padding-bottom: 2px;
+}
+.pt-\[1px\]{
+  padding-top: 1px;
+}
+.pb-2{
+  padding-bottom: 0.5rem;
+}
+.pt-1{
+  padding-top: 0.25rem;
 }
 .text-left{
   text-align: left;
@@ -1562,11 +1609,7 @@ html, body {
     height: 100%;
 }
 
-.btn-obvious{
-    position:fixed;
-    z-index:9;
-    top:40%;
-    left:43%;
+.btn-purple{
     background: var(--bg);
     color: white;
     padding:2rem;
@@ -1709,6 +1752,13 @@ h4 {
     .container-fluid {
         margin-left: 15%;
         max-width: 85%;
+    }
+}
+
+@media(max-width:1500px) and (min-width:1280px){
+    .container{
+        max-width:75%;
+        margin-right:6.5%
     }
 }
 
@@ -1984,6 +2034,9 @@ progress { /* for FF target directly the element */
   }
   .md\:mt-6{
     margin-top: 1.5rem;
+  }
+  .md\:-mt-\[100px\]{
+    margin-top: -100px;
   }
   .md\:block{
     display: block;
@@ -2280,6 +2333,9 @@ progress { /* for FF target directly the element */
 }
 
 @media (min-width: 1536px){
+  .\32xl\:-mt-\[150px\]{
+    margin-top: -150px;
+  }
   .\32xl\:max-w-\[240x\]{
     max-width: 240x;
   }

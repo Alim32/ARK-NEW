@@ -8,13 +8,13 @@ import { Web3Button } from '@/components/Layout/Web3Button';
 import { ConnectionChecker } from '@/components/Layout/ConnectionChecker';
 
 export default function Home() {
-    const [IsConnected, setIsConnected] = useState(false);
+    const [IsConnected, setIsConnected] = useState(true);
     const [connAttempt, setConnAttempt] = useState(false);
 
     return (
         <>
             <WagmiConfig config={wagmiConfig}>
-                <ConnectionChecker callback={setIsConnected} />
+                <ConnectionChecker callback={setIsConnected} reset={setConnAttempt} />
                 {IsConnected
                     ?
                     <ScrollVisibility>
