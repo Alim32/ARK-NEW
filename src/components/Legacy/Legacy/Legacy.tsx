@@ -15,7 +15,7 @@ const NFTBlock = ({
     return (
         <div id={id} className='overflow-hidden flex flex-row justinpfy-evenly xl:h-[650px] h-[610px]'>
             <div className='flex flex-col'>
-                <video autoPlay={true} muted={true} loop={true} playsInline={true} className="2xl:max-w-[380x] xl:max-w-[300px] lg:max-w-[300px] max-w-[285px] mx-auto">
+                <video autoPlay={true} muted={true} loop={true} playsInline={true} className="2xl:max-w-[380px] xl:max-w-[300px] lg:max-w-[300px] max-w-[285px] mx-auto">
                     <source src={video} type="video/mp4" />
                 </video>
                 <div className='flex flex-row xl:justify-evenly justify-start xl:-mt-[90px] -mt-[70px] w-100'>

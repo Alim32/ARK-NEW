@@ -2352,6 +2352,9 @@ hr {
   .\32xl\:max-w-\[380x\]{
     max-width: 380x;
   }
+  .\32xl\:max-w-\[380px\]{
+    max-width: 380px;
+  }
 }   
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/utils.css ***!
