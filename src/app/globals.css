@@ -18,13 +18,13 @@ html, body {
     height: 100%;
 }
 
-.btn-purple{
+.btn-purple {
     background: var(--bg);
     color: white;
-    padding:2rem;
-    font-size:2rem;
+    padding: 2rem;
+    font-size: 2rem;
     border: solid 3px var(--purple);
-    border-radius:25px;
+    border-radius: 25px;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span, strong {
@@ -47,7 +47,7 @@ h4 {
     font-size: 1.6rem;
 }
 
-@media(max-width:600px){
+@media(max-width:600px) {
     h1 {
         font-size: 3rem;
     }
@@ -125,6 +125,27 @@ h4 {
         display: block;
     }
 
+@media(min-width:1280px) {
+    .legacy h4 {
+        font-size: 1rem;
+    }
+
+    .legacy.active h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width:1800px){
+    .legacy h4 {
+        font-size: 1.35rem;
+    }
+
+    .legacy.active h4 {
+        font-size: 1.6rem;
+    }
+}
+
+
 .menu-item {
     text-decoration: none;
     font-weight: 600;
@@ -163,10 +184,10 @@ h4 {
     }
 }
 
-@media(max-width:1500px) and (min-width:1280px){
-    .container{
-        max-width:75%;
-        margin-right:6.5%
+@media(max-width:1500px) and (min-width:1280px) {
+    .container {
+        max-width: 75%;
+        margin-right: 6.5%
     }
 }
 
@@ -200,6 +221,7 @@ h4 {
         display: block !important;
     }
 }
+
 @media(min-width:1280px) {
     .mobilebar {
         display: none !important;
@@ -211,19 +233,19 @@ progress {
     border: none; /* Needed for Firefox */
     color: #fff; /* For IE10 */
     -webkit-appearance: none; /* Needed for WebKit/Blink */
-    border-radius:2px;
-}
-
-progress[value]::-webkit-progress-bar {
-    background: transparent;
     border-radius: 2px;
 }
 
-progress[value]::-webkit-progress-value {
-    background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)), -webkit-linear-gradient(right, rgba(255, 255, 255, 0.68), rgba(56, 38, 255, 1));
-    border-radius: 2px;
-    background-size: 35px 20px, 100% 100%, 100% 100%;
-}
+    progress[value]::-webkit-progress-bar {
+        background: transparent;
+        border-radius: 2px;
+    }
+
+    progress[value]::-webkit-progress-value {
+        background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)), -webkit-linear-gradient(right, rgba(255, 255, 255, 0.68), rgba(56, 38, 255, 1));
+        border-radius: 2px;
+        background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
 
 progress {
     -webkit-appearance: none;
@@ -251,18 +273,18 @@ progress { /* for FF target directly the element */
 
     progress::-moz-progress-bar { /* for FF ::progress-bar is the value bar */
         background: linear-gradient(to left, rgba(255, 255, 255, 0.68), rgba(56, 38, 255, 1)) !important;
-        transition: all .7s;        
+        transition: all .7s;
     }
 
 .modal-overlay {
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
-    position: fixed;    
+    position: fixed;
     background: rgb(0,0,0, 0.5);
     z-index: 99999999999999;
-    display:none;
+    display: none;
     transition: top ease-in-out;
 }
 
@@ -276,9 +298,10 @@ progress { /* for FF target directly the element */
     width: 45vw;
     height: 50vh;
     border-radius: 25px;
-    display:none;
+    display: none;
     transition: ease-in-out;
 }
+
 .modal {
     background: linear-gradient(180deg, #181823 0%, #0c0c0e 20%, #03071d 100%);
     border: solid 1px rgb(235 235 235 / 10%);
@@ -306,16 +329,16 @@ progress { /* for FF target directly the element */
     }
 }
 
-.mobile-icon{
-    padding-bottom:7.5px;
+.mobile-icon {
+    padding-bottom: 7.5px;
 }
 
-.mobile-icon.active{
-    border-bottom: solid 2px white !important;
-}
+    .mobile-icon.active {
+        border-bottom: solid 2px white !important;
+    }
 
-.grayscale-50{
-    filter:grayscale(0.5);
+.grayscale-50 {
+    filter: grayscale(0.5);
 }
 
 .grayscale-75 {
@@ -337,4 +360,4 @@ hr {
     background-color: rgba(255, 255, 255, 0.2);
     margin: 1.25rem 0;
     border: none;
-}   
+}
