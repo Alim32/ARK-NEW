@@ -62,7 +62,7 @@ const NFTTab = ({
     return (
         <div id={'nfttab' + id} className={'flex flex-col mt-[25px] legacy cursor-pointer xl:block hidden ' + active} onClick={() => ScrollToNft(id)}>
             <h4 className='text-white-60 flex flex-row items-center'>{name} <span className='text-base text-white-30 ml-3'>${price}</span></h4>
-            <p className='text-white-30 max-w-[400px] block'>I am ready to share and educate.
+            <p className='text-white-30 2xl:max-w-[575px] 2xl:pr-[5rem] max-w-[400px] block'>I am ready to share and educate.
                 I want a piece of the future of Ark Fi
             </p>
         </div>
