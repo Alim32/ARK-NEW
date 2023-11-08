@@ -54,7 +54,7 @@ const Calculator = ({
                             alt="nft logo"
                             className='mr-5'
                         />
-                        <h4 className="text-white text-center mx-5 ls-wider" id='nft-text'>DIAMOND</h4>
+                        <h4 className="text-white text-center mx-5 ls-wider" id='nft-text'>PLATINUM</h4>
                     </button>
                     <div id='dropdown-1' className='dropdown w-[85%]'>
                         <DropItem clickEvent={() => changeShares(100, 1)} text={"COPPER"} image={"/icons/nft.png"} />
