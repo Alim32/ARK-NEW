@@ -34,7 +34,7 @@ const Hero = ({
                 alt="ARC ARK"
             />
             <div className='flex flex-row justify-evenly items-center xl:-mt-[5rem] lg:-mt-[3rem] -mt-[0rem]'>
-                <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 sm:px-3 px-2 sm:py-2 py-0 flex flex-row items-center sm:mt-0 mt-4'>
+                <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 sm:px-3 px-2 sm:py-2 py-1 flex flex-row items-center sm:mt-0 mt-4'>
                     <span className='2xl:mt-1'>Mint NFT</span>
                     <Image
                         className="w-100 h-100 object-fit-contain ml-2"
@@ -44,7 +44,7 @@ const Hero = ({
                         alt="Mint NFT"
                     />
                 </button>
-                <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 px-3 py-2 flex flex-row items-center sm:mt-0 mt-4'>
+                <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 sm:px-3 px-2 sm:py-2 py-1  flex flex-row items-center sm:mt-0 mt-4'>
                     <span className='2xl:mt-1'>Claim Rewards</span>
                     <Image
                         className="w-100 h-100 object-fit-contain ml-2"
