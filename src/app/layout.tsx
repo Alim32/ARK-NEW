@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <html lang='en' className='scroll-smooth'>
             <body className=''>
-                <main className='overflow-hidden mx-auto lg:pt-[15vh] pt-[60px]'>                    
+                <main className='overflow-hidden mx-auto lg:pt-[15vh] pt-[60px]'>
                     {children}
                 </main>
                 <Mobilebar />

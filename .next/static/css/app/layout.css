@@ -539,6 +539,18 @@ video {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.mx-3{
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.mx-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -566,6 +578,9 @@ video {
 }
 .-mr-\[200px\]{
   margin-right: -200px;
+}
+.-mt-\[0rem\]{
+  margin-top: -0rem;
 }
 .-mt-\[10px\]{
   margin-top: -10px;
@@ -633,6 +648,9 @@ video {
 .mb-\[8\.5px\]{
   margin-bottom: 8.5px;
 }
+.ml-2{
+  margin-left: 0.5rem;
+}
 .ml-3{
   margin-left: 0.75rem;
 }
@@ -647,6 +665,9 @@ video {
 }
 .mr-2{
   margin-right: 0.5rem;
+}
+.mr-5{
+  margin-right: 1.25rem;
 }
 .mr-\[1rem\]{
   margin-right: 1rem;
@@ -678,11 +699,20 @@ video {
 .mt-8{
   margin-top: 2rem;
 }
+.mt-\[100px\]{
+  margin-top: 100px;
+}
 .mt-\[125px\]{
   margin-top: 125px;
 }
 .mt-\[150px\]{
   margin-top: 150px;
+}
+.mt-\[15vh\]{
+  margin-top: 15vh;
+}
+.mt-\[175px\]{
+  margin-top: 175px;
 }
 .mt-\[1px\]{
   margin-top: 1px;
@@ -707,6 +737,9 @@ video {
 }
 .mt-\[85px\]{
   margin-top: 85px;
+}
+.mt-7{
+  margin-top: 1.75rem;
 }
 .block{
   display: block;
@@ -854,6 +887,9 @@ video {
 }
 .w-\[80\%\]{
   width: 80%;
+}
+.w-\[85\%\]{
+  width: 85%;
 }
 .w-\[95px\]{
   width: 95px;
@@ -1331,6 +1367,9 @@ video {
 .pb-7{
   padding-bottom: 1.75rem;
 }
+.pb-\[100px\]{
+  padding-bottom: 100px;
+}
 .pb-\[1px\]{
   padding-bottom: 1px;
 }
@@ -1601,7 +1640,7 @@ html, body {
     border-radius: 25px;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, strong {
+h1, h2, h3, h4, h5, h6, p, a, span, strong, input {
     font-family: Montserrat;
 }
 
@@ -1621,6 +1660,24 @@ h4 {
     font-size: 1.6rem;
 }
 
+@media(max-width:1400px) {
+    h1 {
+        font-size: 3.25rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+}
+
 @media(max-width:600px) {
     h1 {
         font-size: 3rem;
@@ -1631,11 +1688,29 @@ h4 {
     }
 
     h3 {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
     }
 
     h4 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width:450px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    h4 {
+        font-size: 1.15rem;
     }
 }
 
@@ -1925,6 +2000,147 @@ hr {
     border: none;
 }
 
+.divider {
+    width: 3px;
+    height: 350px;
+    background-color: rgb(167 167 167 / 25%);
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    padding-left: 1px;
+    padding-right: 1px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;    
+}
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 94px;
+        height: 35px;
+        border: 0;
+        background: url('/images/slider.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 94px;
+        height: 35px;
+        border: 0;
+        background: url('/images/slider.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+.dropdown-box {
+    border: solid 1px rgb(255,255,255,0.3);
+    border-radius: 15px;
+    height: 65px;
+}
+
+        .dropdown-box:after {
+            content: "⌄";
+            color: rgb(255,255,255,0.6);
+            font-size:2rem;
+            margin-top:-1rem;
+        }
+
+    .form-control{
+        border:none;
+        background:none;
+        color: white;
+    }
+
+    .form-control:focus, .form-control:active, .form-control:focus-visible{
+        border: none !important;
+        box-shadow:none !important;
+        outline:none !important;
+    }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+
+.dropdown{
+    display:flex;
+    flex-direction:column;    
+    border:solid 1px rgb(255,255,255,0.3);
+    border-radius:15px;
+    z-index:9;
+    position:absolute;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-top: 65px;
+    background: rgb(0,0,0,1);
+    -webkit-backdrop-filter:blur(25px);
+            backdrop-filter:blur(25px);
+    display:none;    
+}
+
+@media(min-width:1024px){
+    .dropdown{
+        top: auto !important;
+    }
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding: 5px 15px;
+    align-items: center;
+    width:100%;
+    margin-bottom:2.5px;
+}
+.dropdown-item:hover{
+    box-shadow: 0 0 0 1px rgb(255,255,255,0.6);
+    border-radius:15px;
+}
+
+@media(max-width:1024px){
+    .dropdown{
+        padding-top:0.15rem;
+        max-width:100%;
+        max-height:100%;
+        width:100vw;
+        height:100vh;
+        left:0;
+        top:0;
+        position:fixed;
+        margin:0;
+    }
+    .dropdown-item {
+        margin-bottom: 5px;
+    }
+
+    .dropdown-item:hover{
+        box-shadow:none;        
+    }
+}
+
 .last\:mr-0:last-child{
   margin-right: 0px;
 }
@@ -2162,6 +2378,9 @@ hr {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
   }
+  .lg\:-mt-\[3rem\]{
+    margin-top: -3rem;
+  }
   .lg\:mb-0{
     margin-bottom: 0px;
   }
@@ -2173,6 +2392,9 @@ hr {
   }
   .lg\:mb-20{
     margin-bottom: 5rem;
+  }
+  .lg\:mt-0{
+    margin-top: 0px;
   }
   .lg\:mt-10{
     margin-top: 2.5rem;
@@ -2275,6 +2497,9 @@ hr {
     margin-left: auto;
     margin-right: auto;
   }
+  .xl\:-mt-\[5rem\]{
+    margin-top: -5rem;
+  }
   .xl\:-mt-\[90px\]{
     margin-top: -90px;
   }
@@ -2334,6 +2559,10 @@ hr {
     padding-left: 8rem;
     padding-right: 8rem;
   }
+  .xl\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .xl\:px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -2356,6 +2585,10 @@ hr {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+  .xl\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
   .xl\:tracking-\[0\.5em\]{
     letter-spacing: 0.5em;
   }
@@ -2368,8 +2601,14 @@ hr {
   .\32xl\:-mt-\[150px\]{
     margin-top: -150px;
   }
+  .\32xl\:mt-1{
+    margin-top: 0.25rem;
+  }
   .\32xl\:mt-\[25px\]{
     margin-top: 25px;
+  }
+  .\32xl\:mt-5{
+    margin-top: 1.25rem;
   }
   .\32xl\:max-w-\[240x\]{
     max-width: 240x;
@@ -2383,8 +2622,11 @@ hr {
   .\32xl\:pr-\[5rem\]{
     padding-right: 5rem;
   }
+  .\32xl\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
-
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/utils.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
