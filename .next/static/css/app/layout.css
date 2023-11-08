@@ -2202,6 +2202,9 @@ input[type=number] {
   .sm\:mr-0{
     margin-right: 0px;
   }
+  .sm\:mt-0{
+    margin-top: 0px;
+  }
   .sm\:min-w-\[320px\]{
     min-width: 320px;
   }
