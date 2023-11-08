@@ -18,6 +18,13 @@ const Main = ({
         connector: new InjectedConnector(),
     });
 
+    var IsConnected = isConnected;
+
+    if (status == "reconnecting") {
+        IsConnected = false;
+    }
+
+
     // Hooks
     useEffect(() => {
         setHasMounted(true);
@@ -28,7 +35,7 @@ const Main = ({
 
     return (
         <div>
-            {isConnected
+            {IsConnected
                 ?
                 <ScrollVisibility>
                     <div className='container h-100 w-100 mx-auto'>

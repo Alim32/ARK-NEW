@@ -10,10 +10,16 @@ const Main = ({
     id
 }: any) => {
     const [hasMounted, setHasMounted] = useState(false);
-    const { address, isConnected = false } = useAccount();
+    const { address, isConnected = false, status } = useAccount();
     const { connect } = useConnect({
         connector: new InjectedConnector(),
     });
+
+    var IsConnected = isConnected;
+
+    if (status == "reconnecting") {
+        IsConnected = false;
+    }
 
     // Hooks
     useEffect(() => {
@@ -25,7 +31,7 @@ const Main = ({
 
     return (
         <div>
-            {isConnected
+            {IsConnected
                 ?
                 <ScrollVisibility>
                     <div className='container h-100 w-100 mx-auto'>
