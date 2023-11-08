@@ -738,9 +738,6 @@ video {
 .mt-\[85px\]{
   margin-top: 85px;
 }
-.mt-7{
-  margin-top: 1.75rem;
-}
 .block{
   display: block;
 }
@@ -2205,14 +2202,8 @@ input[type=number] {
   .sm\:mt-0{
     margin-top: 0px;
   }
-  .sm\:block{
-    display: block;
-  }
   .sm\:inline{
     display: inline;
-  }
-  .sm\:flex{
-    display: flex;
   }
   .sm\:min-w-\[320px\]{
     min-width: 320px;
@@ -2616,11 +2607,11 @@ input[type=number] {
   .\32xl\:mt-1{
     margin-top: 0.25rem;
   }
-  .\32xl\:mt-\[25px\]{
-    margin-top: 25px;
-  }
   .\32xl\:mt-5{
     margin-top: 1.25rem;
+  }
+  .\32xl\:mt-\[25px\]{
+    margin-top: 25px;
   }
   .\32xl\:max-w-\[240x\]{
     max-width: 240x;

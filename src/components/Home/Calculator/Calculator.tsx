@@ -69,8 +69,8 @@ const Calculator = ({
                     <p className="text-white-30 text-lg text-center mt-[75px]">Utility Products Profits<br /><span className='text-sm'>(Monthly)</span></p>
                     <div className="flex flex-row items-center justify-between 2xl:mt-5 mt-10 w-[85%]">
                         <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$100k</p>
-                        <input type="range" className="slider mx-3" id="range1" max={50000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares)} />
-                        <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$50m</p>
+                        <input type="range" className="slider mx-3" id="range1" max={10000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares)} />
+                        <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$10m</p>
                     </div>
                     <div className="flex flex-row items-center justify-center mt-10">
                         <p className='text-xl text-white-30'>$</p>

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 var activeTab = 1;
-const maxValue = 50000000;
+const maxValue = 10000000;
 const minValue = 100000;
 
 export const formatter = new Intl.NumberFormat('en-US', {
