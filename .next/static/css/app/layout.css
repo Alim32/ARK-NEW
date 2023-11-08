@@ -2208,6 +2208,12 @@ input[type=number] {
   .sm\:block{
     display: block;
   }
+  .sm\:inline{
+    display: inline;
+  }
+  .sm\:flex{
+    display: flex;
+  }
   .sm\:min-w-\[320px\]{
     min-width: 320px;
   }
