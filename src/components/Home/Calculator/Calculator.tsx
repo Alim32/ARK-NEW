@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { getNFTData, getNFTBalance, getShares } from "@/scripts/legacy";
-import { formatter, formatterNoDec, calculate, calculateNoSetter, onInput, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
+import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
 import { useState } from 'react';
 import { Dropdown } from "../../MISC/Dropdown";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
@@ -76,7 +76,7 @@ const Calculator = ({
                         </div>
                         <div className="flex flex-row items-center justify-center mt-10">
                             <p className='text-xl text-white-30'>$</p>
-                            <input type="text" disabled lang='en' step="0.01" className='text-xl text-white text-center form-control ls-wide' id='selectedAmount' value={formatter.format(inputVal)} onChange={(e) => onInput(e, setSliderVal, setInputVal, shares)} />
+                            <input type="text" disabled lang='en' step="0.01" className='text-xl text-white text-center form-control ls-wide' id='selectedAmount' value={formatter.format(inputVal)} />
                         </div>
                         h1</div>
                     <div className="divider lg:block hidden"></div>
