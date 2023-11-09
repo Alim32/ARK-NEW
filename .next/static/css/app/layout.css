@@ -2624,6 +2624,9 @@ input[type=number] {
   .lg\:pt-\[35px\]{
     padding-top: 35px;
   }
+  .lg\:pt-\[12\.5vh\]{
+    padding-top: 12.5vh;
+  }
   .lg\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
