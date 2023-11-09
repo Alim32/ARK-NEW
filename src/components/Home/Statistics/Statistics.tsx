@@ -43,7 +43,7 @@ const Statistics = ({
     var values = getInitValues(sliderVal, shares);
 
     return (
-        <div className='mt-[15vh] mb-[2vh] 2xl:p-10 xl:p-5 sm:p-4 stats-box'>
+        <div className='mt-[15vh] mb-[15vh] 2xl:p-10 xl:p-5 sm:p-4 stats-box'>
             <div className='flex lg:flex-row flex-col w-100 justify-evenly items-center'>
                 <div className="flex flex-col justify-start items-start w-[100%] px-5">
                     <h3 className='text-white mb-10 mt-5'>Ecosystem Statistics</h3>

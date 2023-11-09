@@ -765,6 +765,12 @@ video {
 .mb-\[2vh\]{
   margin-bottom: 2vh;
 }
+.mb-\[10vh\]{
+  margin-bottom: 10vh;
+}
+.mb-\[15vh\]{
+  margin-bottom: 15vh;
+}
 .block{
   display: block;
 }
