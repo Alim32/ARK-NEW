@@ -1,10 +1,10 @@
 "use client";
 import Image from 'next/image';
 import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { Web3Button } from '@/components/Layout/Web3Button';
 import { Hero } from '@/components/Home/Hero';
 import { Calculator } from '@/components/Home/Calculator';
+import { Statistics } from '@/components/Home/Statistics';
 import { InjectedConnector } from "wagmi/connectors/injected";
 import React, { useState, useEffect } from 'react';
 import { OpenModal, CloseModal } from '@/scripts/test.js';
@@ -37,13 +37,12 @@ const Main = ({
         <div>
             {IsConnected
                 ?
-                <ScrollVisibility>
-                    <div className='container h-100 w-100 mx-auto'>
-                        <Hero address={address} openmodal={() => OpenModal("modal-myacc")} />
-                        <Calculator />
-                        <Modal id={"modal-myacc"} title="Diamond NFT" closeEvent={() => CloseModal("modal-myacc")} video={"/video/nft_platinum.mp4"} />
-                    </div>
-                </ScrollVisibility>
+                <div className='container h-100 w-100 mx-auto'>
+                    <Hero address={address} openmodal={() => OpenModal("modal-myacc")} />
+                    <Calculator />
+                    <Statistics />
+                    <Modal id={"modal-myacc"} title="Diamond NFT" closeEvent={() => CloseModal("modal-myacc")} video={"/video/nft_platinum.mp4"} />
+                </div>
                 :
                 <Web3Button />
             }
