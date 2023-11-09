@@ -519,6 +519,12 @@ video {
 .order-1{
   order: 1;
 }
+.order-2{
+  order: 2;
+}
+.order-3{
+  order: 3;
+}
 .col-span-full{
   grid-column: 1 / -1;
 }
@@ -627,9 +633,6 @@ video {
 .mb-8{
   margin-bottom: 2rem;
 }
-.mb-\[15vh\]{
-  margin-bottom: 15vh;
-}
 .mb-\[1px\]{
   margin-bottom: 1px;
 }
@@ -641,6 +644,9 @@ video {
 }
 .mb-\[5px\]{
   margin-bottom: 5px;
+}
+.mb-\[5vh\]{
+  margin-bottom: 5vh;
 }
 .mb-\[75px\]{
   margin-bottom: 75px;
@@ -699,6 +705,9 @@ video {
 .mt-6{
   margin-top: 1.5rem;
 }
+.mt-7{
+  margin-top: 1.75rem;
+}
 .mt-8{
   margin-top: 2rem;
 }
@@ -740,6 +749,21 @@ video {
 }
 .mt-\[85px\]{
   margin-top: 85px;
+}
+.-mt-3{
+  margin-top: -0.75rem;
+}
+.-mt-5{
+  margin-top: -1.25rem;
+}
+.mb-\[100px\]{
+  margin-bottom: 100px;
+}
+.mb-\[150px\]{
+  margin-bottom: 150px;
+}
+.mb-\[2vh\]{
+  margin-bottom: 2vh;
 }
 .block{
   display: block;
@@ -810,8 +834,11 @@ video {
 .h-\[0px\]{
   height: 0px;
 }
-.h-\[500px\]{
-  height: 500px;
+.h-\[350px\]{
+  height: 350px;
+}
+.h-\[550px\]{
+  height: 550px;
 }
 .h-\[5px\]{
   height: 5px;
@@ -836,6 +863,9 @@ video {
 }
 .max-h-full{
   max-height: 100%;
+}
+.max-h-\[325px\]{
+  max-height: 325px;
 }
 .min-h-\[130px\]{
   min-height: 130px;
@@ -904,11 +934,17 @@ video {
 .w-full{
   width: 100%;
 }
+.w-\[250px\]{
+  width: 250px;
+}
 .min-w-0{
   min-width: 0px;
 }
 .min-w-\[100\%\]{
   min-width: 100%;
+}
+.min-w-\[115px\]{
+  min-width: 115px;
 }
 .min-w-\[40px\]{
   min-width: 40px;
@@ -942,6 +978,9 @@ video {
 }
 .max-w-\[285px\]{
   max-width: 285px;
+}
+.max-w-\[325px\]{
+  max-width: 325px;
 }
 .max-w-\[340px\]{
   max-width: 340px;
@@ -1453,6 +1492,9 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+.text-\[16px\]{
+  font-size: 16px;
+}
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1634,6 +1676,12 @@ html, body {
     height: 100%;
 }
 
+.btn-purple-og {
+    background: var(--purple);
+    color: white;
+    border-radius: 25px;
+}
+
 .btn-purple {
     background: var(--bg);
     color: white;
@@ -1792,7 +1840,7 @@ h5 {
 .info-box {
     background: rgb(16 20 40);
     border-radius: 10px;
-    padding: 5px 10px
+    padding: 5px 10px;
 }
 
 .btn-white {
@@ -2054,8 +2102,7 @@ hr {
 }
 
 .divider {
-    width: 3px;
-    height: 350px;
+    width: 3px;    
     background-color: rgb(167 167 167 / 25%);
 }
 
@@ -2251,6 +2298,10 @@ input[type=number] {
   .sm\:col-span-3{
     grid-column: span 3 / span 3;
   }
+  .sm\:mx-2{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
   .sm\:mb-0{
     margin-bottom: 0px;
   }
@@ -2262,6 +2313,9 @@ input[type=number] {
   }
   .sm\:mt-0{
     margin-top: 0px;
+  }
+  .sm\:mt-4{
+    margin-top: 1rem;
   }
   .sm\:inline{
     display: inline;
@@ -2307,6 +2361,10 @@ input[type=number] {
   .sm\:text-start{
     text-align: start;
   }
+  .sm\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 768px){
@@ -2321,6 +2379,9 @@ input[type=number] {
   }
   .md\:order-2{
     order: 2;
+  }
+  .md\:order-3{
+    order: 3;
   }
   .md\:mx-0{
     margin-left: 0px;
@@ -2350,6 +2411,9 @@ input[type=number] {
   }
   .md\:mt-6{
     margin-top: 1.5rem;
+  }
+  .md\:mt-\[75px\]{
+    margin-top: 75px;
   }
   .md\:block{
     display: block;
@@ -2654,6 +2718,9 @@ input[type=number] {
   }
   .xl\:pt-20{
     padding-top: 5rem;
+  }
+  .xl\:pb-\[100px\]{
+    padding-bottom: 100px;
   }
   .xl\:text-3xl{
     font-size: 1.875rem;

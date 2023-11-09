@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { Web3Button } from '@/components/Layout/Web3Button';
 import { Hero } from '@/components/Home/Hero';
+import { Bank } from '@/components/Home/Bank';
 import { Calculator } from '@/components/Home/Calculator';
 import { Statistics } from '@/components/Home/Statistics';
 import { InjectedConnector } from "wagmi/connectors/injected";
@@ -41,6 +42,7 @@ const Main = ({
                     <Hero address={address} openmodal={() => OpenModal("modal-myacc")} />
                     <Calculator />
                     <Statistics />
+                    <Bank/>
                     <Modal id={"modal-myacc"} title="Diamond NFT" closeEvent={() => CloseModal("modal-myacc")} video={"/video/nft_platinum.mp4"} />
                 </div>
                 :

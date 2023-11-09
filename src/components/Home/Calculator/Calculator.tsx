@@ -79,7 +79,7 @@ const Calculator = ({
                             <input type="text" disabled lang='en' step="0.01" className='text-xl text-white text-center form-control ls-wide' id='selectedAmount' value={formatter.format(inputVal)} />
                         </div>
                         h1</div>
-                    <div className="divider lg:block hidden"></div>
+                    <div className="divider lg:block hidden h-[350px]"></div>
                     <div className="flex flex-col justify-center items-center w-[100%] px-5 lg:mt-0 mt-[75px]">
                         <h4 className="text-white-60">You Earn</h4>
                         <div className='flex flex-row justify-evenly w-[100%] mt-10'>

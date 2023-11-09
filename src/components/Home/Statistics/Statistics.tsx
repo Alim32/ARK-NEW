@@ -44,10 +44,10 @@ const Statistics = ({
 
     return (
         <ScrollVisibility>
-            <div className='mt-[15vh] mb-[15vh] 2xl:p-10 xl:p-5 sm:p-4 stats-box'>                                
+            <div className='mt-[15vh] mb-[2vh] 2xl:p-10 xl:p-5 sm:p-4 stats-box'>
                 <div className='flex lg:flex-row flex-col w-100 justify-evenly items-center'>
                     <div className="flex flex-col justify-start items-start w-[100%] px-5">
-                        <h3 className='text-white mb-10'>Ecosystem Statistics</h3>
+                        <h3 className='text-white mb-10 mt-5'>Ecosystem Statistics</h3>
                         <button className='btn-products'>
                             <h5>Privacy Products</h5>
                             <p>Our decentralized Emailing, VPN, Password Manager and File Manager services.</p>
@@ -61,27 +61,37 @@ const Statistics = ({
                             <p>Lorem ipsum dolar connet.</p>
                         </button>
                     </div>
-                    <div className="divider lg:block hidden h-[500px]"></div>
-                    <div className="flex flex-col justify-center items-center w-[100%] px-5 lg:mt-0 mt-[75px]">
-                        <h4 className="text-white-60">You Earn</h4>
-                        <div className='flex flex-row justify-evenly w-[100%] mt-10'>
-                            <div className='flex flex-col justify-center items-center text-center'>
-                                <h3 id='daily' className='text-white'>${formatterNoDec.format(values.daily)}</h3>
-                                <p className='text-white-30'>per day</p>
+                    <div className="divider lg:block hidden h-[550px]"></div>
+                    <div className="flex flex-col justify-center items-center w-[100%] px-5 lg:mt-0 md:mt-[75px] mt-[25px] pb-5">
+                        <video autoPlay={true} muted={true} loop={true} playsInline={true} className="max-w-[325px] md:order-1 order-3 md:mt-0 mt-5">
+                            <source src={"/video/cards.mp4"} type="video/mp4" />
+                        </video>
+                        <div className='flex flex-row justify-center items-center w-[100%] md:mt-0 mt-7 md:order-2 order-1'>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px] sm:mx-2 mx-1'>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>{formatterNoDec.format(84)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Terras</p>
                             </div>
-                            <div className='flex flex-col justify-center items-center text-center'>
-                                <h3 id='weekly' className='text-white'>${formatterNoDec.format(values.weekly)}</h3>
-                                <p className='text-white-30'>per week</p>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px]  sm:mx-2 mx-1 '>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>${formatterNoDec.format(58700900)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Loaded</p>
+                            </div>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px]  sm:mx-2 mx-1 '>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>${formatterNoDec.format(312006)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Profits</p>
                             </div>
                         </div>
-                        <div className='flex flex-row justify-evenly w-[100%] mt-10'>
-                            <div className='flex flex-col justify-center items-center text-center'>
-                                <h3 id='monthly' className='text-white'>${formatterNoDec.format(values.monthly)}</h3>
-                                <p className='text-white-30'>per month</p>
+                        <div className='flex flex-row justify-center items-center w-[100%] sm:mt-4 mt-2 md:order-3 order-2'>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px]  sm:mx-2 mx-1 '>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>{formatterNoDec.format(129)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Airs</p>
                             </div>
-                            <div className='flex flex-col justify-center items-center text-center'>
-                                <h3 id='yearly' className='text-white'>${formatter.format(values.yearly)}</h3>
-                                <p className='text-white-30'>per year</p>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px]  sm:mx-2 mx-1 '>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>${formatterNoDec.format(28700090)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Loaded</p>
+                            </div>
+                            <div className='info-box flex flex-col items-center justify-center text-center min-w-[115px]  sm:mx-2 mx-1 '>
+                                <p className='text-lg text-white sm:text-base text-[16px]'>${formatterNoDec.format(2000326)}</p>
+                                <p className='text-lg text-white-30 mb-0'>Profits</p>
                             </div>
                         </div>
                     </div>

@@ -18,6 +18,12 @@ html, body {
     height: 100%;
 }
 
+.btn-purple-og {
+    background: var(--purple);
+    color: white;
+    border-radius: 25px;
+}
+
 .btn-purple {
     background: var(--bg);
     color: white;
@@ -176,7 +182,7 @@ h5 {
 .info-box {
     background: rgb(16 20 40);
     border-radius: 10px;
-    padding: 5px 10px
+    padding: 5px 10px;
 }
 
 .btn-white {
@@ -449,8 +455,7 @@ hr {
 }
 
 .divider {
-    width: 3px;
-    height: 350px;
+    width: 3px;    
     background-color: rgb(167 167 167 / 25%);
 }
 
