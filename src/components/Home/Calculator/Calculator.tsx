@@ -68,7 +68,7 @@ const Calculator = ({
     return (
         <ScrollVisibility>
             <div className='mt-[15vh] pb-[100px]'>
-                <h3 className='text-white-30 text-center mt-[175px]'>Calculate your returns</h3>
+                <h3 className='text-white-30 text-center mt-[200px]'>Calculate your returns</h3>
                 <div className='flex lg:flex-row flex-col w-100 justify-evenly items-center mt-[100px]'>
                     <div className="flex flex-col justify-center items-center w-[100%] px-5">
                         <button className='flex flex-row items-center justify-between dropdown-box px-5 py-3 cp w-[85%]' onClick={() => openDropDown("dropdown-1")}>
@@ -128,13 +128,13 @@ const Calculator = ({
                     </div>
                 </div>
                 <div className='flex flex-col mt-[100px]'>
-                    <h5 className='text-center text-activated'>25%</h5>
+                    <h4 className='text-center text-activated'>25%</h4>
                     <div className='flex flex row justify-center items-center my-2'>
-                        <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
-                        <h5 className='text-center text-white-30 font-semibold'>Current Boost</h5>
+                        <Image src='https://bank.arkfi.io/img/fast.png' alt= 'boost' width={35} height={35} className='contrast-200 mx-2' />
+                        <h4 className='text-center text-white-30 font-semibold'>Current Boost</h4>
                         <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
                     </div>
-                    <p className='text-center text-white'>Tier 1</p>
+                    <h5 className='text-center text-white'>Tier 1</h5>
                 </div>
                 <div className='flex flex-col xl:mt-[200px] mt-5'>
                     <div className='flex flex-row w-[100%]'>
