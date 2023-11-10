@@ -14,8 +14,8 @@ export const formatterNoDec = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 0
 });
 
-export function getInitValues(value, shares) {
-    var ownership = shares / 1100000;
+export function getInitValues(value, shares, totalShares = 1000000) {
+    var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);
 
     if (window.innerWidth < 750) {
@@ -37,10 +37,10 @@ export function getInitValues(value, shares) {
     };
 }
 
-export function onInput(event, callback, callback2, shares = 100) {
+export function onInput(event, callback, callback2, shares = 100, totalShares = 1000000) {
     var value = event.target.value;
     value = value > maxValue ? maxValue : value;
-    var ownership = shares / 1100000;
+    var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);
     if (window.innerWidth < 750) {
         $("#daily").text("$" + formatterNoDec.format(amount / 30));
@@ -57,10 +57,10 @@ export function onInput(event, callback, callback2, shares = 100) {
     callback2(value);
 }
 
-export function calculate(event, callback, callback2, shares = 100) {
+export function calculate(event, callback, callback2, shares = 100, totalShares = 1000000) {
     var value = event.target.value;
     value = value > maxValue ? maxValue : value;
-    var ownership = shares / 1100000;
+    var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);
     if (window.innerWidth < 750) {
         $("#daily").text("$" + formatterNoDec.format(amount / 30));
@@ -118,16 +118,14 @@ export function openDropDown(id) {
     }    
 }
 
-export function calculateNoSetter(value, shares) {
-    var ownership = shares / 1100000;
+export function calculateNoSetter(value, shares, totalShares = 1000000) {
+    var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);    
     $("#daily").text("$" + formatter.format(amount / 30));
     $("#weekly").text("$" + formatter.format(amount / 4));
     $("#monthly").text("$" + formatter.format(amount));
     $("#yearly").text("$" + formatter.format(amount * 52));    
 }
-
-
 export function ScrollToNft(id) {
     var scrollVal = id < 7 ? id + 1 : id;
 

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { getNFTData, getNFTBalance, getShares } from "@/scripts/legacy";
+import { getTotalShares } from "@/scripts/legacy";
 import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
 import { useState } from 'react';
 import { Dropdown } from "../../MISC/Dropdown";
@@ -26,21 +26,44 @@ const DropItem = ({
     )
 }
 
+const ProgressItem = ({
+    width,
+    id,
+    active,
+    perc
+}: any) => {
+    const customStyles = {
+        width: width + "%"
+    }
+
+    return (
+        <div className='flex flex-col items-start justify-start -ml-[10px] xl:flex hidden' style={customStyles}>
+            <p className='text-white flex flex-col justify-center items-center'>
+                <span className={`${active ? "text-activated" : "text-white-60"} `}>Tier {id}</span>
+                <span className='text-white-30 text-sm'>{perc}%</span>
+                {active ? <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mb-2' /> : <div className='h-[35px] w-[1px]'></div>}
+                <div className={`divider-2 h-[50px]`}></div>
+            </p>
+        </div>
+    )
+}
+
 const Calculator = ({
 }: any) => {
     const [sliderVal, setSliderVal] = useState(100000);
     const [inputVal, setInputVal] = useState(100000);
     const [shares, setShares] = useState(10000);
 
+    var totalShares = getTotalShares();
+    var values = getInitValues(sliderVal, shares, totalShares);
+
     function changeShares(amount = 0, id = 1) {
         setShares(amount);
         setSliderVal(sliderVal);
         setInputVal(sliderVal);
-        calculateNoSetter(sliderVal, shares);
+        calculateNoSetter(sliderVal, shares, totalShares);
         setNewNFT(id);
     }
-
-    var values = getInitValues(sliderVal, shares);
 
     return (
         <ScrollVisibility>
@@ -71,7 +94,7 @@ const Calculator = ({
                         <p className="text-white-30 text-lg text-center mt-[75px]">Utility Products Profits<br /><span className='text-sm'>(Monthly)</span></p>
                         <div className="flex flex-row items-center justify-between 2xl:mt-5 mt-10 w-[85%]">
                             <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$100k</p>
-                            <input type="range" className="slider mx-3" id="range1" max={10000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares)} />
+                            <input type="range" className="slider mx-3" id="range1" max={10000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares, totalShares)} />
                             <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$10m</p>
                         </div>
                         <div className="flex flex-row items-center justify-center mt-10">
@@ -104,6 +127,38 @@ const Calculator = ({
                         </div>
                     </div>
                 </div>
+                <div className='flex flex-col mt-[100px]'>
+                    <h5 className='text-center text-activated'>25%</h5>
+                    <div className='flex flex row justify-center items-center my-2'>
+                        <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
+                        <h5 className='text-center text-white-30 font-semibold'>Current Boost</h5>
+                        <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
+                    </div>
+                    <p className='text-center text-white'>Tier 1</p>
+                </div>
+                <div className='flex flex-col xl:mt-[200px] mt-5'>
+                    <div className='flex flex-row w-[100%]'>
+                        <ProgressItem perc={25} active={true} width={20} id={1} />
+                        <ProgressItem perc={20} active={false} width={16} id={2} />
+                        <ProgressItem perc={15} active={false} width={13} id={3} />
+                        <ProgressItem perc={10} active={false} width={11.5} id={4} />
+                        <ProgressItem perc={5} active={false} width={8} id={5} />
+                        <ProgressItem perc={2} active={false} width={7.5} id={6} />
+                        <ProgressItem perc={1} active={false} width={7} id={7} />
+                        <ProgressItem perc={0} active={false} width={15} id={8} />
+                    </div>
+                    <div className='flex flex-col'>
+                        <progress className='h-[25px] xl:w-[100%] progress-home xl:mx-0 mx-auto w-[90%]' value={15} max={100}></progress>
+                        
+                    </div>
+                    <div className='flex flex-row xl:w-[50%] w-[100%] justify-evenly xl:mx-auto mt-5 xl:mt-10'>
+                        <div className='flex flex-col'>
+                            <h4 className='text-center text-white-60'>16%</h4>
+                            <p className='text-center text-white-30'>Minted</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </ScrollVisibility>
     );

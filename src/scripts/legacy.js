@@ -20,6 +20,38 @@ export function getNFTBalance(address) {
     }
 }
 
+export function getContributions() {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 137,
+            address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+            abi: abi,
+            functionName: 'totalContributions',            
+        })
+
+        return Number(data) / Math.pow(10, 6);
+    }
+    catch {
+        return 0;
+    }
+}
+
+export function getTotalShares() {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 56,
+            address: '0x6733a95654fF739e6058247Dd7556BF9Ce2dEdf6',
+            abi: abi,
+            functionName: 'totalShares',
+        })
+
+        return Number(data) * 1000;
+    }
+    catch {
+        return 0;
+    }
+}
+
 export function getShares(address) {
     try {
         const { data, isError, isLoading } = useContractRead({
