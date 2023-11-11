@@ -20,7 +20,7 @@ const Hero = ({
 
     return (
         <ScrollVisibility>
-            <div className='flex flex-col w-100 justify-center items-center'>
+            <div className='flex flex-col w-100 justify-center items-center lg:pt-[2.5vh] 2xl:pb-[20vh] lg:pb-[5vh]'>
                 <h1 className="text-white text-center md:tracking-[0.1em] my-5 mt-4 cp" onClick={openmodal}>
                     <span className='text-white-30 mr-[1rem]'>$</span>
                     <span className='text-white'>{formatterNoDec.format(shares)}</span>

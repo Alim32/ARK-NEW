@@ -7,7 +7,7 @@ export function getNFTBalance(address) {
     try {
         const { data, isError, isLoading } = useContractRead({
             chainId: 137,
-            address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+            address: ca,
             abi: abi,
             functionName: 'balanceOf',
             args: [address]
@@ -20,11 +20,27 @@ export function getNFTBalance(address) {
     }
 }
 
+export function getMaxSupply() {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 137,
+            address: ca,
+            abi: abi,
+            functionName: 'maxSupply',
+        })
+
+        return Number(data) / Math.pow(10, 6);
+    }
+    catch {
+        return 0;
+    }
+}
+
 export function getContributions() {
     try {
         const { data, isError, isLoading } = useContractRead({
             chainId: 137,
-            address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+            address: ca,
             abi: abi,
             functionName: 'totalContributions',            
         })
@@ -56,7 +72,7 @@ export function getShares(address) {
     try {
         const { data, isError, isLoading } = useContractRead({
             chainId: 137,
-            address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+            address: ca,
             abi: abi,
             functionName: 'getShares',
             args: [address]
@@ -73,7 +89,7 @@ export function getNFTLevel(id) {
     try {
         const { data, isError, isLoading } = useContractRead({
             chainId: 137,
-            address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+            address: ca,
             abi: abi,
             functionName: 'levelOfNft',
             args: [id]
@@ -93,7 +109,7 @@ export function getNFTData(address, balance) {
         for (let i = 0; i < balance; i++) {
             const { data, isError, isLoading } = useContractRead({
                 chainId: 137,
-                address: '0xA82DcFAEe0E3eFe853B5C00D37CEd919dd0b86F3',
+                address: ca,
                 abi: abi,
                 functionName: 'tokenOfOwnerByIndex',
                 args: [address, i]
@@ -127,7 +143,7 @@ export function GetNFTNameByLevel(level) {
         case 1:
             return "Gold";
         case 1:
-            return "Platinum";
+            return "Platinum";  
         case 1:
             return "Diamond";
         case 8:

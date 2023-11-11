@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { getTotalShares } from "@/scripts/legacy";
+import { getTotalShares, getContributions, getMaxSupply } from "@/scripts/legacy";
 import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
 import { useState } from 'react';
 import { Dropdown } from "../../MISC/Dropdown";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
+import { initialize } from "next/dist/server/lib/render-server";
 
 const DropItem = ({
     image,
@@ -29,20 +30,21 @@ const DropItem = ({
 const ProgressItem = ({
     width,
     id,
-    active,
+    activeId,
     perc
 }: any) => {
     const customStyles = {
         width: width + "%"
     }
+    const active = id == activeId;
 
     return (
         <div className='flex flex-col items-start justify-start -ml-[10px] xl:flex hidden' style={customStyles}>
             <p className='text-white flex flex-col justify-center items-center'>
                 <span className={`${active ? "text-activated" : "text-white-60"} `}>Tier {id}</span>
                 <span className='text-white-30 text-sm'>{perc}%</span>
-                {active ? <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mb-2' /> : <div className='h-[35px] w-[1px]'></div>}
-                <div className={`divider-2 h-[50px]`}></div>
+                {active ? <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mb-2' /> : <span className='h-[35px] w-[1px]'></span>}
+                <span className={`divider-2 h-[50px]`}></span>
             </p>
         </div>
     )
@@ -54,8 +56,50 @@ const Calculator = ({
     const [inputVal, setInputVal] = useState(100000);
     const [shares, setShares] = useState(10000);
 
+    var activeId = 1;
     var totalShares = getTotalShares();
     var values = getInitValues(sliderVal, shares, totalShares);
+    var totalContribution = getContributions();
+    var maxSupply = getMaxSupply();
+    var percentage = 0;
+    var activeTier = "Tier 1";
+    var activePercentage = 25;
+    //End of Tiers
+    var tiers = {1: 1200000, 2: 2160000, 3: 2928000, 4: 3542400, 5: 4033920, 6: 4427136,7: 4741709, 8: 6000000,};
+
+    function GetTierPercentage(tier = -1) {
+        switch (tier) {
+            case 1:
+                return 25;
+            case 2:
+                return 20;
+            case 3:
+                return 15;
+            case 4:
+                return 10;
+            case 5:
+                return 5;
+            case 6:
+                return 2;
+            case 7:
+                return 1;
+            case 8:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    for (const [key, value] of Object.entries(tiers)) {
+        if (totalContribution <= value) {
+            activeId = Number(key);            
+            percentage = totalContribution / maxSupply * 100;
+            GetTierPercentage;
+            activeTier = `Tier ${key}`;
+            activePercentage = GetTierPercentage(Number(key));
+            break;
+        }
+    }
 
     function changeShares(amount = 0, id = 1) {
         setShares(amount);
@@ -128,32 +172,32 @@ const Calculator = ({
                     </div>
                 </div>
                 <div className='flex flex-col mt-[100px]'>
-                    <h4 className='text-center text-activated'>25%</h4>
+                    <h4 className='text-center text-activated'>{activePercentage}%</h4>
                     <div className='flex flex row justify-center items-center my-2'>
-                        <Image src='https://bank.arkfi.io/img/fast.png' alt= 'boost' width={35} height={35} className='contrast-200 mx-2' />
+                        <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
                         <h4 className='text-center text-white-30 font-semibold'>Current Boost</h4>
                         <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
                     </div>
-                    <h5 className='text-center text-white'>Tier 1</h5>
+                    <h5 className='text-center text-white'>{activeTier}</h5>
                 </div>
                 <div className='flex flex-col xl:mt-[200px] mt-5'>
                     <div className='flex flex-row w-[100%]'>
-                        <ProgressItem perc={25} active={true} width={20} id={1} />
-                        <ProgressItem perc={20} active={false} width={16} id={2} />
-                        <ProgressItem perc={15} active={false} width={13} id={3} />
-                        <ProgressItem perc={10} active={false} width={11.5} id={4} />
-                        <ProgressItem perc={5} active={false} width={8} id={5} />
-                        <ProgressItem perc={2} active={false} width={7.5} id={6} />
-                        <ProgressItem perc={1} active={false} width={7} id={7} />
-                        <ProgressItem perc={0} active={false} width={15} id={8} />
+                        <ProgressItem perc={25} activeId={activeId} width={20} id={1} />
+                        <ProgressItem perc={20} activeId={activeId} width={16} id={2} />
+                        <ProgressItem perc={15} activeId={activeId} width={13} id={3} />
+                        <ProgressItem perc={10} activeId={activeId} width={11.5} id={4} />
+                        <ProgressItem perc={5} activeId={activeId} width={8} id={5} />
+                        <ProgressItem perc={2} activeId={activeId} width={7.5} id={6} />
+                        <ProgressItem perc={1} activeId={activeId} width={7} id={7} />
+                        <ProgressItem perc={0} activeId={activeId} width={15} id={8} />
                     </div>
                     <div className='flex flex-col'>
-                        <progress className='h-[25px] xl:w-[100%] progress-home xl:mx-0 mx-auto w-[90%]' value={15} max={100}></progress>
-                        
+                        <progress className='h-[25px] xl:w-[100%] progress-home xl:mx-0 mx-auto w-[90%]' value={percentage} max={100}></progress>
+
                     </div>
                     <div className='flex flex-row xl:w-[50%] w-[100%] justify-evenly xl:mx-auto mt-5 xl:mt-10'>
                         <div className='flex flex-col'>
-                            <h4 className='text-center text-white-60'>16%</h4>
+                            <h4 className='text-center text-white-60'>{percentage.toFixed(1)}%</h4>
                             <p className='text-center text-white-30'>Minted</p>
                         </div>
                     </div>
