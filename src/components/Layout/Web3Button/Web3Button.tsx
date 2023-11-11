@@ -11,11 +11,13 @@ const Web3Button = ({
         open();
     }
 
+    var name = localStorage.getItem("profileName");
+
     return (
         <ScrollVisibility>
             <div className='container h-100 w-100 mx-auto pb-10'>
                 <div className="flex flex-col justify-center items-center">
-                    <h2 className="text-white">Welcome</h2>
+                    <h2 className="text-white">Welcome {name}</h2>
                     <p className="text-white my-3 text-lg text-center max-w-[400px]">In order to use the ArkFi app, you need to connect your wallet</p>
                     <Image
                         className="w-100 h-100 object-fit-contain mt-10 pt-5 cp"

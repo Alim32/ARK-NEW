@@ -8,8 +8,6 @@ import { Calculator } from '@/components/Home/Calculator';
 import { Statistics } from '@/components/Home/Statistics';
 import { InjectedConnector } from "wagmi/connectors/injected";
 import React, { useState, useEffect } from 'react';
-import { OpenModal, CloseModal } from '@/scripts/test.js';
-import { Modal } from '@/components/Layout/Modal';
 
 const Main = ({
     id
@@ -39,11 +37,10 @@ const Main = ({
             {IsConnected
                 ?
                 <div className='container h-100 w-100 mx-auto'>
-                    <Hero address={address} openmodal={() => OpenModal("modal-myacc")} />
+                    <Hero address={address} />
                     <Calculator />
                     <Statistics />
-                    <Bank/>
-                    <Modal id={"modal-myacc"} title="Diamond NFT" closeEvent={() => CloseModal("modal-myacc")} video={"/video/nft_platinum.mp4"} />
+                    <Bank/>                    
                 </div>
                 :
                 <Web3Button />

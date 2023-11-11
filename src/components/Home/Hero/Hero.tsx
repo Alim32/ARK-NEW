@@ -3,16 +3,15 @@ import Image from "next/image";
 import { getNFTData, getNFTBalance, getShares } from "@/scripts/legacy";
 import { formatter, formatterNoDec } from '@/scripts/test';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
-
+import { HomeStatsModal } from '@/components/Home/HomeStatsModal';
+import { OpenModal, CloseModal } from '@/scripts/test.js';
 
 const Hero = ({
-    address,
-    openmodal
+    address    
 }: any) => {
     var shares = getShares(address);
     var balance = getNFTBalance(address);
-    var data = getNFTData(address);
-    var width = window.innerWidth;
+    var width = window.innerWidth;    
     var filename = "/images/arc_main.png";
     if (width < 1300) {
         filename = "/images/arc_mob.png";
@@ -21,12 +20,12 @@ const Hero = ({
     return (
         <ScrollVisibility>
             <div className='flex flex-col w-100 justify-center items-center lg:pt-[2.5vh] 2xl:pb-[20vh] lg:pb-[5vh]'>
-                <h1 className="text-white text-center md:tracking-[0.1em] my-5 mt-4 cp" onClick={openmodal}>
+                <h1 className="text-white text-center md:tracking-[0.1em] my-5 mt-4 cp" onClick={() => OpenModal("modal-myacc")}>
                     <span className='text-white-30 mr-[1rem]'>$</span>
                     <span className='text-white'>{formatterNoDec.format(shares)}</span>
                     <span className='text-white-30 sm:inline hidden'>{formatter.format(shares).substring(formatter.format(shares).indexOf("."), formatter.format(shares).length)}</span>
                 </h1>
-                <h3 className='text-white ls-wide cp' onClick={openmodal}>{balance} <span className='ml-[11px] text-white-30'>NFT(s)</span></h3>
+                <h3 className='text-white ls-wide cp' onClick={() => OpenModal("modal-myacc")}>{balance} <span className='ml-[11px] text-white-30'>NFT(s)</span></h3>
                 <Image
                     className="w-100 h-100 object-fit-contain mt-10 pt-5"
                     src={filename}
@@ -57,6 +56,7 @@ const Hero = ({
                     </button>
                 </div>
             </div>
+            <HomeStatsModal id={"modal-myacc"} closeEvent={() => CloseModal("modal-myacc")} balance={balance} address={address} />
         </ScrollVisibility>
     );
 };

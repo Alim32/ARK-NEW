@@ -159,6 +159,7 @@ export function OpenModal(id) {
                 }
             }, 6);
         } else {
+            document.getElementById(`${id}`).style.top = "50%";
             $(`#${id}`).fadeIn(500);
         }
     }
@@ -183,6 +184,7 @@ export function CloseModal(id) {
             }
         }, 6);
     } else {
+        document.getElementById(`${id}`).style.top = "50%";
         $(`#${id}`).fadeOut(500);
     }
 

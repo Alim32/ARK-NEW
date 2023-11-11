@@ -68,6 +68,23 @@ export function getTotalShares() {
     }
 }
 
+export function getSharesOfNft(id) {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 137,
+            address: ca,
+            abi: abi,
+            functionName: 'shares',
+            args: [id]
+        })
+
+        return Number(data);
+    }
+    catch {
+        return 0;
+    }
+}
+
 export function getShares(address) {
     try {
         const { data, isError, isLoading } = useContractRead({
@@ -105,6 +122,7 @@ export function getNFTLevel(id) {
 export function getNFTData(address, balance) {
     try {            
         var nftData = [];
+        var _nftData = {};
 
         for (let i = 0; i < balance; i++) {
             const { data, isError, isLoading } = useContractRead({
@@ -117,12 +135,23 @@ export function getNFTData(address, balance) {
 
             var nft = {
                 id: Number(data),
-                level: 1
+                level: getNFTLevel(Number(data)),
+                value: getSharesOfNft(Number(data)),
+                amount: 1
             }
-
-            nftData.push(nft);
+            if (_nftData[nft.level] === undefined) {
+                _nftData[nft.level] = nft;
+            } else {
+                _nftData[nft.level].value += nft.value;
+                _nftData[nft.level].amount++;
+            }
         }
 
+        for (let i in _nftData) {
+            var itm = _nftData[i];
+            nftData.push(itm);
+        }
+        
         return nftData;
     }
     catch {
@@ -140,11 +169,11 @@ export function GetNFTNameByLevel(level) {
             return "Bronze";
         case 4:
             return "Silver";
-        case 1:
+        case 5:
             return "Gold";
-        case 1:
+        case 6:
             return "Platinum";  
-        case 1:
+        case 7:
             return "Diamond";
         case 8:
             return "Sunrock";
