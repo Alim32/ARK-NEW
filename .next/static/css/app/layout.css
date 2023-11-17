@@ -557,6 +557,10 @@ video {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
+.mx-\[0\.625rem\]{
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -580,6 +584,10 @@ video {
 .my-7{
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
+}
+.my-\[2px\]{
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .-mb-px{
   margin-bottom: -1px;
@@ -677,6 +685,9 @@ video {
 .ml-3{
   margin-left: 0.75rem;
 }
+.ml-4{
+  margin-left: 1rem;
+}
 .ml-\[11px\]{
   margin-left: 11px;
 }
@@ -689,6 +700,9 @@ video {
 .mr-2{
   margin-right: 0.5rem;
 }
+.mr-3{
+  margin-right: 0.75rem;
+}
 .mr-4{
   margin-right: 1rem;
 }
@@ -697,6 +711,9 @@ video {
 }
 .mr-\[1rem\]{
   margin-right: 1rem;
+}
+.mt-0{
+  margin-top: 0px;
 }
 .mt-10{
   margin-top: 2.5rem;
@@ -836,11 +853,11 @@ video {
 .h-\[0px\]{
   height: 0px;
 }
-.h-\[100\%\]{
-  height: 100%;
-}
 .h-\[25px\]{
   height: 25px;
+}
+.h-\[2px\]{
+  height: 2px;
 }
 .h-\[350px\]{
   height: 350px;
@@ -860,8 +877,14 @@ video {
 .h-\[610px\]{
   height: 610px;
 }
+.h-\[7\.5\%\]{
+  height: 7.5%;
+}
 .h-\[80px\]{
   height: 80px;
+}
+.h-\[92\.5\%\]{
+  height: 92.5%;
 }
 .h-full{
   height: 100%;
@@ -971,6 +994,9 @@ video {
 }
 .min-w-\[4rem\]{
   min-width: 4rem;
+}
+.min-w-\[50\%\]{
+  min-width: 50%;
 }
 .max-w-298{
   max-width: 298px;
@@ -1119,6 +1145,9 @@ video {
 .justify-start{
   justify-content: flex-start;
 }
+.justify-end{
+  justify-content: flex-end;
+}
 .justify-center{
   justify-content: center;
 }
@@ -1202,6 +1231,9 @@ video {
 }
 .rounded-3xl{
   border-radius: 1.5rem;
+}
+.rounded-\[15px\]{
+  border-radius: 15px;
 }
 .rounded-\[20px\]{
   border-radius: 20px;
@@ -1888,6 +1920,26 @@ h5 {
         pointer-events: none
     }
 
+.btn-white-2 {
+    background: #fff;
+    border: 2px solid rgb(131 131 131);
+    border-radius: 15px;
+    color: #000;
+    font-weight: 600
+}
+
+    .btn-white-2:hover {
+        background: #0b0d1169;
+        -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+        border: solid 2px #fff;
+        color: #fff !important
+    }
+
+    .btn-white-2:disabled {
+        background: rgb(255,255,255,.5);
+        pointer-events: none
+    }
 .legacy p, .legacy span {
     display: none;
 }
@@ -1981,7 +2033,7 @@ h5 {
 .mobilebar {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(27, 28, 50, 0.8);
     position: fixed;
-    z-index: 9;
+    z-index: 5;
     bottom: 1.5%;
     width: 95%;
     left: 2.5%;
@@ -1993,7 +2045,7 @@ h5 {
 
 @media(max-width:1279px) {
     .mobilebar {
-        display: block !important;
+        display: block;
     }
 }
 
@@ -2008,12 +2060,12 @@ progress {
     border: none; /* Needed for Firefox */
     color: #fff; /* For IE10 */
     -webkit-appearance: none; /* Needed for WebKit/Blink */
-    border-radius: 2px;
+    border-radius: 15px;
 }
 
     progress[value]::-webkit-progress-bar {
         background: transparent;
-        border-radius: 2px;
+        border-radius: 15px;
     }
 
     progress[value]::-webkit-progress-value {
@@ -2027,11 +2079,13 @@ progress {
     appearance: none;
     width: 100%;
     height: 20px;
+    border-radius: 15px;
 }
 
     progress::-webkit-progress-bar {
         background-color: #ccc;
         width: 100%;
+        border-radius: 15px;
     }
 
 progress { /* for FF target directly the element */
@@ -2044,12 +2098,14 @@ progress { /* for FF target directly the element */
         background-color: transparent !important;
         -webkit-transition: all .7s;
         transition: all .7s;
+        border-radius: 15px;
     }
 
     progress::-moz-progress-bar { /* for FF ::progress-bar is the value bar */
         background: linear-gradient(to left, rgba(255, 255, 255, 0.68), rgba(56, 38, 255, 1)) !important;
         -moz-transition: all .7s;
         transition: all .7s;
+        border-radius: 15px;
     }
 
 .modal-overlay {
@@ -2073,13 +2129,15 @@ progress { /* for FF target directly the element */
     height: 100%;
     top: 50%;
     left: 50%;
-    max-height: 670px;
-    max-width: 670px;
-    margin-left: -335px;
-    margin-top: -335px;
+    max-height: 770px;
+    max-width: 770px;
+    margin-left: -385px;
+    margin-top: -385px;
     border-radius: 25px;
     display: none;
     transition: ease-in-out;
+    overflow-y: auto;
+    z-index: 999;
 }
 
 @media(max-width: 1024px) {
@@ -2092,7 +2150,7 @@ progress { /* for FF target directly the element */
         border-top-left-radius: 35px;
         border-top-right-radius: 35px;
         border: none;
-        border-top: solid 2px rgb(235 235 235 / 20%);
+        border-top: solid 2px rgb(235 235 235 / 20%);        
     }
 }
 
@@ -2195,6 +2253,19 @@ hr {
         margin-top: -1rem;
     }
 
+.dropdown-box-2 {
+    border: solid 2px rgb(255,255,255,0.2);
+    border-radius: 15px;
+}
+
+    .dropdown-box-2:after {
+        content: "⌄";
+        color: rgb(255,255,255,0.6);
+        font-size: 1.25rem;
+        margin-left:10px;
+        margin-top: -0.5rem;
+    }
+
 .form-control {
     border: none;
     background: none;
@@ -2231,6 +2302,7 @@ input[type=number] {
     -webkit-backdrop-filter: blur(25px);
             backdrop-filter: blur(25px);
     display: none;
+    background: var(--bg);
 }
 
 @media(min-width:1024px) {
@@ -2287,54 +2359,80 @@ input[type=number] {
     border: solid 2px rgb(255,255,255,0.1);
 }
 
+.nft-box {
+    background: var(--bg);
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
+    box-shadow: 0 0 5px #7b7b7b9e;
+    flex-grow: 5;
+    min-width:275px;
+    max-width:300px;
+}
 
-.last\:mr-0:last-child{
+.nft-body {
+    margin-top: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-radius:15px;
+    background: #15192c;
+}
+
+@media(max-width:650px){
+    .nft-box{
+        min-width:175px;
+    }
+}
+
+.fc-2{
+    border:solid 2px rgb(255,255,255,0.2);
+    padding:0.5rem 1rem;
+    border-radius:15px;
+}
+
+    .fc-2:active, .fc-2:focus {
+        border: solid 2px rgb(255,255,255,0.2) !important;
+    }
+
+    .last\:mr-0:last-child{
   margin-right: 0px;
 }
 
-
-.hover\:bg-f-orange:hover{
+    .hover\:bg-f-orange:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(252 138 52 / var(--tw-bg-opacity));
 }
 
-
-.hover\:bg-gray-100:hover{
+    .hover\:bg-gray-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-
-.hover\:bg-gray-50:hover{
+    .hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-
-.hover\:text-f-orange:hover{
+    .hover\:text-f-orange:hover{
   --tw-text-opacity: 1;
   color: rgb(252 138 52 / var(--tw-text-opacity));
 }
 
-
-.hover\:opacity-100:hover{
+    .hover\:opacity-100:hover{
   opacity: 1;
 }
 
-
-.focus\:border-f-orange:focus{
+    .focus\:border-f-orange:focus{
   --tw-border-opacity: 1;
   border-color: rgb(252 138 52 / var(--tw-border-opacity));
 }
 
-
-.focus\:outline-none:focus{
+    .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-
-@media (prefers-color-scheme: dark){
+    @media (prefers-color-scheme: dark){
   .dark\:fill-gray-300{
     fill: #d1d5db;
   }
@@ -2344,8 +2442,7 @@ input[type=number] {
   }
 }
 
-
-@media (min-width: 640px){
+    @media (min-width: 640px){
   .sm\:col-span-3{
     grid-column: span 3 / span 3;
   }
@@ -2390,6 +2487,12 @@ input[type=number] {
   .sm\:flex-row-reverse{
     flex-direction: row-reverse;
   }
+  .sm\:justify-start{
+    justify-content: flex-start;
+  }
+  .sm\:justify-between{
+    justify-content: space-between;
+  }
   .sm\:gap-3{
     gap: 0.75rem;
   }
@@ -2422,8 +2525,7 @@ input[type=number] {
   }
 }
 
-
-@media (min-width: 768px){
+    @media (min-width: 768px){
   .md\:visible{
     visibility: visible;
   }
@@ -2520,6 +2622,10 @@ input[type=number] {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+  .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
   .md\:pl-\[100px\]{
     padding-left: 100px;
   }
@@ -2566,8 +2672,7 @@ input[type=number] {
   }
 }
 
-
-@media (min-width: 1024px){
+    @media (min-width: 1024px){
   .lg\:mx-4{
     margin-left: 1rem;
     margin-right: 1rem;
@@ -2696,8 +2801,7 @@ input[type=number] {
   }
 }
 
-
-@media (min-width: 1280px){
+    @media (min-width: 1280px){
   .xl\:fixed{
     position: fixed;
   }
@@ -2824,8 +2928,7 @@ input[type=number] {
   }
 }
 
-
-@media (min-width: 1536px){
+    @media (min-width: 1536px){
   .\32xl\:my-5{
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;

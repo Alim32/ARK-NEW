@@ -1,6 +1,6 @@
 "use client";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
-import { ScrollToNft, OpenModal, CloseModal } from '@/scripts/test.js';
+import { ScrollToNft, OpenModal, CloseModal } from '@/scripts/home';
 import { Modal } from '@/components/Layout/Modal';
 
 const NFTBlock = ({

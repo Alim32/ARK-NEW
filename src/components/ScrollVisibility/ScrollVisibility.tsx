@@ -27,7 +27,7 @@ const ScrollVisibility = ({ children }: ScrollVisibilityProps) => {
   }, []);
 
     return (
-        <Element name='fade-in-section' className="mbb-l">
+        <Element name='fade-in-section' className="">
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 150 }}

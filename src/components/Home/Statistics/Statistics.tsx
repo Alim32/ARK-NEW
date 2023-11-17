@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { getNFTData, getNFTBalance, getShares } from "@/scripts/legacy";
-import { formatter, formatterNoDec, calculate, calculateNoSetter, onInput, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
+import { formatter, formatterNoDec, calculate, calculateNoSetter, onInput, getInitValues, setNewNFT, openDropDown } from '@/scripts/home';
 import { useState } from 'react';
 import { Dropdown } from "../../MISC/Dropdown";
 import { ScrollVisibility } from '@/components/ScrollVisibility'

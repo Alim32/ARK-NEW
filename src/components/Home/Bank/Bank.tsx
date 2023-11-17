@@ -6,7 +6,7 @@ const Bank = ({
 }: any) => {
     return (
         <ScrollVisibility>
-            <div className='xl:p-5 mb-[150px]'>                
+            <div className='xl:p-5 mb-[150px] mbb-l'>                
                 <div className='flex lg:flex-row flex-col w-100 justify-evenly items-center'>
                     <div className="flex flex-col justify-center items-center w-[100%] px-5">
                         <video autoPlay={true} muted={true} loop={true} playsInline={true} className="max-w-[325px] max-h-[325px]">

@@ -7,7 +7,7 @@ const Mobilebar = () => {
     const pathname = usePathname();
 
     return (
-        <nav className="mobilebar">
+        <nav className="mobilebar" id='mobilebar'>
             <div className="flex flex-row items-center justify-evenly pt-2">
                 <Link href={"/legacy"}>
                     <Image

@@ -20,13 +20,13 @@ export default function Home() {
                         {/*    </div>*/}
                         {/*</div>*/}
                         {/*<hr className="w-[50%]" />*/}
-                        <div className="flex flex-row mb-0 cp">
+                        <a className="flex flex-row mb-0 cp" href='/nfts'>
                             <img className="main-menu-icon p-[2px] mt-2" src="/images/MENU/NFT icon.png" />
                             <div className="flex flex-col px-5 pr-0">
                                 <h4 className="text-white mb-0">NFTS</h4>
                                 <p className="text-white-60 mb-0">Manage your collection of NFTs</p>
                             </div>
-                        </div>
+                        </a>
                         <hr className="md:w-[50%] w-[100%] my-5" />
                         <div className="flex flex-row mb-0 cp">
                             <img className="main-menu-icon mbb-l mt-2" src="/images/MENU/media.png" />

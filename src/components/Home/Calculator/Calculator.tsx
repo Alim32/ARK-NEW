@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { getTotalShares, getContributions, getMaxSupply } from "@/scripts/legacy";
-import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/test';
+import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/home';
 import { useState } from 'react';
 import { Dropdown } from "../../MISC/Dropdown";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
@@ -21,7 +21,7 @@ const DropItem = ({
                 alt="nft logo"
                 className='mr-5'
             />
-            <h4 className="text-white text-center mx-5 ls-wider">{text}</h4>
+            <h4 className="text-white text-center mx-5 ls-wider">{text}</h4>            
             <span></span>
         </button>
     )
@@ -65,7 +65,7 @@ const Calculator = ({
     var activeTier = "Tier 1";
     var activePercentage = 25;
     //End of Tiers
-    var tiers = {1: 1200000, 2: 2160000, 3: 2928000, 4: 3542400, 5: 4033920, 6: 4427136,7: 4741709, 8: 6000000,};
+    var tiers = {1: 2000000, 2: 3300000, 3: 4300000, 4: 5000000, 5: 5500000, 6: 6000000};
 
     function GetTierPercentage(tier = -1) {
         switch (tier) {
@@ -80,10 +80,6 @@ const Calculator = ({
             case 5:
                 return 5;
             case 6:
-                return 2;
-            case 7:
-                return 1;
-            case 8:
                 return 0;
             default:
                 return 0;
@@ -106,7 +102,7 @@ const Calculator = ({
         setSliderVal(sliderVal);
         setInputVal(sliderVal);
         calculateNoSetter(sliderVal, shares, totalShares);
-        setNewNFT(id);
+        setNewNFT(id);        
     }
 
     return (
@@ -117,22 +113,23 @@ const Calculator = ({
                     <div className="flex flex-col justify-center items-center w-[100%] px-5">
                         <button className='flex flex-row items-center justify-between dropdown-box px-5 py-3 cp w-[85%]' onClick={() => openDropDown("dropdown-1")}>
                             <Image
-                                src={"/icons/nft.png"}
+                                src={"/images/platinum.png"}
                                 width={30}
                                 height={50}
                                 alt="nft logo"
                                 className='mr-5'
+                                id="selected-nft"
                             />
                             <h4 className="text-white text-center mx-5 ls-wider" id='nft-text'>PLATINUM</h4>
                         </button>
                         <div id='dropdown-1' className='dropdown w-[85%]'>
-                            <DropItem clickEvent={() => changeShares(100, 1)} text={"COPPER"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(250, 2)} text={"TIN"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(500, 3)} text={"BRONZE"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(1000, 4)} text={"SILVER"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(4000, 5)} text={"GOLD"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(10000, 6)} text={"PLATINUM"} image={"/icons/nft.png"} />
-                            <DropItem clickEvent={() => changeShares(50000, 7)} text={"DIAMOND"} image={"/icons/nft.png"} />
+                            <DropItem clickEvent={() => changeShares(100, 1)} text={"COPPER"} image={"/images/copper.png"} />
+                            <DropItem clickEvent={() => changeShares(250, 2)} text={"TIN"} image={"/images/tin.png"} />
+                            <DropItem clickEvent={() => changeShares(500, 3)} text={"BRONZE"} image={"/images/bronze.png"} />
+                            <DropItem clickEvent={() => changeShares(1000, 4)} text={"SILVER"} image={"/images/silver.png"} />
+                            <DropItem clickEvent={() => changeShares(4000, 5)} text={"GOLD"} image={"/images/gold.png"} />
+                            <DropItem clickEvent={() => changeShares(10000, 6)} text={"PLATINUM"} image={"/images/platinum.png"} />
+                            <DropItem clickEvent={() => changeShares(50000, 7)} text={"DIAMOND"} image={"/images/platinum.png"} />
                         </div>
 
                         <p className="text-white-30 text-lg text-center mt-[75px]">Utility Products Profits<br /><span className='text-sm'>(Monthly)</span></p>
@@ -182,17 +179,15 @@ const Calculator = ({
                 </div>
                 <div className='flex flex-col xl:mt-[200px] mt-5'>
                     <div className='flex flex-row w-[100%]'>
-                        <ProgressItem perc={25} activeId={activeId} width={20} id={1} />
-                        <ProgressItem perc={20} activeId={activeId} width={16} id={2} />
-                        <ProgressItem perc={15} activeId={activeId} width={13} id={3} />
-                        <ProgressItem perc={10} activeId={activeId} width={11.5} id={4} />
-                        <ProgressItem perc={5} activeId={activeId} width={8} id={5} />
-                        <ProgressItem perc={2} activeId={activeId} width={7.5} id={6} />
-                        <ProgressItem perc={1} activeId={activeId} width={7} id={7} />
-                        <ProgressItem perc={0} activeId={activeId} width={15} id={8} />
+                        <ProgressItem perc={25} activeId={activeId} width={33} id={1} />
+                        <ProgressItem perc={20} activeId={activeId} width={22} id={2} />
+                        <ProgressItem perc={15} activeId={activeId} width={16} id={3} />
+                        <ProgressItem perc={10} activeId={activeId} width={12} id={4} />
+                        <ProgressItem perc={5} activeId={activeId} width={9} id={5} />
+                        <ProgressItem perc={0} activeId={activeId} width={8} id={6} />
                     </div>
                     <div className='flex flex-col'>
-                        <progress className='h-[25px] xl:w-[100%] progress-home xl:mx-0 mx-auto w-[90%]' value={percentage} max={100}></progress>
+                        <progress className='h-[25px] xl:w-[100%] progress-home xl:mx-0 mx-auto w-[90%]' value={percentage  } max={100}></progress>
 
                     </div>
                     <div className='flex flex-row xl:w-[50%] w-[100%] justify-evenly xl:mx-auto mt-5 xl:mt-10'>
