@@ -157,7 +157,7 @@ export function getShares(address) {
             watch: true
         })
 
-        return Number(data) / Math.pow(10,2);
+        return Number(data) / Math.pow(10, 2);
     }
     catch (error) {
         console.log(error);
@@ -234,10 +234,71 @@ export function GetNFTNameByLevel(level) {
         case 7:
             return "Iridium";
         case 8:
-            return "Palladium";
+            return "Diamond";
         case 9:
             return "Unobtainium";
         default:
             return "Unknown";
     }
+}
+
+export function GetBoostPercentageByLevelAndTier(level, tier) {
+    var boost = 25;
+    var decayRate = 0;
+    var decayAmount = 0;
+
+    switch (level) {
+        case 1:
+        case 2:
+        case 3:
+            decayRate = 0;
+            boost -= 25;
+            break;
+        case 4:
+            decayRate = 1;
+            boost -= 20;
+            break;
+        case 5:
+            decayRate = 2;
+            boost -= 15;
+            break;
+        case 6:
+            decayRate = 3;
+            boost -= 10;
+            break;
+        case 7:
+            decayRate = 4;
+            boost -= 5;
+            break;
+        case 8:
+            decayRate = 5;
+            boost -= 0;
+            break;
+    }       
+
+    var tiersPassed = 0;
+    switch (tier) {
+        case 1:
+            tiersPassed = 0;
+            break;
+        case 2:
+            tiersPassed = 1;
+            break;
+        case 3:
+            tiersPassed = 2;
+            break;
+        case 4:
+            tiersPassed = 3;
+            break;
+        case 5:
+            tiersPassed = 4;
+            break;
+        case 6:
+            tiersPassed = 5;
+            break;
+    }
+
+    decayAmount = tiersPassed * decayRate;
+
+    return boost - decayAmount;
 }

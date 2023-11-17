@@ -99,7 +99,7 @@ const HomeStatsModal = ({
                 <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4'>
                     <div className='flex flex-row items-center'>
                         <Image
-                            src={"/icons/nft.png"}
+                            src={`/images/${GetNFTNameByLevel(nfts!["level"]).toLowerCase()}.png`}
                             width={30}
                             height={50}
                             alt="nft logo"

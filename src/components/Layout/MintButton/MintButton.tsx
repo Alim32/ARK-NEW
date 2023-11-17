@@ -10,7 +10,7 @@ const MintButton = ({
         address: ca,
         abi: abi,
         functionName: 'mintToWallet',
-        args: [address, 3]
+        args: [address, 5]
     });
 
     const contractWrite = useContractWrite(config);
