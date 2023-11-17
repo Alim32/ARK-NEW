@@ -1,7 +1,11 @@
 import Image from 'next/image';
+import { ScrollVisibility } from "@/components/ScrollVisibility";
+
+
 export default function Home() {
     return (
         <>
+            <ScrollVisibility>
             <div className="container-fluid">
                 <div className="flex lg:flex-row flex-col justify-center items-center">
                     <div className="flex flex-col main-menu-1 lg:block hidden">
@@ -63,7 +67,8 @@ export default function Home() {
                         
                     </div>
                 </div>
-            </div>
+                </div>
+            </ScrollVisibility>
         </>
     );
 }
