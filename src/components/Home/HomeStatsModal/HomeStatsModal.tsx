@@ -105,9 +105,9 @@ const HomeStatsModal = ({
                             alt="nft logo"
                             className='mr-5 lg:block hidden'
                         />
-                        <p className='md:text-lg text-base text-white ls-wide lg:ml-10'>{nfts!["amount"]} {GetNFTNameByLevel(nfts!["level"]).toUpperCase()}{nfts!["amount"] > 1 ? "S" : ""}</p>
+                        <p className='md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10'>{nfts!["amount"]} {GetNFTNameByLevel(nfts!["level"]).toUpperCase()}{nfts!["amount"] > 1 ? "S" : ""}</p>
                     </div>
-                    <p className='md:text-lg text-base text-white-60'>${formatterNoDec.format(nfts!["value"])}</p>
+                    <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(nfts!["value"])}</p>
                 </div>
                 <hr />
             </div>
@@ -118,9 +118,9 @@ const HomeStatsModal = ({
                 <div>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
                         <div className='flex flex-row items-center'>
-                            <p className='md:text-lg text-base text-white ls-wide lg:ml-10'>NO NFTs FOUND.</p>
+                            <p className='md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10'>NO NFTs FOUND.</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'></p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'></p>
                     </div>
                     <hr />
                 </div>
@@ -129,9 +129,9 @@ const HomeStatsModal = ({
                 <div>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
                         <div className='flex flex-row items-center'>
-                            <p className='md:text-lg text-base text-white ls-wide lg:ml-10'>LOADING...</p>
+                            <p className='md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10'>LOADING...</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'></p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'></p>
                     </div>
                     <hr />
                 </div>
@@ -157,9 +157,9 @@ const HomeStatsModal = ({
                                 alt="nft logo"
                                 className='mr-5 lg:block hidden'
                             />
-                            <p className='md:text-lg text-base text-white lg:ls-widest ls-wide lg:ml-10'>MINT CREDIT</p>
+                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>MINT CREDIT</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'>${formatterNoDec.format(credit)}</p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(credit)}</p>
                     </div>
                     <hr />
                     <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4'>
@@ -171,9 +171,9 @@ const HomeStatsModal = ({
                                 alt="nft logo"
                                 className='mr-5 lg:block hidden contract-200'
                             />
-                            <p className='md:text-lg text-base text-white lg:ls-widest ls-wide lg:ml-10'>PENDING REWARDS</p>
+                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>PENDING REWARDS</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'>${formatterNoDec.format(pendingRewards)}</p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(pendingRewards)}</p>
                     </div>
                     <hr />
                     <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4'>
@@ -185,9 +185,9 @@ const HomeStatsModal = ({
                                 alt="nft logo"
                                 className='mr-5 lg:block hidden'
                             />
-                            <p className='md:text-lg text-base text-white lg:ls-widest ls-wide lg:ml-10'>CLAIMED REWARDS</p>
+                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>CLAIMED REWARDS</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'>${formatterNoDec.format(claimedRewards - pendingRewards)}</p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(claimedRewards - pendingRewards)}</p>
                     </div>
                     <hr />
                     <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4 pb-5'>
@@ -199,9 +199,9 @@ const HomeStatsModal = ({
                                 alt="nft logo"
                                 className='mr-5 lg:block hidden'
                             />
-                            <p className='md:text-lg text-base text-white lg:ls-widest ls-wide lg:ml-10'>TOTAL WORTH</p>
+                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>TOTAL WORTH</p>
                         </div>
-                        <p className='md:text-lg text-base text-white-60'>${formatterNoDec.format(totalWorth)}</p>
+                        <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(totalWorth)}</p>
                     </div>
 
                 </div>
