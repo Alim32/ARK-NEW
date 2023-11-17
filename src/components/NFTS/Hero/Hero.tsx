@@ -19,7 +19,7 @@ const NftBlock = ({
     return (
         <div className='nft-box flex flex-col items-center justify-center mx-[0.625rem] mt-5'>
             <Image
-                src={`images/${type}.png`}
+                src={`/images/${type}.png`}
                 alt=""
                 width={190}
                 height={190}
