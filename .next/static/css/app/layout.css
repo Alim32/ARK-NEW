@@ -2613,6 +2613,9 @@ input[type=number] {
   .md\:mt-5{
     margin-top: 1.25rem;
   }
+  .md\:mr-5{
+    margin-right: 1.25rem;
+  }
   .md\:block{
     display: block;
   }
@@ -2668,6 +2671,10 @@ input[type=number] {
   .md\:px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+  .md\:py-3{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
   .md\:pl-\[100px\]{
     padding-left: 100px;
