@@ -141,7 +141,7 @@ const HomeMintModal = ({
                         </h4>
                     </div>
                     <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-10'>
-                        <button className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-lg text-base'>PURCHASE</button>
+                        <button className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm'>PURCHASE</button>
                     </div>
                 </div>
             </div>
