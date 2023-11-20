@@ -40,7 +40,7 @@ const HomeMintModal = ({
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>
                 </div>
                 <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[35px] lg:pt-[35px] pt-[20px] overflow-y-auto'>
-                    <button className='flex flex-row items-center justify-between dropdown-box px-5 py-3 cp w-[100%] mt-5' onClick={() => openDropDown("dropdown-mint")}>
+                    <button className='flex flex-row items-center justify-between dropdown-box px-5 py-3 cp w-[100%] md:mt-5 mt-4' onClick={() => openDropDown("dropdown-mint")}>
                         <Image
                             src={"/images/platinum.png"}
                             width={30}
@@ -114,9 +114,9 @@ const HomeMintModal = ({
                         </h4>
                     </div>
                     <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Credit Discount</h4>
+                        <h4 className='text-white-30'>Credit</h4>
                         <h4 className='text-white flex flex-row items-center'>
-                            $67.28
+                            -$67.28
                             <Image
                                 alt="usdt"
                                 src="/icons/usdt.png"

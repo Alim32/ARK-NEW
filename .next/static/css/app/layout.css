@@ -2610,6 +2610,9 @@ input[type=number] {
   .md\:mt-\[75px\]{
     margin-top: 75px;
   }
+  .md\:mt-5{
+    margin-top: 1.25rem;
+  }
   .md\:block{
     display: block;
   }
