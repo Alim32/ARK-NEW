@@ -39,7 +39,8 @@ const Main = ({
                 <div className='container h-100 w-100 mx-auto'>
                     <Hero address={address} />
                     <Calculator />
-                    <Statistics />
+                    {/*<Statistics />*/}
+
                     <Bank/>                    
                 </div>
                 :

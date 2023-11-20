@@ -169,7 +169,7 @@ const Calculator = ({
                     </div>
                 </div>
                 <div className='flex flex-col mt-[100px]'>
-                    <h4 className='text-center text-activated'>{activePercentage}%</h4>
+                    <h4 className='text-center text-activated'>Up to {activePercentage}%</h4>
                     <div className='flex flex row justify-center items-center my-2'>
                         <Image src='https://bank.arkfi.io/img/fast.png' alt='boost' width={35} height={35} className='contrast-200 mx-2' />
                         <h4 className='text-center text-white-30 font-semibold'>Current Boost</h4>

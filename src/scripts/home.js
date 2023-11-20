@@ -269,3 +269,15 @@ export async function RollOut(id) {
         }
     }, 6);
 }
+
+
+export function setMintNFT(id) {
+    $("#mint-text").text("COPPER");
+    $("#mint-selection").attr("src", "/images/copper.png");
+
+    if (window.innerWidth < 1024) {
+        RollOut("dropdown-mint");
+    } else {
+        $(`#dropdown-mint`).slideToggle(500);
+    }
+}

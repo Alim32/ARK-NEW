@@ -5,6 +5,7 @@ import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { HomeStatsModal } from '@/components/Home/HomeStatsModal';
+import { HomeMintModal } from '@/components/Home/HomeMintModal';
 import { MintButton } from "@/components/Layout/MintButton";
 import { ClaimButton } from "@/components/Layout/ClaimButton";
 import { useEffect, useState } from "react";
@@ -52,11 +53,11 @@ const Hero = ({
             setNftBalances(nftData);
         }
 
-        if (nftBalances.length < balance) {
+        if (nftBalances.length !== balance) {
             fetchData();
         }        
     }, [balance])
-
+    
     return (
         <ScrollVisibility>
             <div className='flex flex-col w-100 justify-center items-center lg:pt-[2.5vh] 2xl:pb-[20vh] lg:pb-[5vh]'>
@@ -73,12 +74,24 @@ const Hero = ({
                     height={1000}
                     alt="ARC ARK"
                 />
-                <div className='flex flex-row justify-evenly items-center xl:-mt-[5rem] lg:-mt-[3rem] -mt-[0rem]'>
+                <div className='flex flex-row justify-evenly items-center 2xl:-mt-[5rem] xl:-mt-[3rem] sm:pt-5 pt-0'>
                     <ClaimButton address={address} />
-                    <MintButton address={address} />
+                    <div className='flex flex-row justify-evenly items-center xl:-mt-[5rem] lg:-mt-[3rem] -mt-[0rem]'>
+                        <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 sm:px-3 px-2 sm:py-2 py-1  flex flex-row items-center sm:mt-0 mt-[50px]' onClick={() => OpenModal("modal-mint")}>
+                            <span className='2xl:mt-1'>Mint NFT</span>
+                            <Image
+                                className="w-100 h-100 object-fit-contain ml-2"
+                                src={"/images/mint.png"}
+                                width={25}
+                                height={25}
+                                alt="Claim Rewards"
+                            />
+                        </button>
+                    </div>                    
                 </div>
             </div>
             <HomeStatsModal id={"modal-myacc"} closeEvent={() => CloseModal("modal-myacc")} balance={balance} address={address} claimedRewards={claimedRewards} pendingRewards={rewards} nftsInWallet={nftBalances} credit={mintCredit} />
+            <HomeMintModal id={"modal-mint"} closeEvent={() => CloseModal("modal-mint")} credit={mintCredit} />
         </ScrollVisibility>
     );
 };

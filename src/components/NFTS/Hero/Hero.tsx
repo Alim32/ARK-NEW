@@ -165,7 +165,7 @@ const Hero = ({
             <NftBlock key={nfts!["id"]} id={nfts!["id"]} value={nfts!["value"]} boost={nfts!["tier"]} boostperc={GetBoostPercentageByLevelAndTier(nfts!["level"], nfts!["tier"])} type={GetNFTNameByLevel(nfts!["level"])} />
         );
     } else {
-        if (nftBalances.length <= 0) {
+        if (balance <= 0) {
             listNFTs =
                 <div className='mx-auto'>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
@@ -179,8 +179,9 @@ const Hero = ({
             listNFTs =
                 <div className='mx-auto'>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
-                        <div className='flex flex-row items-center'>
-                            <p className='md:text-xl text-lg text-white ls-wide lg:ml-10'>LOADING...</p>
+                        <div className='flex flex-col items-center'>
+                            <img alt="ARK connect" loading="lazy" width="45" height="45" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
+                            <p className='text-base text-white-60 ls-wide'>LOADING</p>
                         </div>
                         <p className='md:text-lg text-base text-white-60'></p>
                     </div>
