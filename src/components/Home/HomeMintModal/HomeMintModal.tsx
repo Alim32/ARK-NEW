@@ -74,7 +74,7 @@ const HomeMintModal = ({
                         </h4>
                     </div>
                     <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>   Credit</h4>
+                        <h4 className='text-white-30'>Mint Credit</h4>
                         <h4 className='text-white flex flex-row items-center'>
                             $67.28
                             <Image
