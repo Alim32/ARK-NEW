@@ -3,6 +3,7 @@ import Image from "next/image";
 import { formatterNoDec, formatter, openDropDown } from "@/scripts/home";
 import { getUSDTBalance } from "@/scripts/general";
 import { getPriceOfLevel, getCurrentBoostOfLevel, getCurrentTier } from "@/scripts/legacy";
+import { MintButton } from "@/components/Layout/MintButton";
 import { setMintNFT } from "@/scripts/home";
 import { useState } from 'react';
 
@@ -46,7 +47,7 @@ const HomeMintModal = ({
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>
                 </div>
                 <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[25px] lg:pt-[35px] pt-[20px] overflow-y-auto'>
-                    <button className='flex flex-row items-center justify-between dropdown-box md:px-5 px-4 md:py-3 py-1 cp w-[100%] md:mt-5 mt-4' onClick={() => openDropDown("dropdown-mint")}>
+                    <button className='flex flex-row items-center justify-between dropdown-box md:px-5 px-4 md:py-3 py-1 h-fit cp w-[100%] md:mt-5 mt-4' onClick={() => openDropDown("dropdown-mint")}>
                         <Image
                             src={"/images/platinum.png"}
                             width={30}
@@ -152,8 +153,8 @@ const HomeMintModal = ({
                                 />
                             </h4>
                         </div>
-                        <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-10'>
-                            <button className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm mt-5'>PURCHASE</button>
+                        <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-5'>
+                            <MintButton address={address}/>
                         </div>
                     </div>
                 </div>

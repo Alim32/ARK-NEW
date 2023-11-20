@@ -4,32 +4,42 @@ import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from
 import { ca, abi } from "@/scripts/legacy";
 
 const MintButton = ({
-    address
+    address,
+    level = 1
 }: any) => {
-    const { config } = usePrepareContractWrite({
+    const { data, write } = useContractWrite({
         address: ca,
         abi: abi,
         functionName: 'mintToWallet',
-        args: [address, 5]
+        onMutate() {
+            var item = document.getElementById("mint-btn") as HTMLButtonElement;
+            var item2 = document.getElementById("mint-loader") as HTMLElement;            
+            item.style.display = "none";
+            item2.style.display = "block";
+        },
+        onError() {
+            var item = document.getElementById("mint-btn") as HTMLButtonElement;
+            var item2 = document.getElementById("mint-loader") as HTMLElement;
+            item.style.display = "block";
+            item2.style.display = "none";
+        },
+        args: [address, level]
     });
 
-    const contractWrite = useContractWrite(config);
     const wait = useWaitForTransaction({
-        hash: contractWrite.data?.hash        
+        hash: data?.hash
     })
 
     return (
-        <div className='flex flex-row justify-evenly items-center xl:-mt-[5rem] lg:-mt-[3rem] -mt-[0rem]'>
-            <button className='xl:text-base text-sm btn-white mx-2 xl:px-4 sm:px-3 px-2 sm:py-2 py-1  flex flex-row items-center sm:mt-0 mt-[50px]' onClick={contractWrite.write}>
-                <span className='2xl:mt-1'>Mint NFT</span>
-                <Image
-                    className="w-100 h-100 object-fit-contain ml-2"
-                    src={"/images/mint.png"}
-                    width={25}
-                    height={25}
-                    alt="Claim Rewards"
-                />
-            </button>
+        <div className='flex flex-col w-[100%]'>
+            <button id='mint-btn' className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm mt-5' onClick={() => write()}>PURCHASE</button>
+            <div className='flex flex-col items-center w-100% hidden mb-10 mt-4' id='mint-loader'>
+                <div className="loader">
+                    <div className="loaderBar"></div>                    
+                </div>
+                <p className='text-sm text-white-60 ls-wide text-center mt-3'>Awaiting Transaction...</p>
+            </div>
+            
         </div>
     );
 };
