@@ -91,7 +91,7 @@ const Hero = ({
                 </div>
             </div>
             <HomeStatsModal id={"modal-myacc"} closeEvent={() => CloseModal("modal-myacc")} balance={balance} address={address} claimedRewards={claimedRewards} pendingRewards={rewards} nftsInWallet={nftBalances} credit={mintCredit} />
-            <HomeMintModal id={"modal-mint"} closeEvent={() => CloseModal("modal-mint")} credit={mintCredit} />
+            <HomeMintModal id={"modal-mint"} closeEvent={() => CloseModal("modal-mint")} credit={mintCredit} address={address} />
         </ScrollVisibility>
     );
 };

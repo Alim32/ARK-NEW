@@ -22,6 +22,101 @@ export function getClaimableRewards(address) {
     }
 }
 
+export function getCurrentTier() {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 137,
+            address: ca,
+            abi: abi,
+            functionName: 'getCurrentTier',
+            watch: true
+        })
+
+        return Number(data);
+    }
+    catch (error) {
+        console.log(error)
+        return 0;
+    }
+}
+
+export function getPriceOfLevel(level) {
+    try {
+        const { data, isError, isLoading } = useContractRead({
+            chainId: 137,
+            address: ca,
+            abi: abi,
+            functionName: 'nftPriceOfLevel',
+            args: [level],
+            watch: true
+        })
+
+        if (data === undefined) {
+            return 0;
+        }
+
+        return Number(data) / Math.pow(10, 6);
+    }
+    catch (error) {
+        console.log(error)
+        return 0;
+    }
+}
+
+export function getCurrentBoostOfLevel(level, tier) {
+    try {
+        var decay = 0;
+        var penalty = 0;
+        var boost = 25;
+
+        switch (level) {
+            case 1:
+            case 2:
+            case 3:
+                return 0;
+            case 4:
+                decay = 1;
+                penalty = 20;
+                break;
+            case 5:
+                decay = 2;
+                penalty = 15;
+                break;
+            case 6:
+                decay = 3;
+                penalty = 10;
+                break;
+            case 7:
+                decay = 4;
+                penalty = 5;
+                break;
+            case 8:
+                decay = 5;
+                penalty = 0;
+                break;
+        }
+
+        switch (tier) {
+            case 1:
+                return boost - penalty - (0 * decay);
+            case 2:
+                return boost - penalty - (1 * decay);
+            case 3:
+                return boost - penalty - (2 * decay);
+            case 4:
+                return boost - penalty - (3 * decay);
+            case 5:
+                return boost - penalty - (4 * decay);
+            case 6:
+                return boost - penalty - (5 * decay);
+        }
+    }
+    catch (error) {
+        console.log(error)
+        return 0;
+    }
+}
+
 export function getMintCredit(address) {
     try {
         const { data, isError, isLoading } = useContractRead({

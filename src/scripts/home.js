@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { GetNFTNameByLevel } from './legacy';
 
 var activeTab = 1;
 const maxValue = 10000000;
@@ -121,7 +122,7 @@ export function openDropDown(id) {
     if (window.innerWidth < 1024) {
         RollIn(id);
     } else {
-        $(`#${id}`).slideToggle(500);
+        $(`#${id}`).slideToggle(400);
     }    
 }
 
@@ -271,13 +272,17 @@ export async function RollOut(id) {
 }
 
 
-export function setMintNFT(id) {
-    $("#mint-text").text("COPPER");
-    $("#mint-selection").attr("src", "/images/copper.png");
+export function setMintNFT(id, callback) {
+    var name = GetNFTNameByLevel(id);   
+    
+    $("#mint-text").text(name.toUpperCase());
+    $("#mint-selection").attr("src", `/images/${name.toLowerCase()}.png`);
 
     if (window.innerWidth < 1024) {
         RollOut("dropdown-mint");
     } else {
-        $(`#dropdown-mint`).slideToggle(500);
+        $(`#dropdown-mint`).slideToggle(300);
     }
+
+    callback(id);
 }

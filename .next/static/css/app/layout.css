@@ -784,18 +784,6 @@ video {
 .mt-\[85px\]{
   margin-top: 85px;
 }
-.mb-\[100px\]{
-  margin-bottom: 100px;
-}
-.mb-\[10\%\]{
-  margin-bottom: 10%;
-}
-.mb-\[20\%\]{
-  margin-bottom: 20%;
-}
-.mb-\[25\%\]{
-  margin-bottom: 25%;
-}
 .block{
   display: block;
 }
@@ -865,6 +853,9 @@ video {
 .h-\[0px\]{
   height: 0px;
 }
+.h-\[100\%\]{
+  height: 100%;
+}
 .h-\[25px\]{
   height: 25px;
 }
@@ -898,15 +889,12 @@ video {
 .h-\[92\.5\%\]{
   height: 92.5%;
 }
-.h-full{
-  height: 100%;
-}
-.h-\[100\%\]{
-  height: 100%;
-}
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
+}
+.h-full{
+  height: 100%;
 }
 .max-h-0{
   max-height: 0px;
@@ -917,14 +905,14 @@ video {
 .max-h-\[325px\]{
   max-height: 325px;
 }
+.max-h-\[35px\]{
+  max-height: 35px;
+}
 .max-h-\[45px\]{
   max-height: 45px;
 }
 .max-h-full{
   max-height: 100%;
-}
-.max-h-\[35px\]{
-  max-height: 35px;
 }
 .min-h-\[130px\]{
   min-height: 130px;
@@ -1044,6 +1032,9 @@ video {
 .max-w-\[140px\]{
   max-width: 140px;
 }
+.max-w-\[20px\]{
+  max-width: 20px;
+}
 .max-w-\[285px\]{
   max-width: 285px;
 }
@@ -1073,12 +1064,6 @@ video {
 }
 .max-w-sm{
   max-width: 24rem;
-}
-.max-w-\[25px\]{
-  max-width: 25px;
-}
-.max-w-\[20px\]{
-  max-width: 20px;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -1166,9 +1151,6 @@ video {
 }
 .items-start{
   align-items: flex-start;
-}
-.items-end{
-  align-items: flex-end;
 }
 .items-center{
   align-items: center;
@@ -1426,6 +1408,10 @@ video {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
+.px-\[25px\]{
+  padding-left: 25px;
+  padding-right: 25px;
+}
 .px-\[35px\]{
   padding-left: 35px;
   padding-right: 35px;
@@ -1461,10 +1447,6 @@ video {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.px-\[25px\]{
-  padding-left: 25px;
-  padding-right: 25px;
 }
 .\!pb-0{
   padding-bottom: 0px !important;
@@ -2438,44 +2420,60 @@ input[type=number] {
         border: solid 2px rgb(255,255,255,0.2) !important;
     }
 
+.dropdown-bg {
+    background: linear-gradient(180deg, #181823 0%, #0c0c0e 20%, #03071d 100%) !important;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255,255,255,0.8);
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255,255,255,0.8);
+    }
     .last\:mr-0:last-child{
   margin-right: 0px;
 }
-
     .hover\:bg-f-orange:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(252 138 52 / var(--tw-bg-opacity));
 }
-
     .hover\:bg-gray-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-
     .hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-
     .hover\:text-f-orange:hover{
   --tw-text-opacity: 1;
   color: rgb(252 138 52 / var(--tw-text-opacity));
 }
-
     .hover\:opacity-100:hover{
   opacity: 1;
 }
-
     .focus\:border-f-orange:focus{
   --tw-border-opacity: 1;
   border-color: rgb(252 138 52 / var(--tw-border-opacity));
 }
-
     .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
     @media (prefers-color-scheme: dark){
   .dark\:fill-gray-300{
     fill: #d1d5db;
@@ -2485,7 +2483,6 @@ input[type=number] {
     color: rgb(75 85 99 / var(--tw-text-opacity));
   }
 }
-
     @media (min-width: 640px){
   .sm\:col-span-3{
     grid-column: span 3 / span 3;
@@ -2571,7 +2568,6 @@ input[type=number] {
     line-height: 1.5rem;
   }
 }
-
     @media (min-width: 768px){
   .md\:visible{
     visibility: visible;
@@ -2605,6 +2601,9 @@ input[type=number] {
   .md\:mb-5{
     margin-bottom: 1.25rem;
   }
+  .md\:mr-5{
+    margin-right: 1.25rem;
+  }
   .md\:mt-0{
     margin-top: 0px;
   }
@@ -2614,6 +2613,9 @@ input[type=number] {
   .md\:mt-11{
     margin-top: 2.75rem;
   }
+  .md\:mt-5{
+    margin-top: 1.25rem;
+  }
   .md\:mt-6{
     margin-top: 1.5rem;
   }
@@ -2622,12 +2624,6 @@ input[type=number] {
   }
   .md\:mt-\[75px\]{
     margin-top: 75px;
-  }
-  .md\:mt-5{
-    margin-top: 1.25rem;
-  }
-  .md\:mr-5{
-    margin-right: 1.25rem;
   }
   .md\:block{
     display: block;
@@ -2662,11 +2658,11 @@ input[type=number] {
   .md\:min-w-\[45\%\]{
     min-width: 45%;
   }
-  .md\:max-w-\[450px\]{
-    max-width: 450px;
-  }
   .md\:max-w-\[30px\]{
     max-width: 30px;
+  }
+  .md\:max-w-\[450px\]{
+    max-width: 450px;
   }
   .md\:flex-row{
     flex-direction: row;
@@ -2740,7 +2736,6 @@ input[type=number] {
     letter-spacing: 0.1em;
   }
 }
-
     @media (min-width: 1024px){
   .lg\:mx-4{
     margin-left: 1rem;
@@ -2868,16 +2863,11 @@ input[type=number] {
     font-size: 6rem;
     line-height: 1;
   }
-  .lg\:text-lg{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
   .lg\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
   }
 }
-
     @media (min-width: 1280px){
   .xl\:fixed{
     position: fixed;
@@ -3007,7 +2997,6 @@ input[type=number] {
     color: rgb(255 255 255 / 0.6);
   }
 }
-
     @media (min-width: 1536px){
   .\32xl\:my-5{
     margin-top: 1.25rem;
@@ -3051,6 +3040,7 @@ input[type=number] {
     line-height: 1.5rem;
   }
 }
+
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/utils.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/

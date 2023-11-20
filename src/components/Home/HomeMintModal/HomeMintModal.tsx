@@ -1,8 +1,10 @@
 'use client';
 import Image from "next/image";
-import { formatterNoDec, openDropDown } from "@/scripts/home";
+import { formatterNoDec, formatter, openDropDown } from "@/scripts/home";
 import { getUSDTBalance } from "@/scripts/general";
+import { getPriceOfLevel, getCurrentBoostOfLevel, getCurrentTier } from "@/scripts/legacy";
 import { setMintNFT } from "@/scripts/home";
+import { useState } from 'react';
 
 const DropItem = ({
     image,
@@ -30,7 +32,11 @@ const HomeMintModal = ({
     credit = 0,
     address
 }: any) => {
+    const [level, setLevel] = useState(8);
+    var currentTier = getCurrentTier();
+    var price = getPriceOfLevel(level);
     var usdtBalance = getUSDTBalance(address);
+    var boost = getCurrentBoostOfLevel(level, currentTier);
 
     return (
         <div className='modal-overlay' id={id + "overlay"}>
@@ -49,99 +55,106 @@ const HomeMintModal = ({
                             className='md:mr-5 mr-4 md:max-h-[50px] md:max-w-[30px] max-h-[35px] max-w-[20px]'
                             id="mint-selection"
                         />
-                        <h4 className="text-white text-center mx-5 ls-wider  md:text-lg text-base" id='mint-text'>PLATINUM</h4>
+                        <h4 className="text-white text-center mx-5 ls-wider  md:text-2xl text-base" id='mint-text'>DIAMOND</h4>
                     </button>
-                    <div id='dropdown-mint' className='dropdown w-[100%]'>
-                        <DropItem clickEvent={() => setMintNFT(1)} text={"COPPER"} image={"/images/copper.png"} />
-                        <DropItem clickEvent={() => setMintNFT(2)} text={"TIN"} image={"/images/tin.png"} />
-                        <DropItem clickEvent={() => setMintNFT(3)} text={"BRONZE"} image={"/images/bronze.png"} />
-                        <DropItem clickEvent={() => setMintNFT(4)} text={"SILVER"} image={"/images/silver.png"} />
-                        <DropItem clickEvent={() => setMintNFT(5)} text={"GOLD"} image={"/images/gold.png"} />
-                        <DropItem clickEvent={() => setMintNFT(6)} text={"PLATINUM"} image={"/images/platinum.png"} />
-                        <DropItem clickEvent={() => setMintNFT(7)} text={"DIAMOND"} image={"/images/platinum.png"} />
+                    <div id='dropdown-mint' className='dropdown w-[100%] dropdown-bg'>
+                        <DropItem clickEvent={() => setMintNFT(1, setLevel)} text={"COPPER"} image={"/images/copper.png"} />
+                        <DropItem clickEvent={() => setMintNFT(2, setLevel)} text={"TIN"} image={"/images/tin.png"} />
+                        <DropItem clickEvent={() => setMintNFT(3, setLevel)} text={"BRONZE"} image={"/images/bronze.png"} />
+                        <DropItem clickEvent={() => setMintNFT(4, setLevel)} text={"SILVER"} image={"/images/silver.png"} />
+                        <DropItem clickEvent={() => setMintNFT(5, setLevel)} text={"GOLD"} image={"/images/gold.png"} />
+                        <DropItem clickEvent={() => setMintNFT(6, setLevel)} text={"PLATINUM"} image={"/images/platinum.png"} />
+                        <DropItem clickEvent={() => setMintNFT(7, setLevel)} text={"IRIDIUM"} image={"/images/platinum.png"} />
+                        <DropItem clickEvent={() => setMintNFT(8, setLevel)} text={"DIAMOND"} image={"/images/platinum.png"} />
                     </div>
-                    <div className='flex flex-row justify-between items-center mt-10'>
-                        <h4 className='text-white-30'>My Balance</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            $12,345
-                            <Image
-                                alt="usdt"
-                                src="/icons/usdt.png"
-                                width={28}
-                                height={28}
-                                className='ml-3'
-                            />
-                        </h4>
-                    </div>
-                    <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Mint Credit</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            $67.28
-                            <Image
-                                alt="usdt"
-                                src="/icons/usdt.png"
-                                width={28}
-                                height={28}
-                                className='ml-3'
-                            />
-                        </h4>
-                    </div>
-                    <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Boost</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            0%
-                            <Image
-                                alt="usdt"
-                                src="/icons/fast.png"
-                                width={30}
-                                height={30}
-                                className='ml-3 contrast-200'
-                            />
-                        </h4>
-                    </div>
-                    <hr className='mt-5' />
-                    <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Price</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            $100
-                            <Image
-                                alt="usdt"
-                                src="/icons/usdt.png"
-                                width={28}
-                                height={28}
-                                className='ml-3'
-                            />
-                        </h4>
-                    </div>
-                    <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Credit</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            -$67.28
-                            <Image
-                                alt="usdt"
-                                src="/icons/usdt.png"
-                                width={28}
-                                height={28}
-                                className='ml-3'
-                            />
-                        </h4>
-                    </div>
-                    <hr className='mt-5' />
-                    <div className='flex flex-row justify-between items-center mt-5'>
-                        <h4 className='text-white-30'>Total</h4>
-                        <h4 className='text-white flex flex-row items-center'>
-                            $37.72
-                            <Image
-                                alt="usdt"
-                                src="/icons/usdt.png"
-                                width={28}
-                                height={28}
-                                className='ml-3'
-                            />
-                        </h4>
-                    </div>
-                    <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-10'>
-                        <button className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm'>PURCHASE</button>
+                    <div className='flex flex-col h-[100%]'>
+                        <div className='flex flex-row justify-between items-center mt-10'>
+                            <h4 className='text-white-30'>My Balance</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                ${formatter.format(usdtBalance)}
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/usdt.png"
+                                    width={28}
+                                    height={28}
+                                    className='ml-3'
+                                />
+                            </h4>
+                        </div>
+                        <div className='flex flex-row justify-between items-center mt-5'>
+                            <h4 className='text-white-30'>Mint Credit</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                ${formatter.format(credit)}
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/usdt.png"
+                                    width={28}
+                                    height={28}
+                                    className='ml-3'
+                                />
+                            </h4>
+                        </div>
+                        <div className='flex flex-row justify-between items-center mt-5'>
+                            <h4 className='text-white-30'>Boost</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                {boost}%
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/fast.png"
+                                    width={30}
+                                    height={30}
+                                    className='ml-3 contrast-200'
+                                />
+                            </h4>
+                        </div>
+                        <hr className='mt-5' />
+                        <div className='flex flex-row justify-between items-center mt-5'>
+                            <h4 className='text-white-30'>Price</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                ${formatter.format(price)}
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/usdt.png"
+                                    width={28}
+                                    height={28}
+                                    className='ml-3'
+                                />
+                            </h4>
+                        </div>
+                        {
+                            credit > 0 ?
+                                <div className='flex flex-row justify-between items-center mt-5'>
+                                    <h4 className='text-white-30'>Credit</h4>
+                                    <h4 className='text-white flex flex-row items-center'>
+                                        -${formatter.format(credit)}
+                                        <Image
+                                            alt="usdt"
+                                            src="/icons/usdt.png"
+                                            width={28}
+                                            height={28}
+                                            className='ml-3'
+                                        />
+                                    </h4>
+                                </div>
+                                : <></>
+                        }
+                        <hr className='mt-5' />
+                        <div className='flex flex-row justify-between items-center mt-5'>
+                            <h4 className='text-white-30'>Total</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                ${formatter.format(price - credit)}
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/usdt.png"
+                                    width={28}
+                                    height={28}
+                                    className='ml-3'
+                                />
+                            </h4>
+                        </div>
+                        <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-10'>
+                            <button className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm mt-5'>PURCHASE</button>
+                        </div>
                     </div>
                 </div>
             </div>
