@@ -39,17 +39,17 @@ const HomeMintModal = ({
                     <h4 className='text-white'>Mint NFT</h4>
                     <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>
                 </div>
-                <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[35px] lg:pt-[35px] pt-[20px] overflow-y-auto'>
-                    <button className='flex flex-row items-center justify-between dropdown-box px-5 md:py-3 py-2 cp w-[100%] md:mt-5 mt-4' onClick={() => openDropDown("dropdown-mint")}>
+                <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[25px] lg:pt-[35px] pt-[20px] overflow-y-auto'>
+                    <button className='flex flex-row items-center justify-between dropdown-box md:px-5 px-4 md:py-3 py-1 cp w-[100%] md:mt-5 mt-4' onClick={() => openDropDown("dropdown-mint")}>
                         <Image
                             src={"/images/platinum.png"}
                             width={30}
                             height={50}
                             alt="nft logo"
-                            className='md:mr-5 mr-4'
+                            className='md:mr-5 mr-4 md:max-h-[50px] md:max-w-[30px] max-h-[35px] max-w-[20px]'
                             id="mint-selection"
                         />
-                        <h4 className="text-white text-center mx-5 ls-wider" id='mint-text'>PLATINUM</h4>
+                        <h4 className="text-white text-center mx-5 ls-wider  md:text-lg text-base" id='mint-text'>PLATINUM</h4>
                     </button>
                     <div id='dropdown-mint' className='dropdown w-[100%]'>
                         <DropItem clickEvent={() => setMintNFT(1)} text={"COPPER"} image={"/images/copper.png"} />

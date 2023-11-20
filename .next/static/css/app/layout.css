@@ -923,6 +923,9 @@ video {
 .max-h-full{
   max-height: 100%;
 }
+.max-h-\[35px\]{
+  max-height: 35px;
+}
 .min-h-\[130px\]{
   min-height: 130px;
 }
@@ -1070,6 +1073,12 @@ video {
 }
 .max-w-sm{
   max-width: 24rem;
+}
+.max-w-\[25px\]{
+  max-width: 25px;
+}
+.max-w-\[20px\]{
+  max-width: 20px;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -1452,6 +1461,10 @@ video {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.px-\[25px\]{
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .\!pb-0{
   padding-bottom: 0px !important;
@@ -2628,6 +2641,9 @@ input[type=number] {
   .md\:h-64{
     height: 16rem;
   }
+  .md\:max-h-\[50px\]{
+    max-height: 50px;
+  }
   .md\:min-h-\[250px\]{
     min-height: 250px;
   }
@@ -2648,6 +2664,9 @@ input[type=number] {
   }
   .md\:max-w-\[450px\]{
     max-width: 450px;
+  }
+  .md\:max-w-\[30px\]{
+    max-width: 30px;
   }
   .md\:flex-row{
     flex-direction: row;
