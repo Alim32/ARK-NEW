@@ -59,7 +59,7 @@ const Hero = ({
     function OpenConsolidation(level: any) {
         setConsolidationLevel(level);
         CloseModal("modal-selectconsolidate");
-        setTimeout(function () { OpenModal("modal-consolidate"); }, 500);
+        setTimeout(function () { OpenModal("modal-consolidate"); }, 600);
     }
 
 
