@@ -411,6 +411,7 @@ progress { /* for FF target directly the element */
 }
 
 .modal {
+    background-color: var(--bg);
     background: linear-gradient(180deg, #181823 0%, #0c0c0e 20%, #03071d 100%);
     border: solid 1px rgb(235 235 235 / 10%);
     box-shadow: 0 0 2px rgb(150 150 150 / 10%);
