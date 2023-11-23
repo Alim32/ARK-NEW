@@ -32,6 +32,14 @@ export default function Home() {
                                 </div>
                             </a>
                             <hr className="md:w-[50%] w-[100%] my-5" />
+                            <a className="flex flex-row mb-0 cp" href='/nfts'>
+                                <img className="main-menu-icon p-[2px] mt-2" src="/images/MENU/spark_lottery.png" />
+                                <div className="flex flex-col px-5 pr-0">
+                                    <h4 className="text-white mb-0">Gifting</h4>
+                                    <p className="text-white-60 mb-0">Gift someone you know credit to mint a NFT</p>
+                                </div>
+                            </a>
+                            <hr className="md:w-[50%] w-[100%] my-5" />
                             <div className="flex flex-row mb-0 cp">
                                 <img className="main-menu-icon mbb-l mt-2" src="/images/MENU/media.png" />
                                 <div className="flex flex-col px-5 pr-0">

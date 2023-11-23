@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useChainId } from "wagmi";
 import { Web3Button } from '@/components/Layout/Web3Button';
 import { Hero } from '@/components/NFTS/Hero';
 import { InjectedConnector } from "wagmi/connectors/injected";
@@ -11,6 +11,7 @@ const Main = ({
 }: any) => {
     const [hasMounted, setHasMounted] = useState(false);
     const { address, isConnected = false, status } = useAccount();
+    const chain = useChainId();
     const { connect } = useConnect({
         connector: new InjectedConnector(),
     });
@@ -31,13 +32,13 @@ const Main = ({
 
     return (
         <div>
-            {IsConnected
+            {IsConnected && chain == 137
                 ?
                 <div className='container h-100 w-100 mx-auto'>
                     <Hero address={address} />              
                 </div>
                 :
-                <Web3Button />
+                <Web3Button connected={IsConnected} chainid={chain} />
             }
         </div>
     );

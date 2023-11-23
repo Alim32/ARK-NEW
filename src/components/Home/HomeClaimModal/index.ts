@@ -1,0 +1,1 @@
+export { default as HomeClaimModal } from './HomeClaimModal';

@@ -4,10 +4,10 @@ import { ca, abi, getNFTBalance, GetNFTNameByLevel, GetBoostPercentageByLevelAnd
 import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
-import { HomeStatsModal } from '@/components/Home/HomeStatsModal';
 import { useEffect, useState } from "react";
 import { readContracts } from "wagmi";
-
+import { ConsolidateModal } from "@/components/NFTS/ConsolidateModal";
+import { SelectConsolidationModal } from "@/components/NFTS/SelectConsolidationModal";
 
 const NftBlock = ({    
     id,
@@ -39,7 +39,7 @@ const NftBlock = ({
                     <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Boost:</p>
                     <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>{boostperc}%</p>
                 </div>
-                <button className='btn-purple-og py-1 sm:text-base text-sm font-semibold mt-5 w-[90%] mx-auto'>Options</button>
+                <button className='btn-purple-og py-1 sm:text-base text-sm font-semibold mt-5 w-[90%] mx-auto' onClick={() => OpenModal("modal-selectconsolidate")}>Options</button>
 
             </div>
 
@@ -53,8 +53,15 @@ const Hero = ({
     const [nftBalances, setNftBalances] = useState([]);
     const [nftData, setData] = useState([]);
     const [dataLength, setDataLength] = useState(0);
-    var balance = getNFTBalance(address);
-    var totalWorth = 0;
+    const [consolidationLevel, setConsolidationLevel] = useState(2);
+    var balance = getNFTBalance(address);    
+
+    function OpenConsolidation(level: any) {
+        setConsolidationLevel(level);
+        CloseModal("modal-selectconsolidate");
+        setTimeout(function () { OpenModal("modal-consolidate"); }, 500);
+    }
+
 
     useEffect(() => {
         async function tokenOfOwnerByIndex(id: number) {
@@ -66,7 +73,7 @@ const Hero = ({
                 abi: abi,
                 functionName: 'tokenOfOwnerByIndex',
                 args: [address, id]
-            }).then((data: any) => {
+            }).then((data: any) => {                
                 returnVal = Number(data);
             });
 
@@ -149,7 +156,6 @@ const Hero = ({
                 _data.push(nft);
             }
 
-            console.log(_data);
             setDataLength(nftBalances.length);
             setData(_data);
         }
@@ -188,7 +194,7 @@ const Hero = ({
                 </div>
         }
     }
-
+    
     return (
         <ScrollVisibility>
             <div className='flex flex-col w-100 justify-start items-start 2xl:pb-[20vh] lg:pb-[5vh]'>
@@ -215,7 +221,9 @@ const Hero = ({
                 <div className='flex flex-wrap mt-10 sm:justify-start justify-center w-[100%]'>
                     {listNFTs}
                 </div>
-            </div>            
+            </div>
+            <SelectConsolidationModal id="modal-selectconsolidate" closeEvent={() => CloseModal("modal-selectconsolidate")} selector={OpenConsolidation} />
+            <ConsolidateModal id="modal-consolidate" closeEvent={() => CloseModal("modal-consolidate")} address={address} data={nftData} level={consolidationLevel} />
         </ScrollVisibility>
     );
 };

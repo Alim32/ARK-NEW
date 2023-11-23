@@ -1,5 +1,5 @@
 "use client";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useChainId } from "wagmi";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { Web3Button } from '@/components/Layout/Web3Button';
 import { Legacy } from '@/components/Legacy/Legacy';
@@ -11,6 +11,7 @@ const Main = ({
 }: any) => {
     const [hasMounted, setHasMounted] = useState(false);
     const { address, isConnected = false, status } = useAccount();
+    const chain = useChainId();
     const { connect } = useConnect({
         connector: new InjectedConnector(),
     });
@@ -31,7 +32,7 @@ const Main = ({
 
     return (
         <div>
-            {IsConnected
+            {IsConnected && chain == 137
                 ?
                 <ScrollVisibility>
                     <div className='container h-100 w-100 mx-auto'>
@@ -39,7 +40,7 @@ const Main = ({
                     </div>
                 </ScrollVisibility>
                 :
-                <Web3Button />
+                <Web3Button connected={IsConnected} chainid={chain} />
             }
         </div>
     );

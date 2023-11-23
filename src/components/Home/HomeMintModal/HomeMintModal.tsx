@@ -39,6 +39,14 @@ const HomeMintModal = ({
     var usdtBalance = getUSDTBalance(address);
     var boost = getCurrentBoostOfLevel(level, currentTier);
 
+    var usedCredit = 0;
+
+    if (price < credit) {
+        usedCredit = price;
+    } else {
+        usedCredit = credit;
+    }
+    
     return (
         <div className='modal-overlay' id={id + "overlay"}>
             <div className="modal" id={id}>
@@ -127,7 +135,7 @@ const HomeMintModal = ({
                                 <div className='flex flex-row justify-between items-center mt-5'>
                                     <h4 className='text-white-30'>Credit</h4>
                                     <h4 className='text-white flex flex-row items-center'>
-                                        -${formatter.format(credit)}
+                                        -${formatter.format(usedCredit)}
                                         <Image
                                             alt="usdt"
                                             src="/icons/usdt.png"
@@ -143,7 +151,7 @@ const HomeMintModal = ({
                         <div className='flex flex-row justify-between items-center mt-5'>
                             <h4 className='text-white-30'>Total</h4>
                             <h4 className='text-white flex flex-row items-center'>
-                                ${formatter.format(price - credit)}
+                                ${formatter.format(price - usedCredit)}
                                 <Image
                                     alt="usdt"
                                     src="/icons/usdt.png"
@@ -154,7 +162,7 @@ const HomeMintModal = ({
                             </h4>
                         </div>
                         <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-5'>
-                            <MintButton address={address}/>
+                            <MintButton level={level} address={address} />
                         </div>
                     </div>
                 </div>

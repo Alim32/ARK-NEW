@@ -169,7 +169,7 @@ export function getNFTBalance(address) {
         return Number(data);
     }
     catch (error) {
-        console.log(error)
+        console.log("getNFTBalance() " + error.message);
         return 0;
     }
 }
