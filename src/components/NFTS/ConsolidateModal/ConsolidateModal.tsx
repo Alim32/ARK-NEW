@@ -65,7 +65,7 @@ const ConsolidateModal = ({
         level
     }: any) => {
         const styles = {
-            background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.png)`,
+            background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
             backgroundSize: "contain",
             backgroundPosition: "center bottom",
             backgroundRepeat: "no-repeat"
