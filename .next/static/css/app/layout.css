@@ -2195,7 +2195,7 @@ progress { /* for FF target directly the element */
     display: none;
     transition: ease-in-out;
     overflow-y: auto;
-    z-index: 999;
+    z-index: 99999;
 }
 
 @media(max-width: 1024px) {
