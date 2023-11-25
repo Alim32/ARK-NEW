@@ -76,6 +76,7 @@ const Hero = ({
             for (let i = 0; i < balance; i++) {
                 var tokenId = Number(await tokenOfOwnerByIndex(i));
                 nftData.push(Number(tokenId));
+                break;
             }
 
             setNftBalances(nftData);
