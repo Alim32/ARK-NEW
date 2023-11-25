@@ -911,9 +911,6 @@ video {
 .max-h-72{
   max-height: 18rem;
 }
-.max-h-\[180px\]{
-  max-height: 180px;
-}
 .max-h-\[325px\]{
   max-height: 325px;
 }
@@ -2440,6 +2437,7 @@ input[type=number] {
 }
 
 .consolidate-box {
+    background: black;
     border-radius: 15px;
     -webkit-backdrop-filter: blur(25px);
             backdrop-filter: blur(25px);
@@ -2852,9 +2850,6 @@ input[type=number] {
   }
   .md\:h-64{
     height: 16rem;
-  }
-  .md\:max-h-\[210px\]{
-    max-height: 210px;
   }
   .md\:max-h-\[50px\]{
     max-height: 50px;

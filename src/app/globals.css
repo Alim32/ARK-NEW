@@ -672,6 +672,7 @@ input[type=number] {
 }
 
 .consolidate-box {
+    background: black;
     border-radius: 15px;
     backdrop-filter: blur(25px);
     box-shadow: 0 0 1px 1px rgb(255,255,255,0.1);

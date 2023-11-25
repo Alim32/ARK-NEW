@@ -73,27 +73,28 @@ const ConsolidateModal = ({
             id,
             value,
             tier,
-            level
+            level,
+            name
         }: any) => {
-            const styles = {
-                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
-                backgroundSize: "contain",
-                backgroundPosition: "center bottom",
-                backgroundRepeat: "no-repeat"
-            }
+            //const styles = {
+            //    background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
+            //    backgroundSize: "contain",
+            //    backgroundPosition: "center bottom",
+            //    backgroundRepeat: "no-repeat"
+            //}
 
-            if (window.innerWidth < 1000) {
-                styles.background = "black";
-            }
+            //if (window.innerWidth < 1000) {
+            //    styles.background = "black";
+            //}
 
             var active = "";
 
             if (selectedNFTs.includes(id)) { active = 'active'; }
 
             return (
-                <div id={`block-${id}`} className={`consolidate-box flex flex-col items-center justify-center md:mx-[0.625rem] mx-1 md:p-5 p-5 px-4 cp ${active}`} style={styles} onClick={() => selectBlock(id, value, tier, level)}>
+                <div id={`block-${id}`} className={`consolidate-box flex flex-col items-center justify-center md:mx-[0.625rem] mx-1 md:p-5 p-5 px-4 cp ${active}`} onClick={() => selectBlock(id, value, tier, level)}>
                     <p className='md:text-base text-sm text-white-80'>#{id}</p>
-                    <p className='md:text-base text-sm text-white-80'>{GetNFTNameByLevel(level)}</p>
+                    <p className='md:text-base text-sm text-white-80'>{name}</p>
                     <p className='md:text-base text-sm text-white-80 font-semibold'>Tier {tier}</p>
                 </div>
             )
@@ -131,23 +132,23 @@ const ConsolidateModal = ({
                         <div className='flex flex-col h-[100%]'>
                             <div className='flex flex-col items-start xl:justify-between justify-start h-[100%]'>
                                 <div className='flex flex-wrap md:mt-5 mt-4  mb-3 overflow-y-auto selection-box xl:mb-0 mb-1 xl:mt-0 mt-5 console-row'>
-                                    <NftBlock id={1} level={5} tier={1} value={4000} />
-                                    <NftBlock id={2} level={4} tier={2} value={1000} />
-                                    <NftBlock id={3} level={6} tier={3} value={10000} />
-                                    <NftBlock id={4} level={3} tier={4} value={500} />
-                                    <NftBlock id={5} level={2} tier={5} value={250} />
-                                    <NftBlock id={6} level={1} tier={6} value={100} />
-                                    <NftBlock id={7} level={4} tier={2} value={1000} />
-                                    <NftBlock id={8} level={4} tier={2} value={1000} />
-                                    <NftBlock id={9} level={4} tier={2} value={1000} />
-                                    <NftBlock id={10} level={4} tier={2} value={1000} />
-                                    <NftBlock id={11} level={3} tier={4} value={500} />
-                                    <NftBlock id={12} level={2} tier={5} value={250} />
-                                    <NftBlock id={13} level={1} tier={6} value={100} />
-                                    <NftBlock id={14} level={4} tier={2} value={1000} />
-                                    <NftBlock id={15} level={4} tier={2} value={1000} />
-                                    <NftBlock id={16} level={4} tier={2} value={1000} />
-                                    <NftBlock id={17} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={1} level={5} tier={1} value={4000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={2} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={3} level={6} tier={3} value={10000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={4} level={3} tier={4} value={500} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={5} level={2} tier={5} value={250} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={6} level={1} tier={6} value={100} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={7} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={8} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={9} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={10} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={11} level={3} tier={4} value={500} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={12} level={2} tier={5} value={250} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={13} level={1} tier={6} value={100} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={14} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={15} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={16} level={4} tier={2} value={1000} />
+                                    <NftBlock name={GetNFTNameByLevel(level)} id={17} level={4} tier={2} value={1000} />
                                 </div>
                                 <div className='flex flex-col w-[100%] hidden'>
                                     <div className='flex flex-row justify-between items-center  md:mt-4 mt-2'>
