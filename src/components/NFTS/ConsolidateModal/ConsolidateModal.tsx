@@ -82,7 +82,11 @@ const ConsolidateModal = ({
                 backgroundPosition: "center bottom",
                 backgroundRepeat: "no-repeat"
             }
-    
+
+            if (window.innerWidth < 1000) {
+                styles.background = "black";
+            }
+
             var active = "";
 
             if (selectedNFTs.includes(id)) { active = 'active'; }
