@@ -130,7 +130,7 @@ const ConsolidateModal = ({
                     <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[25px] lg:pt-[35px] pt-[0px] overflow-y-auto'>
                         <div className='flex flex-col h-[100%]'>
                             <div className='flex flex-col items-start xl:justify-between justify-start h-[100%]'>
-                                <div className='flex flex-wrap md:mt-5 mt-4 md:max-h-[210px] max-h-[180px] mb-3 overflow-y-auto selection-box xl:mb-0 mb-1 xl:mt-0 mt-5 console-row'>
+                                <div className='flex flex-wrap md:mt-5 mt-4  mb-3 overflow-y-auto selection-box xl:mb-0 mb-1 xl:mt-0 mt-5 console-row'>
                                     <NftBlock id={1} level={5} tier={1} value={4000} />
                                     <NftBlock id={2} level={4} tier={2} value={1000} />
                                     <NftBlock id={3} level={6} tier={3} value={10000} />
