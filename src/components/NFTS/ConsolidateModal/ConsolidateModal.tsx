@@ -59,6 +59,7 @@ const ConsolidateModal = ({
         closeEvent();
         setSelectedNfts([]);
         setNftValue(0);
+        setLevel(0);
     }
 
     if (level > 0) {
@@ -237,7 +238,7 @@ const ConsolidateModal = ({
                 <div className="modal" id={id}>
                     <div className='flex flex-row justify-between lg:items-start items-center w-100 h-[`9.5%] lg:px-[50px] px-[35px] lg:pt-[35px] pt-[20px]'>
                         <h4 className='text-white'>Select a NFT level</h4>
-                        <button className='text-white font-semibold text-2xl x-btn' onClick={() => closeEvent()}>X</button>
+                        <button className='text-white font-semibold text-2xl x-btn' onClick={() => ClosePage()}>X</button>
                     </div>
                     <div className='flex flex-col justify-start items-start content-center h-[90.5%] w-[100%] lg:px-[50px] px-[25px] lg:pt-[35px] pt-[20px]'>
                         <NFTBlock level={2} name={"Tin"} />
