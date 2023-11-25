@@ -141,9 +141,9 @@ const ConsolidateModal = ({
                                     <NftBlock name={GetNFTNameByLevel(level)} id={7} level={4} tier={2} value={1000} />
                                     <NftBlock name={GetNFTNameByLevel(level)} id={8} level={4} tier={2} value={1000} />
                                     <NftBlock name={GetNFTNameByLevel(level)} id={9} level={4} tier={2} value={1000} />
-                                    <NftBlock name={GetNFTNameByLevel(level)} id={10} level={4} tier={2} value={1000} />
-                                    <NftBlock name={GetNFTNameByLevel(level)} id={11} level={3} tier={4} value={500} />
-                                    <NftBlock name={GetNFTNameByLevel(level)} id={12} level={2} tier={5} value={250} />
+                                    {/*<NftBlock name={GetNFTNameByLevel(level)} id={10} level={4} tier={2} value={1000} />*/}
+                                    {/*<NftBlock name={GetNFTNameByLevel(level)} id={11} level={3} tier={4} value={500} />*/}
+                                    {/*<NftBlock name={GetNFTNameByLevel(level)} id={12} level={2} tier={5} value={250} />*/}
                                     {/*<NftBlock name={GetNFTNameByLevel(level)} id={13} level={1} tier={6} value={100} />*/}
                                     {/*<NftBlock name={GetNFTNameByLevel(level)} id={14} level={4} tier={2} value={1000} />*/}
                                     {/*<NftBlock name={GetNFTNameByLevel(level)} id={15} level={4} tier={2} value={1000} />*/}
