@@ -76,17 +76,13 @@ const ConsolidateModal = ({
             level,
             name
         }: any) => {
-            //const styles = {
-            //    background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
-            //    backgroundSize: "contain",
-            //    backgroundPosition: "center bottom",
-            //    backgroundRepeat: "no-repeat"
-            //}
-
-            //if (window.innerWidth < 1000) {
-            //    styles.background = "black";
-            //}
-
+            const styles = {
+                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
+                backgroundSize: "contain",
+                backgroundPosition: "center bottom",
+                backgroundRepeat: "no-repeat"
+            }
+    
             var active = "";
 
             if (selectedNFTs.includes(id)) { active = 'active'; }
