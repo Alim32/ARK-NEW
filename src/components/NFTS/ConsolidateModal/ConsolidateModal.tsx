@@ -134,22 +134,22 @@ const ConsolidateModal = ({
                                     <NftBlock id={1} level={5} tier={1} value={4000} />
                                     <NftBlock id={2} level={4} tier={2} value={1000} />
                                     <NftBlock id={3} level={6} tier={3} value={10000} />
-                                    {/*<NftBlock id={4} level={3} tier={4} value={500} />*/}
-                                    {/*<NftBlock id={5} level={2} tier={5} value={250} />*/}
-                                    {/*<NftBlock id={6} level={1} tier={6} value={100} />*/}
-                                    {/*<NftBlock id={7} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={8} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={9} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={10} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={11} level={3} tier={4} value={500} />*/}
-                                    {/*<NftBlock id={12} level={2} tier={5} value={250} />*/}
-                                    {/*<NftBlock id={13} level={1} tier={6} value={100} />*/}
-                                    {/*<NftBlock id={14} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={15} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={16} level={4} tier={2} value={1000} />*/}
-                                    {/*<NftBlock id={17} level={4} tier={2} value={1000} />*/}
+                                    <NftBlock id={4} level={3} tier={4} value={500} />
+                                    <NftBlock id={5} level={2} tier={5} value={250} />
+                                    <NftBlock id={6} level={1} tier={6} value={100} />
+                                    <NftBlock id={7} level={4} tier={2} value={1000} />
+                                    <NftBlock id={8} level={4} tier={2} value={1000} />
+                                    <NftBlock id={9} level={4} tier={2} value={1000} />
+                                    <NftBlock id={10} level={4} tier={2} value={1000} />
+                                    <NftBlock id={11} level={3} tier={4} value={500} />
+                                    <NftBlock id={12} level={2} tier={5} value={250} />
+                                    <NftBlock id={13} level={1} tier={6} value={100} />
+                                    <NftBlock id={14} level={4} tier={2} value={1000} />
+                                    <NftBlock id={15} level={4} tier={2} value={1000} />
+                                    <NftBlock id={16} level={4} tier={2} value={1000} />
+                                    <NftBlock id={17} level={4} tier={2} value={1000} />
                                 </div>
-                                <div className='flex flex-col w-[100%]'>
+                                <div className='flex flex-col w-[100%] hidden'>
                                     <div className='flex flex-row justify-between items-center  md:mt-4 mt-2'>
                                         <div className='flex flex-row items-center'>
                                             <p className='md:text-lg md:text-base text-sm text-white-60 lg:ls-widest ls-wide'>MINT CREDIT</p>
