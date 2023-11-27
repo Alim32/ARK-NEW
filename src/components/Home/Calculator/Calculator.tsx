@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import { getTotalShares, getContributions, getMaxSupply } from "@/scripts/legacy";
+//import { getTotalShares, getContributions, getMaxSupply } from "@/scripts/legacy";
 import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/home';
 import { useState } from 'react';
-import { Dropdown } from "../../MISC/Dropdown";
 import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { initialize } from "next/dist/server/lib/render-server";
 
@@ -57,10 +56,10 @@ const Calculator = ({
     const [shares, setShares] = useState(10000);
 
     var activeId = 1;
-    var totalShares = getTotalShares();
+    var totalShares = 0;//getTotalShares();
     var values = getInitValues(sliderVal, shares, totalShares);
-    var totalContribution = getContributions();
-    var maxSupply = getMaxSupply();
+    var totalContribution = 0;//getContributions();
+    var maxSupply = 0;//getMaxSupply();
     var percentage = 0;
     var activeTier = "Tier 1";
     var activePercentage = 25;

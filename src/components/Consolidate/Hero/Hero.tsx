@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ca, abi, getNFTBalance, getMintCredit, GetNFTNameByLevel, getPriceOfLevel } from "@/scripts/legacy";
+import { ca, abi, GetNFTNameByLevel } from "@/scripts/legacy";
 import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, setNewNFT, openDropDown } from '@/scripts/home';
 import { getUSDTBalance } from '@/scripts/general';
@@ -38,10 +38,10 @@ const Hero = ({
     const [dataLength, setDataLength] = useState(0);
     const [selectedNFTs, setSelectedNfts] = useState(initialValue);    
     const [level, setLevel] = useState(6);
-    var balance = getNFTBalance(address);    
-    var price = getPriceOfLevel(level);
+    var balance = 0;//getNFTBalance(address);    
+    var price = 0;//getPriceOfLevel(level);
     var usdtBalance = getUSDTBalance(address);
-    var credit = getMintCredit(address);
+    var credit = 0;//getMintCredit(address);
 
     useEffect(() => {
         async function tokenOfOwnerByIndex(id: number) {
@@ -239,7 +239,7 @@ const Hero = ({
                 <div className='mx-auto'>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
                         <div className='flex flex-col items-center'>
-                            <img alt="ARK connect" loading="lazy" width="45" height="45" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
+                            <Image alt="ARK connect" loading="lazy" width="45" height="45" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
                             <p className='text-base text-white-60 ls-wide'>LOADING</p>
                         </div>
                         <p className='md:text-lg text-base text-white-60'></p>
@@ -265,7 +265,7 @@ const Hero = ({
                 <h2 className="text-white text-center md:tracking-[0.1em]  md:mx-0 mx-3">
                     Consolidate NFTs
                 </h2>
-                <p className='text-white-60 mb-5 md:mx-0 mx-3'>Select the NFTs you'd like to combine to mint a higher level NFT.</p>
+                <p className='text-white-60 mb-5 md:mx-0 mx-3'>Select the NFTs you&apos;d like to combine to mint a higher level NFT.</p>
                 <hr className='h-[2px] bg-white-25 w-[100%]' />                
                 <div className='flex md:flex-row flex-col md:mt-5 w-[100%] items-start'>
                     <div className='flex flex-wrap md:items-start items-center text-center justify-start md:w-[50%] w-[100%] p-5'>

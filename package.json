@@ -24,7 +24,7 @@
     "eslint-config-next": "13.4.13",
     "framer-motion": "^10.16.4",
     "jquery": "^3.7.1",
-    "next": "^14.0.3",
+    "next": "^13.4.13",
     "node-fetch": "^3.3.2",
     "pino": "^8.16.2",
     "pino-pretty": "^10.2.3",

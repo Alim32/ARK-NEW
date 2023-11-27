@@ -138,7 +138,7 @@ const HomeStatsModal = ({
                 <div>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
                         <div className='flex flex-col items-center'>
-                            <img alt="ARK connect" loading="lazy" width="35" height="35" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
+                            <Image alt="ARK connect" loading="lazy" width="35" height="35" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
                             <p className='text-sm text-white-60 ls-wide'>LOADING</p>
                         </div>
                         <p className='md:text-lg md:text-base text-sm text-white-60'></p>

@@ -5,16 +5,16 @@ export const abiUSDT = [{ "inputs": [], "stateMutability": "nonpayable", "type":
 
 export function getUSDTBalance(address) {
     try {
-        const { data, isError, isLoading } = useContractRead({
-            chainId: 137,
-            address: caUSDT,
-            abi: abiUSDT,
-            functionName: 'balanceOf',
-            args: [address],
-            watch: true
-        })
+        //const { data, isError, isLoading } = useContractRead({
+        //    chainId: 137,
+        //    address: caUSDT,
+        //    abi: abiUSDT,
+        //    functionName: 'balanceOf',
+        //    args: [address],
+        //    watch: true
+        //})
         
-        return Number(data) / Math.pow(10, 6);
+        return 0;// Number(data) / Math.pow(10, 6);
     }
     catch (error) {
         console.log(error)

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { getNFTBalance, getShares, getLifetimeRewards, getClaimableRewards, getMintCredit, ca, abi } from "@/scripts/legacy";
+import { ca, abi } from "@/scripts/legacy"; //getNFTBalance, getShares, getLifetimeRewards, getClaimableRewards, getMintCredit,
 import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
@@ -15,11 +15,11 @@ const Hero = ({
     address
 }: any) => {
     const [nftBalances, setNftBalances] = useState([]);
-    var shares = getShares(address);
-    var balance = getNFTBalance(address);
-    var rewards = getClaimableRewards(address);
-    var claimedRewards = getLifetimeRewards(address);
-    var mintCredit = getMintCredit(address);
+    var shares = 0;//getShares(address);
+    var balance = 0;//getNFTBalance(address);
+    var rewards = 0;//getClaimableRewards(address);
+    var claimedRewards = 0;//getLifetimeRewards(address);
+    var mintCredit = 0;//getMintCredit(address);
 
     var width = window.innerWidth;
     var filename = "/images/arc_main.png";

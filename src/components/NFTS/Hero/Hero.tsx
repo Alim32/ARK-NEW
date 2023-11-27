@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ca, abi, getNFTBalance, GetNFTNameByLevel, GetBoostPercentageByLevelAndTier } from "@/scripts/legacy";
+import { ca, abi, GetNFTNameByLevel, GetBoostPercentageByLevelAndTier } from "@/scripts/legacy";
 import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
@@ -52,7 +52,7 @@ const Hero = ({
     const [nftBalances, setNftBalances] = useState([]);
     const [nftData, setData] = useState([]);
     const [dataLength, setDataLength] = useState(0);
-    var balance = getNFTBalance(address);    
+    var balance = 0;// getNFTBalance(address);    
 
     useEffect(() => {
         async function tokenOfOwnerByIndex(id: number) {
@@ -177,7 +177,7 @@ const Hero = ({
                 <div className='mx-auto'>
                     <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
                         <div className='flex flex-col items-center'>
-                            <img alt="ARK connect" loading="lazy" width="45" height="45" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
+                            <Image alt="ARK connect" loading="lazy" width="45" height="45" decoding="async" data-nimg="1" className="object-fit-contain mb-5 bg-transparent mx-auto" src="/video/loader.gif" />
                             <p className='text-base text-white-60 ls-wide'>LOADING</p>
                         </div>
                         <p className='md:text-lg text-base text-white-60'></p>

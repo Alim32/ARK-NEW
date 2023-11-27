@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { formatterNoDec, formatter, openDropDown } from "@/scripts/home";
 import { getUSDTBalance } from "@/scripts/general";
-import { GetNFTNameByLevel, getPriceOfLevel } from "../../../scripts/legacy";
+import { GetNFTNameByLevel } from "../../../scripts/legacy";
 import { useState } from "react";
 
 
@@ -18,7 +18,7 @@ const ConsolidateModal = ({
     const [level, setLevel] = useState(0);
     //const [price, setPrice] = useState(0);
     const [selectedNFTs, setSelectedNfts] = useState(initialValue);    
-    var price = getPriceOfLevel(level);
+    var price = 0;//getPriceOfLevel(level);
     var usdtBalance = getUSDTBalance(address);
 
     function selectBlock(id: any, value = 0, tier = 0, level = 0) {

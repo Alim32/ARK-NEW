@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { formatterNoDec, formatter, openDropDown } from "@/scripts/home";
 import { getUSDTBalance } from "@/scripts/general";
-import { getPriceOfLevel, getCurrentBoostOfLevel, getCurrentTier } from "@/scripts/legacy";
+import { getCurrentBoostOfLevel } from "@/scripts/legacy";
 import { MintButton } from "@/components/Layout/MintButton";
 import { setMintNFT } from "@/scripts/home";
 import { useState } from 'react';
@@ -34,8 +34,8 @@ const HomeMintModal = ({
     address
 }: any) => {
     const [level, setLevel] = useState(8);
-    var currentTier = getCurrentTier();
-    var price = getPriceOfLevel(level);
+    var currentTier = 0;//getCurrentTier();
+    var price = 0;//getPriceOfLevel(level);
     var usdtBalance = getUSDTBalance(address);
     var boost = getCurrentBoostOfLevel(level, currentTier);
 

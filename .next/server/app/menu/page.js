@@ -1,1 +1,628 @@
-(()=>{var e={};e.id=106,e.ids=[106],e.modules={55403:e=>{"use strict";e.exports=require("next/dist/client/components/request-async-storage.external")},94749:e=>{"use strict";e.exports=require("next/dist/client/components/static-generation-async-storage.external")},20399:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},25528:e=>{"use strict";e.exports=require("next/dist\\client\\components\\action-async-storage.external.js")},91877:e=>{"use strict";e.exports=require("next/dist\\client\\components\\request-async-storage.external.js")},25319:e=>{"use strict";e.exports=require("next/dist\\client\\components\\static-generation-async-storage.external.js")},71017:e=>{"use strict";e.exports=require("path")},57310:e=>{"use strict";e.exports=require("url")},27818:(e,s,t)=>{"use strict";t.r(s),t.d(s,{GlobalError:()=>l.a,__next_app__:()=>x,originalPathname:()=>d,pages:()=>o,routeModule:()=>h,tree:()=>m});var a=t(67096),i=t(16132),r=t(37284),l=t.n(r),n=t(32564),c={};for(let e in n)0>["default","tree","pages","GlobalError","originalPathname","__next_app__","routeModule"].indexOf(e)&&(c[e]=()=>n[e]);t.d(s,c);let m=["",{children:["menu",{children:["__PAGE__",{},{page:[()=>Promise.resolve().then(t.bind(t,83235)),"C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\menu\\page.tsx"]}]},{metadata:{icon:[async e=>(await Promise.resolve().then(t.bind(t,73881))).default(e)],apple:[],openGraph:[],twitter:[],manifest:void 0}}]},{layout:[()=>Promise.resolve().then(t.bind(t,47201)),"C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\layout.tsx"],"not-found":[()=>Promise.resolve().then(t.t.bind(t,9291,23)),"next/dist/client/components/not-found-error"],metadata:{icon:[async e=>(await Promise.resolve().then(t.bind(t,73881))).default(e)],apple:[],openGraph:[],twitter:[],manifest:void 0}}],o=["C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\menu\\page.tsx"],d="/menu/page",x={require:t,loadChunk:()=>Promise.resolve()},h=new a.AppPageRouteModule({definition:{kind:i.x.APP_PAGE,page:"/menu/page",pathname:"/menu",bundlePath:"",filename:"",appPaths:[]},userland:{loaderTree:m}})},93772:(e,s,t)=>{Promise.resolve().then(t.t.bind(t,53579,23)),Promise.resolve().then(t.t.bind(t,30619,23)),Promise.resolve().then(t.t.bind(t,81459,23)),Promise.resolve().then(t.t.bind(t,13456,23)),Promise.resolve().then(t.t.bind(t,50847,23)),Promise.resolve().then(t.t.bind(t,57303,23))},64713:(e,s,t)=>{Promise.resolve().then(t.bind(t,62626)),Promise.resolve().then(t.bind(t,36914))},79609:(e,s,t)=>{Promise.resolve().then(t.bind(t,66163))},62626:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>m});var a=t(53854),i=t(41956),r=t.n(i),l=t(75548),n=t.n(l),c=t(51018);let m=()=>{let e=(0,c.usePathname)();return a.jsx("nav",{className:"mobilebar",id:"mobilebar",children:(0,a.jsxs)("div",{className:"flex flex-row items-center justify-evenly pt-2",children:[a.jsx(n(),{href:"/legacy",children:a.jsx(r(),{src:"/icons/tab_nft.png",height:30,width:30,className:`mobile-icon mb-[5px] ${"/legacy"==e?"active":""}`,id:"mobtablegacy",alt:"home"})}),a.jsx(n(),{href:"/",children:a.jsx(r(),{src:"/icons/ark_a.svg",height:30,width:30,className:`mobile-icon ${"/"==e?"active":""}`,id:"mobtabhome",alt:"home"})}),a.jsx(n(),{href:"/menu",children:a.jsx(r(),{src:"/icons/tab_more.png",height:30,width:30,className:`mobile-icon mb-[7px] ${"/menu"==e?"active":""}`,id:"mobtabmenu",alt:"home"})})]})})}},36914:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>n});var a=t(53854),i=t(41956),r=t.n(i),l=t(51018);let n=()=>{let e=(0,l.usePathname)();return a.jsx("nav",{className:"sidebar",children:(0,a.jsxs)("div",{className:"flex flex-col items-start justify-start",children:[a.jsx(r(),{alt:"ARK Logo",width:100,height:35,className:"brand-img",src:"/images/logo.png"}),a.jsx("a",{id:"tabhome",className:`menu-item mt-[75px] mb-3 ${"/"==e?"active":""}`,href:"/",children:"Home"}),a.jsx("a",{id:"tablegacy",className:`menu-item my-3 ${"/legacy"==e?"active":""}`,href:"/legacy",children:"Legacy NFT"}),a.jsx("a",{id:"tabmenu",className:`menu-item my-3 ${"/menu"==e?"active":""}`,href:"/menu",children:"Menu"})]})})}},66163:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>n});var a=t(53854),i=t(34218),r=t(45881),l=t(4751);let n=({children:e})=>{let[s,t]=(0,i.useState)(!1),n=(0,i.useRef)(null);return(0,i.useEffect)(()=>{let e=()=>{if(n.current){let e=n.current.getBoundingClientRect();t(e.top<=window.innerHeight)}};return window.addEventListener("scroll",e),e(),()=>{window.removeEventListener("scroll",e)}},[]),a.jsx(r.W_,{name:"fade-in-section",className:"",children:a.jsx(l.E.div,{initial:{opacity:0,y:200},animate:{opacity:s?1:0,y:s?0:150},transition:{duration:1,ease:"easeInOut"},ref:n,children:e})})}},47201:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>p,metadata:()=>h});var a=t(4656);t(5023),t(56155);var i=t(95153);let r=(0,i.createProxy)(String.raw`C:\Users\alexd\source\repos\ARK\ARK NEW HOME\src\components\Layout\Sidebar\Sidebar.tsx`),{__esModule:l,$$typeof:n}=r,c=r.default,m=(0,i.createProxy)(String.raw`C:\Users\alexd\source\repos\ARK\ARK NEW HOME\src\components\Layout\Mobilebar\Mobilebar.tsx`),{__esModule:o,$$typeof:d}=m,x=m.default,h={title:"Ark Fi - DeFi Simplified",description:"Ark Finance"};function p({children:e}){return a.jsx("html",{lang:"en",className:"scroll-smooth",children:(0,a.jsxs)("body",{className:"",children:[a.jsx("main",{className:"overflow-hidden mx-auto lg:pt-[12.5vh] pt-[60px]",children:e}),a.jsx(x,{}),a.jsx(c,{})]})})}},83235:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>m});var a=t(4656),i=t(95153);let r=(0,i.createProxy)(String.raw`C:\Users\alexd\source\repos\ARK\ARK NEW HOME\src\components\ScrollVisibility\ScrollVisibility.tsx`),{__esModule:l,$$typeof:n}=r,c=r.default;function m(){return a.jsx(a.Fragment,{children:a.jsx(c,{children:a.jsx("div",{className:"container-fluid",children:(0,a.jsxs)("div",{className:"flex lg:flex-row flex-col justify-center items-center",children:[(0,a.jsxs)("div",{className:"flex flex-col main-menu-1 lg:block hidden",children:[a.jsx("h1",{className:"text-white",children:"Menu"}),a.jsx("p",{className:"mt-3 text-white-60 w-75 pr-5 mr-4",children:"Manage your Dapp, Learn about ARK, Stay up to date"})]}),(0,a.jsxs)("div",{id:"main-menu-content",className:"flex flex-col md:w-[52.5%] w-[100%] md:pl-[100px] px-4 pb-10",children:[a.jsx("h2",{className:"text-white mb-4 pb-3",children:"Features"}),(0,a.jsxs)("a",{className:"flex flex-row mb-0 cp",href:"/nfts",children:[a.jsx("img",{className:"main-menu-icon p-[2px] mt-2",src:"/images/MENU/NFT icon.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Manage NFTs"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Inspect, transfer or level up your NFTs."})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),(0,a.jsxs)("a",{className:"flex flex-row mb-0 cp",href:"/consolidate",children:[a.jsx("img",{className:"main-menu-icon p-[2px] mt-2",src:"/images/MENU/consolidate.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Consolidate NFTs"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Combine multiple lower NFTs into a higher level."})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),(0,a.jsxs)("a",{className:"flex flex-row mb-0 cp",href:"/nfts",children:[a.jsx("img",{className:"main-menu-icon p-[2px] mt-2",src:"/images/MENU/spark_lottery.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Gifting"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Gift someone you know credit to mint a NFT"})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),(0,a.jsxs)("div",{className:"flex flex-row mb-0 cp",children:[a.jsx("img",{className:"main-menu-icon mbb-l mt-2",src:"/images/MENU/media.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Media"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Podcasts, Videos, and more!"})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),a.jsx("h2",{className:"text-white mt-5 mb-4 pb-3",children:"Basics"}),(0,a.jsxs)("div",{className:"flex flex-row mb-0 cp",children:[a.jsx("img",{className:"main-menu-icon mbb-l mt-2 min-w-[40px]",src:"/images/MENU/ic_person.svg"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Profile"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Data, Wallet, profile Picture"})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),(0,a.jsxs)("div",{className:"flex flex-row mb-0 cp",children:[a.jsx("img",{className:"main-menu-icon mbb-l mt-2",src:"/images/MENU/settings.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"Settings"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Notifications, Security, Preferences"})]})]}),a.jsx("hr",{className:"md:w-[50%] w-[100%] my-5"}),(0,a.jsxs)("div",{className:"flex flex-row mb-0 cp mb-[75px]",children:[a.jsx("img",{className:"main-menu-icon mbb-l mt-2",src:"/images/MENU/favicon.png"}),(0,a.jsxs)("div",{className:"flex flex-col px-5 pr-0",children:[a.jsx("h4",{className:"text-white mb-0",children:"About ARK"}),a.jsx("p",{className:"text-white-60 mb-0",children:"Whitepaper, Contracts, Company"})]})]})]})]})})})})}},73881:(e,s,t)=>{"use strict";t.r(s),t.d(s,{default:()=>i});var a=t(31323);let i=e=>{let s=(0,a.fillMetadataSegment)(".",e.params,"favicon.ico");return[{type:"image/x-icon",sizes:"134x135",url:s+""}]}},5023:()=>{},56155:()=>{}};var s=require("../../webpack-runtime.js");s.C(e);var t=e=>s(s.s=e),a=s.X(0,[271,425,323,799],()=>t(27818));module.exports=a})();
+(() => {
+var exports = {};
+exports.id = 106;
+exports.ids = [106];
+exports.modules = {
+
+/***/ 18038:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react");
+
+/***/ }),
+
+/***/ 98704:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react-dom/server-rendering-stub");
+
+/***/ }),
+
+/***/ 97897:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react-server-dom-webpack/client");
+
+/***/ }),
+
+/***/ 56786:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/compiled/react/jsx-runtime");
+
+/***/ }),
+
+/***/ 5868:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/app-render/app-render");
+
+/***/ }),
+
+/***/ 41844:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/app-render/get-segment-param");
+
+/***/ }),
+
+/***/ 96624:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/future/helpers/interception-routes");
+
+/***/ }),
+
+/***/ 75281:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/server/future/route-modules/route-module");
+
+/***/ }),
+
+/***/ 57085:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/app-router-context");
+
+/***/ }),
+
+/***/ 1830:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/get-img-props");
+
+/***/ }),
+
+/***/ 20199:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/hash");
+
+/***/ }),
+
+/***/ 66864:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/head");
+
+/***/ }),
+
+/***/ 39569:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/hooks-client-context");
+
+/***/ }),
+
+/***/ 52210:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config");
+
+/***/ }),
+
+/***/ 35359:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config-context");
+
+/***/ }),
+
+/***/ 17160:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router-context");
+
+/***/ }),
+
+/***/ 30893:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix");
+
+/***/ }),
+
+/***/ 12336:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-url");
+
+/***/ }),
+
+/***/ 17887:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/handle-smooth-scroll");
+
+/***/ }),
+
+/***/ 98735:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-bot");
+
+/***/ }),
+
+/***/ 60120:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-local-url");
+
+/***/ }),
+
+/***/ 68231:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-path");
+
+/***/ }),
+
+/***/ 54614:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix");
+
+/***/ }),
+
+/***/ 53750:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash");
+
+/***/ }),
+
+/***/ 70982:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/resolve-href");
+
+/***/ }),
+
+/***/ 79618:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/server-inserted-html");
+
+/***/ }),
+
+/***/ 78423:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils");
+
+/***/ }),
+
+/***/ 98658:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils/warn-once");
+
+/***/ }),
+
+/***/ 71017:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 57310:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("url");
+
+/***/ }),
+
+/***/ 27818:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GlobalError: () => (/* reexport default from dynamic */ next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2___default.a),
+/* harmony export */   __next_app__: () => (/* binding */ __next_app__),
+/* harmony export */   originalPathname: () => (/* binding */ originalPathname),
+/* harmony export */   pages: () => (/* binding */ pages),
+/* harmony export */   routeModule: () => (/* binding */ routeModule),
+/* harmony export */   tree: () => (/* binding */ tree)
+/* harmony export */ });
+/* harmony import */ var next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7262);
+/* harmony import */ var next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19513);
+/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31823);
+/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12502);
+/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__) if(["default","tree","pages","GlobalError","originalPathname","__next_app__","routeModule"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+// @ts-ignore this need to be imported from next/dist to be external
+
+
+const AppPageRouteModule = next_dist_server_future_route_modules_app_page_module__WEBPACK_IMPORTED_MODULE_0__.AppPageRouteModule;
+// We inject the tree and pages here so that we can use them in the route
+// module.
+const tree = {
+        children: [
+        '',
+        {
+        children: [
+        'menu',
+        {
+        children: ['__PAGE__', {}, {
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 78465)), "C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\menu\\page.tsx"],
+          
+        }]
+      },
+        {
+          
+          metadata: {
+    icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 73881))).default(props))],
+    apple: [],
+    openGraph: [],
+    twitter: [],
+    manifest: undefined
+  }
+        }
+      ]
+      },
+        {
+          'layout': [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 98862)), "C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\layout.tsx"],
+          metadata: {
+    icon: [(async (props) => (await Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 73881))).default(props))],
+    apple: [],
+    openGraph: [],
+    twitter: [],
+    manifest: undefined
+  }
+        }
+      ]
+      }.children;
+const pages = ["C:\\Users\\alexd\\source\\repos\\ARK\\ARK NEW HOME\\src\\app\\menu\\page.tsx"];
+
+// @ts-expect-error - replaced by webpack/turbopack loader
+
+const __next_app_require__ = __webpack_require__
+const __next_app_load_chunk__ = () => Promise.resolve()
+const originalPathname = "/menu/page";
+const __next_app__ = {
+    require: __next_app_require__,
+    loadChunk: __next_app_load_chunk__
+};
+
+// Create and export the route module that will be consumed.
+const routeModule = new AppPageRouteModule({
+    definition: {
+        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.APP_PAGE,
+        page: "/menu/page",
+        pathname: "/menu",
+        // The following aren't used in production.
+        bundlePath: "",
+        filename: "",
+        appPaths: []
+    },
+    userland: {
+        loaderTree: tree
+    }
+});
+
+//# sourceMappingURL=app-page.js.map
+
+/***/ }),
+
+/***/ 51523:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 73380, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 80478))
+
+/***/ }),
+
+/***/ 78465:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ Home)
+});
+
+// EXTERNAL MODULE: external "next/dist/compiled/react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(56786);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(14178);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+// EXTERNAL MODULE: ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js
+var module_proxy = __webpack_require__(61363);
+;// CONCATENATED MODULE: ./src/components/ScrollVisibility/ScrollVisibility.tsx
+
+const proxy = (0,module_proxy.createProxy)(String.raw`C:\Users\alexd\source\repos\ARK\ARK NEW HOME\src\components\ScrollVisibility\ScrollVisibility.tsx`)
+
+// Accessing the __esModule property and exporting $$typeof are required here.
+// The __esModule getter forces the proxy target to create the default export
+// and the $$typeof value is for rendering logic to determine if the module
+// is a client boundary.
+const { __esModule, $$typeof } = proxy;
+const __default__ = proxy.default;
+
+
+/* harmony default export */ const ScrollVisibility = (__default__);
+;// CONCATENATED MODULE: ./src/components/ScrollVisibility/index.ts
+
+
+;// CONCATENATED MODULE: ./src/app/menu/page.tsx
+
+
+
+function Home() {
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ jsx_runtime_.jsx(ScrollVisibility, {
+            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                className: "container-fluid",
+                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    className: "flex lg:flex-row flex-col justify-center items-center",
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                            className: "flex flex-col main-menu-1 lg:block hidden",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                                    className: "text-white",
+                                    children: "Menu"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                    className: "mt-3 text-white-60 w-75 pr-5 mr-4",
+                                    children: "Manage your Dapp, Learn about ARK, Stay up to date"
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                            id: "main-menu-content",
+                            className: "flex flex-col md:w-[52.5%] w-[100%] md:pl-[100px] px-4 pb-10",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                    className: "text-white mb-4 pb-3",
+                                    children: "Features"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("a", {
+                                    className: "flex flex-row mb-0 cp",
+                                    href: "/nfts",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon p-[2px] mt-2",
+                                            src: "/images/MENU/NFT icon.png",
+                                            alt: "nft"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Manage NFTs"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Inspect, transfer or level up your NFTs."
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("a", {
+                                    className: "flex flex-row mb-0 cp",
+                                    href: "/consolidate",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon p-[2px] mt-2",
+                                            src: "/images/MENU/consolidate.png",
+                                            alt: "consolidate"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Consolidate NFTs"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Combine multiple lower NFTs into a higher level."
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("a", {
+                                    className: "flex flex-row mb-0 cp",
+                                    href: "/nfts",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon p-[2px] mt-2",
+                                            src: "/images/MENU/spark_lottery.png",
+                                            alt: "gifting"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Gifting"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Gift someone you know credit to mint a NFT"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "flex flex-row mb-0 cp",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon mbb-l mt-2",
+                                            src: "/images/MENU/media.png",
+                                            alt: "media"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Media"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Podcasts, Videos, and more!"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                    className: "text-white mt-5 mb-4 pb-3",
+                                    children: "Basics"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "flex flex-row mb-0 cp",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon mbb-l mt-2 min-w-[40px]",
+                                            src: "/images/MENU/ic_person.svg",
+                                            alt: "profile"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Profile"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Data, Wallet, profile Picture"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "flex flex-row mb-0 cp",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon mbb-l mt-2",
+                                            src: "/images/MENU/settings.png",
+                                            alt: "settings"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "Settings"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Notifications, Security, Preferences"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("hr", {
+                                    className: "md:w-[50%] w-[100%] my-5"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "flex flex-row mb-0 cp mb-[75px]",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            className: "main-menu-icon mbb-l mt-2",
+                                            src: "/images/MENU/favicon.png",
+                                            alt: "about"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                            className: "flex flex-col px-5 pr-0",
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                    className: "text-white mb-0",
+                                                    children: "About ARK"
+                                                }),
+                                                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                                    className: "text-white-60 mb-0",
+                                                    children: "Whitepaper, Contracts, Company"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+            })
+        })
+    });
+}
+
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = __webpack_require__.X(0, [587,655,665,178,473,478], () => (__webpack_exec__(27818)));
+module.exports = __webpack_exports__;
+
+})();
