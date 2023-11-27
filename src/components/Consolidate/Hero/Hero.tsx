@@ -262,10 +262,11 @@ const Hero = ({
     return (
         <ScrollVisibility>
             <div className='flex flex-col w-100 justify-start items-start 2xl:pb-[20vh] lg:pb-[5vh] pb-[100px]'>
-                <h2 className="text-white text-center md:tracking-[0.1em] my-5 mt-0 md:mx-0 mx-3">
+                <h2 className="text-white text-center md:tracking-[0.1em]  md:mx-0 mx-3">
                     Consolidate NFTs
                 </h2>
-                <hr className='h-[2px] bg-white-25 w-[100%]' />
+                <p className='text-white-60 mb-5 md:mx-0 mx-3'>Select the NFTs you'd like to combine to mint a higher level NFT.</p>
+                <hr className='h-[2px] bg-white-25 w-[100%]' />                
                 <div className='flex md:flex-row flex-col md:mt-5 w-[100%] items-start'>
                     <div className='flex flex-wrap md:items-start items-center text-center justify-start md:w-[50%] w-[100%] p-5'>
                         {listNFTs}
@@ -335,7 +336,7 @@ const Hero = ({
 
                         <button id="btn-consolidate" className='btn-purple-og w-[100%] font-bold py-1 mt-3' disabled={true}>Consolidate</button>
                     </div>
-                </div>
+                p</div>
             </div>
         </ScrollVisibility>
     );
