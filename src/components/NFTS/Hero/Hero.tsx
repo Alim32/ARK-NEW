@@ -214,7 +214,7 @@ const Hero = ({
                 </div>
             </div>
             {/*<SelectConsolidationModal id="modal-selectconsolidate" closeEvent={() => CloseModal("modal-selectconsolidate")} selector={OpenConsolidation} />*/}
-            <ConsolidateModal id="modal-consolidate" closeEvent={() => CloseModal("modal-consolidate")} address={address} data={nftData} />
+            {/*<ConsolidateModal id="modal-consolidate" closeEvent={() => CloseModal("modal-consolidate")} address={address} data={nftData} />*/}
         </ScrollVisibility>
     );
 };

@@ -27,10 +27,19 @@ export default function Home() {
                             <a className="flex flex-row mb-0 cp" href='/nfts'>
                                 <img className="main-menu-icon p-[2px] mt-2" src="/images/MENU/NFT icon.png" />
                                 <div className="flex flex-col px-5 pr-0">
-                                    <h4 className="text-white mb-0">NFTS</h4>
-                                    <p className="text-white-60 mb-0">Manage your collection of NFTs</p>
+                                    <h4 className="text-white mb-0">Manage NFTs</h4>
+                                    <p className="text-white-60 mb-0">Inspect, transfer or level up your NFTs.</p>
                                 </div>
                             </a>
+                            <hr className="md:w-[50%] w-[100%] my-5" />
+                            <a className="flex flex-row mb-0 cp" href='/consolidate'>
+                                <img className="main-menu-icon p-[2px] mt-2" src="/images/MENU/consolidate.png" />
+                                <div className="flex flex-col px-5 pr-0">
+                                    <h4 className="text-white mb-0">Consolidate NFTs</h4>
+                                    <p className="text-white-60 mb-0">Combine multiple lower NFTs into a higher level.</p>
+                                </div>
+                            </a>
+
                             <hr className="md:w-[50%] w-[100%] my-5" />
                             <a className="flex flex-row mb-0 cp" href='/nfts'>
                                 <img className="main-menu-icon p-[2px] mt-2" src="/images/MENU/spark_lottery.png" />
@@ -39,6 +48,7 @@ export default function Home() {
                                     <p className="text-white-60 mb-0">Gift someone you know credit to mint a NFT</p>
                                 </div>
                             </a>
+
                             <hr className="md:w-[50%] w-[100%] my-5" />
                             <div className="flex flex-row mb-0 cp">
                                 <img className="main-menu-icon mbb-l mt-2" src="/images/MENU/media.png" />

@@ -929,6 +929,9 @@ video {
 .min-h-\[250px\]{
   min-height: 250px;
 }
+.min-h-\[550px\]{
+  min-height: 550px;
+}
 .w-1{
   width: 0.25rem;
 }
@@ -2883,6 +2886,9 @@ input[type=number] {
   }
   .md\:flex-row{
     flex-direction: row;
+  }
+  .md\:items-start{
+    align-items: flex-start;
   }
   .md\:items-end{
     align-items: flex-end;
