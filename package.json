@@ -12,8 +12,6 @@
     "@babel/preset-typescript": "^7.22.5",
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@types/mailchimp__mailchimp_marketing": "^3.0.10",
     "@types/node": "^20.4.9",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
@@ -25,7 +23,6 @@
     "framer-motion": "^10.16.4",
     "jquery": "^3.7.1",
     "next": "^13.4.13",
-    "node-fetch": "^3.3.2",
     "pino": "^8.16.2",
     "pino-pretty": "^10.2.3",
     "postcss": "8.4.27",
@@ -38,7 +35,8 @@
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "viem": "^1.19.9",
-    "wagmi": "^1.4.7"
+    "wagmi": "^1.4.7",
+    "web3": "^4.2.2"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.11.0",

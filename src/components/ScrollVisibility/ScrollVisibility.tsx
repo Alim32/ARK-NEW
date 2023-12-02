@@ -4,10 +4,10 @@ import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 interface ScrollVisibilityProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
-const ScrollVisibility = ({ children }: ScrollVisibilityProps) => {
+const ScrollVisibility = ({ children}: ScrollVisibilityProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +27,7 @@ const ScrollVisibility = ({ children }: ScrollVisibilityProps) => {
   }, []);
 
     return (
-        <Element name='fade-in-section' className="">
+        <Element name='fade-in-section' className="mbb-l">            
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 150 }}

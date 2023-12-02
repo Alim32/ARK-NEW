@@ -14,6 +14,7 @@ const HomeStatsModal = ({
     claimedRewards = 0,
     credit = 0,
     balance = 0,
+    shares = 0,
     nftsInWallet
 }: any) => {
     const [nftData, setData] = useState([]);
@@ -84,12 +85,16 @@ const HomeStatsModal = ({
             setDataLength(nftsInWallet.length);
             setData(dataArray);
         }
+        
         if (nftsInWallet.length !== dataLength) {
+            console.log("test");
             fetchData();
         }
-    }, [nftsInWallet])
+    }, [nftsInWallet, dataLength])
 
     totalWorth += claimedRewards;
+    totalWorth += shares;
+    totalWorth += credit;
 
     var listNFTs = null;
 
@@ -103,7 +108,7 @@ const HomeStatsModal = ({
                             width={30}
                             height={50}
                             alt="nft logo"
-                            className='mr-5 lg:block hidden'
+                            className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
                         />
                         <p className='md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10'>{nfts!["amount"]} {GetNFTNameByLevel(nfts!["level"]).toUpperCase()}{nfts!["amount"] > 1 ? "S" : ""}</p>
                     </div>
@@ -112,9 +117,42 @@ const HomeStatsModal = ({
                 <hr />
             </div>
         );
-    } else {        
+    } else {
         if (balance <= 0) {
-            console.log("no nfts?")
+            var extraHtml = <></>
+            if (claimedRewards > 0) {
+                extraHtml =
+                    <div>
+                        <hr />
+                        <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4'>
+                            <div className='flex flex-row items-center'>
+                                <Image
+                                    src={"/icons/tab_vault.png"}
+                                    width={30}
+                                    height={50}
+                                    alt="nft logo"
+                                    className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
+                                />
+                                <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>CLAIMED REWARDS</p>
+                            </div>
+                            <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(claimedRewards - pendingRewards)}</p>
+                        </div>
+                        <hr />
+                        <div className='flex flex-row justify-between items-center 2xl:my-5  sm:my-3 my-4 pb-5'>
+                            <div className='flex flex-row items-center'>
+                                <Image
+                                    src={"/icons/ark_a.svg"}
+                                    width={30}
+                                    height={50}
+                                    alt="nft logo"
+                                    className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
+                                />
+                                <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>TOTAL WORTH</p>
+                            </div>
+                            <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(totalWorth)}</p>
+                        </div>
+                    </div>;
+            }
             return (
                 <div className='modal-overlay' id={id + "overlay"}>
                     <div className="modal" id={id}>
@@ -123,13 +161,14 @@ const HomeStatsModal = ({
                             <button className='text-white font-semibold text-2xl x-btn' onClick={closeEvent}>X</button>
                         </div>
                         <div className='flex flex-col h-[92.5%] w-[100%] lg:px-[50px] px-[35px] lg:pt-[35px] pt-[20px]'>
-
-                            <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>
+                            <hr />
+                            <div className='flex flex-row justify-center items-center 2xl:my-5  sm:my-3 my-4'>                            
                                 <div className='flex flex-row items-center'>
-                                    <p className='md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10 mt-10'>NO NFTs FOUND.</p>
-                                </div>
+                                    <p className={`md:text-lg md:text-base text-sm text-white ls-wide lg:ml-10 ${claimedRewards <= 0 ? "mt-10" : "my-5"}`}>NO NFTs FOUND.</p>
+                                </div>                                
                                 <p className='md:text-lg md:text-base text-sm text-white-60'></p>
                             </div>
+                            {extraHtml}
                         </div>
                     </div>
                 </div>);
@@ -147,7 +186,7 @@ const HomeStatsModal = ({
                 </div>
         }
     }
-    
+
     return (
         <div className='modal-overlay' id={id + "overlay"}>
             <div className="modal" id={id}>
@@ -165,7 +204,7 @@ const HomeStatsModal = ({
                                 width={30}
                                 height={50}
                                 alt="nft logo"
-                                className='mr-5 lg:block hidden'
+                                className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
                             />
                             <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>MINT CREDIT</p>
                         </div>
@@ -179,7 +218,7 @@ const HomeStatsModal = ({
                                 width={30}
                                 height={50}
                                 alt="nft logo"
-                                className='mr-5 lg:block hidden contract-200'
+                                className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px] contract-200'
                             />
                             <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>PENDING REWARDS</p>
                         </div>
@@ -193,7 +232,7 @@ const HomeStatsModal = ({
                                 width={30}
                                 height={50}
                                 alt="nft logo"
-                                className='mr-5 lg:block hidden'
+                                className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
                             />
                             <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>CLAIMED REWARDS</p>
                         </div>
@@ -207,9 +246,9 @@ const HomeStatsModal = ({
                                 width={30}
                                 height={50}
                                 alt="nft logo"
-                                className='mr-5 lg:block hidden'
+                                className='md:mr-5 mr-4 md:max-h-[50px] max-h-[30px] md:max-w-[30px] max-w-[20px]'
                             />
-                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>TOTAL WORTH</p>
+                            <p className='md:text-lg md:text-base text-sm text-white lg:ls-widest ls-wide lg:ml-10'>ACCOUNT VALUE</p>
                         </div>
                         <p className='md:text-lg md:text-base text-sm text-white-60'>${formatterNoDec.format(totalWorth)}</p>
                     </div>

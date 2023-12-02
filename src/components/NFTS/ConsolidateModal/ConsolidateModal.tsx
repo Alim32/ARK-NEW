@@ -77,7 +77,7 @@ const ConsolidateModal = ({
             name
         }: any) => {
             const styles = {
-                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.jpg)`,
+                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/images/${GetNFTNameByLevel(level).toLowerCase()}.png)`,
                 backgroundSize: "contain",
                 backgroundPosition: "center bottom",
                 backgroundRepeat: "no-repeat"
@@ -222,7 +222,7 @@ const ConsolidateModal = ({
             return (
                 <div className='flex flex-row mt-4 items-center justify-between cp mx-2 console-bar px-5' onClick={() => setLevel(level)}>
                     <Image
-                        src={`/images/${name.toLowerCase()}.jpg`}
+                        src={`/images/${name.toLowerCase()}.png`}
                         alt="nft level"
                         width={35}
                         height={35}

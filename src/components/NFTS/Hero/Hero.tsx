@@ -5,76 +5,91 @@ import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { useEffect, useState } from "react";
-import { readContracts } from "wagmi";
-import { ConsolidateModal } from "@/components/NFTS/ConsolidateModal";
-
-const NftBlock = ({    
-    id,
-    value,
-    boost,
-    boostperc,
-    type,
-}: any) => {
-    return (
-        <div className='nft-box flex flex-col items-center justify-center mx-[0.625rem] mt-5'>
-            <Image
-                src={`/images/${type.toLowerCase()}.jpg`}
-                alt=""
-                width={190}
-                height={190}
-                className="mt-4 mb-2"
-            />
-            <div className="nft-body w-[100%] pb-3 flex item-center flex-col">
-                <p className='text-white mt-4 font-semibold px-5 sm:text-base text-sm'>{type.substring(0, 1).toUpperCase() + type.substring(1, type.length)} #{id}</p>
-                <div className='flex flex-row md:px-5 px-4 items-start justify-between mt-4'>
-                    <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Value:</p>
-                    <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>${formatter.format(value)}</p>
-                </div>
-                <div className='flex flex-row md:px-5 px-4 items-start justify-between'>
-                    <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Tier:</p>
-                    <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>Tier {boost}</p>
-                </div>
-                <div className='flex flex-row md:px-5 px-4 items-start justify-between'>
-                    <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Boost:</p>
-                    <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>{boostperc}%</p>
-                </div>
-                <button className='btn-purple-og py-1 sm:text-base text-sm font-semibold mt-5 w-[90%] mx-auto' onClick={() => OpenModal("modal-consolidate")}>Options</button>
-
-            </div>
-
-        </div>
-    )
-}
+import { readContracts, useContractRead } from "wagmi";
+import { TransferModal } from "@/components/NFTS/TransferModal";
 
 const Hero = ({
     address
 }: any) => {
+    const [selectedToken, setSelectedToken] = useState(0);
     const [nftBalances, setNftBalances] = useState([]);
     const [nftData, setData] = useState([]);
     const [dataLength, setDataLength] = useState(0);
-    var balance = 0;// getNFTBalance(address);    
+    const { data: balanceData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'balanceOf', args: [address], watch: true });
+    const balance = Number(balanceData);
+
+
+    function OpenTransfer(id: any) {
+        setSelectedToken(id);
+        OpenModal("modal-transfer");
+    }
+
+    const NftBlock = ({
+        id,
+        value,
+        boost,
+        boostperc,
+        type,
+    }: any) => {
+        return (
+            <div className='nft-box flex flex-col items-center justify-center 2xl:mx-[0.825rem] mx-[0.625rem] mt-10'>
+                <Image
+                    src={`/images/${type.toLowerCase()}-header.png`}
+                    alt=""
+                    width={190}
+                    height={190}
+                    className="test-img"
+                />
+                <div className="nft-body w-[100%] pb-3 flex item-center flex-col">
+                    <p className='text-white mt-4 font-semibold px-5 sm:text-base text-sm'>{type.substring(0, 1).toUpperCase() + type.substring(1, type.length)} #{id}</p>
+                    <div className='flex flex-row md:px-5 px-4 items-start justify-between mt-4'>
+                        <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Value:</p>
+                        <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>${formatter.format(value)}</p>
+                    </div>
+                    <div className='flex flex-row md:px-5 px-4 items-start justify-between'>
+                        <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Tier:</p>
+                        <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>Tier {boost}</p>
+                    </div>
+                    <div className='flex flex-row md:px-5 px-4 items-start justify-between'>
+                        <p className='text-white-30 mt-2 sm:text-base text-sm font-semibold mr-3'>Boost:</p>
+                        <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>{boostperc}%</p>
+                    </div>
+                    <button className='btn-white-2 py-0 sm:text-base text-sm font-semibold mt-5 w-[90%] mx-auto' onClick={() => OpenTransfer(id)}> Transfer</button>
+                    {/*<button className='btn-purple-og py-0 sm:text-base text-sm font-semibold mt-2 w-[90%] mx-auto' onClick={() => OpenModal("modal-consolidate")}>Level Up</button>*/}
+
+                </div>
+
+            </div>
+        )
+    }
 
     useEffect(() => {
         async function tokenOfOwnerByIndex(id: number) {
-            var returnVal = 0;
+            try {
+                var returnVal = 0;
 
-            const data: any = await readContract({
-                chainId: 137,
-                address: ca,
-                abi: abi,
-                functionName: 'tokenOfOwnerByIndex',
-                args: [address, id]
-            }).then((data: any) => {                
-                returnVal = Number(data);
-            });
+                const data: any = await readContract({
+                    chainId: 137,
+                    address: ca,
+                    abi: abi,
+                    functionName: 'tokenOfOwnerByIndex',
+                    args: [address, id]
+                }).then((data: any) => {
+                    returnVal = Number(data);
+                });
 
-            return returnVal;
+                return returnVal;
+            }
+            catch {
+                return -1;
+            }
         }
 
         async function fetchData() {
             var nftData: any = [];
             for (let i = 0; i < balance; i++) {
                 var tokenId = Number(await tokenOfOwnerByIndex(i));
+                if (tokenId == -1) { continue; }
                 nftData.push(Number(tokenId));
             }
 
@@ -154,7 +169,7 @@ const Hero = ({
             fetchData();
         }
     }, [nftBalances]);
-    
+
     var listNFTs;
 
     if (nftData.length > 0) {
@@ -185,36 +200,37 @@ const Hero = ({
                 </div>
         }
     }
-    
+
     return (
         <ScrollVisibility>
-            <div className='flex flex-col w-100 justify-start items-start 2xl:pb-[20vh] lg:pb-[5vh]'>
+            <div className='flex flex-col w-100 justify-start items-start pb-[20vh]'>
                 <h2 className="text-white text-center md:tracking-[0.1em] my-5 mt-0 md:mx-0 mx-3">
                     My NFTs
                 </h2>
                 <hr className='h-[2px] bg-white-25 w-[100%]' />
                 <div className='flex flex-wrap my-4 mt-0 sm:justify-between justify-center w-[100%]'>
-                    <div className='flex flex-row mt-3'>
-                        <button className='flex flex-row items-center justify-between dropdown-box-2 px-4 py-2 cp'>
-                            <p className="text-white text-center" id='nft-text'>Recently Added</p>
-                        </button>
-                        <button className='flex flex-row items-center justify-between dropdown-box-2 px-4 py-2 cp ml-4'>
-                            <p className="text-white text-center" id='nft-text'>Type</p>
-                        </button>
-                    </div>
+                    {/*<div className='flex flex-row mt-3'>*/}
+                    {/*    <button className='flex flex-row items-center justify-between dropdown-box-2 px-4 py-2 cp'>*/}
+                    {/*        <p className="text-white text-center" id='nft-text'>Recently Added</p>*/}
+                    {/*    </button>*/}
+                    {/*    <button className='flex flex-row items-center justify-between dropdown-box-2 px-4 py-2 cp ml-4'>*/}
+                    {/*        <p className="text-white text-center" id='nft-text'>Type</p>*/}
+                    {/*    </button>*/}
+                    {/*</div>*/}
 
-                    <div className='flex flex-row justify-end min-w-[50%] mt-3'>
-                        <input className='form-control fc-2 w-[100%]' placeholder='Search by name' />
-                        <button className='btn-white-2 px-3 ml-2 rounded-[15px] my-[2px]'>Search</button>
-                    </div>
+                    {/*<div className='flex flex-row justify-end min-w-[50%] mt-3'>*/}
+                    {/*    <input className='form-control fc-2 w-[100%]' placeholder='Search by name' />*/}
+                    {/*    <button className='btn-white-2 px-3 ml-2 rounded-[15px] my-[2px]'>Search</button>*/}
+                    {/*</div>*/}
 
                 </div>
-                <div className='flex flex-wrap mt-10 sm:justify-start justify-center w-[100%]'>
+                <div className='flex flex-wrap mt-5 xl:justify-start justify-center w-[100%]'>
                     {listNFTs}
                 </div>
             </div>
             {/*<SelectConsolidationModal id="modal-selectconsolidate" closeEvent={() => CloseModal("modal-selectconsolidate")} selector={OpenConsolidation} />*/}
             {/*<ConsolidateModal id="modal-consolidate" closeEvent={() => CloseModal("modal-consolidate")} address={address} data={nftData} />*/}
+            <TransferModal address={address} id="modal-transfer" closeEvent={() => CloseModal("modal-transfer")} selectedToken={selectedToken} />
         </ScrollVisibility>
     );
 };

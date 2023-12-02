@@ -28,10 +28,10 @@ const HomeClaimModal = ({
                                     alt="USDT"
                                     width={50}
                                     height={50}
-                                    className='mr-5 mb-3'
+                                    className='mr-5 mb-3 md:max-w-[50px] max-w-[40px]'
                                 />
                                 <div className='flex flex-col items-center justify-start mx-5'>
-                                    <h5 className='text-white-30'>Available Rewards</h5>
+                                    <h5 className='text-white-30 text-center whitespace-nowrap'>Available Rewards</h5>
                                     <h1 className='text-white'>${formatter.format(rewards)}</h1>                                    
                                 </div>
                                 <Image
@@ -39,10 +39,10 @@ const HomeClaimModal = ({
                                     alt="USDT"
                                     width={50}
                                     height={50}
-                                    className='ml-5 mb-3'
+                                    className='ml-5 mb-3 md:max-w-[50px] max-w-[40px]'
                                 />
                             </div>
-                            <div className='flex flex-row md:justify-end md:items-end md:mt-0 mt-5 w-[100%]'>
+                            <div className='flex flex-row md:justify-end md:items-end md:mt-0 mt-5 w-[100%] md:mb-0 mb-[75px]'>
                                 <ClaimButton address={address} />
                             </div>
                         </div>

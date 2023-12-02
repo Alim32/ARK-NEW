@@ -15,7 +15,8 @@ export const formatterNoDec = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 0
 });
 
-export function getInitValues(value, shares, totalShares = 1000000) {
+export function getInitValues(value, shares, totalShares = 1000000, boost) {
+    shares = shares * ((100 + boost) / 100);
     var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);
 
@@ -38,7 +39,8 @@ export function getInitValues(value, shares, totalShares = 1000000) {
     };
 }
 
-export function onInput(event, callback, callback2, shares = 100, totalShares = 1000000) {
+export function onInput(event, callback, callback2, shares = 100, totalShares = 1000000, boost) {
+    shares = shares * ((100 + boost) / 100);
     var value = event.target.value;
     value = value > maxValue ? maxValue : value;
     var ownership = shares / (totalShares + shares);
@@ -58,7 +60,8 @@ export function onInput(event, callback, callback2, shares = 100, totalShares = 
     callback2(value);
 }
 
-export function calculate(event, callback, callback2, shares = 100, totalShares = 1000000) {
+export function calculate(event, callback, callback2, shares = 100, totalShares = 1000000, boost) {
+    shares = shares * ((100 + boost) / 100);
     var value = event.target.value;
     value = value > maxValue ? maxValue : value;
     var ownership = shares / (totalShares + shares);
@@ -105,8 +108,12 @@ export function setNewNFT(id) {
             $("#selected-nft").attr("src", "/images/platinum.png");
             break;
         case 7:
+            $("#nft-text").text("IRIDIUM");
+            $("#selected-nft").attr("src", "/images/iridium.png");
+            break;
+        case 8:
             $("#nft-text").text("DIAMOND");
-            $("#selected-nft").attr("src", "/images/platinum.png");
+            $("#selected-nft").attr("src", "/images/diamond.png");
             break;
 
     }
@@ -126,7 +133,8 @@ export function openDropDown(id) {
     }    
 }
 
-export function calculateNoSetter(value, shares, totalShares = 1000000) {
+export function calculateNoSetter(value, shares, totalShares = 1000000, boost) {
+    shares = shares * ((100 + boost) / 100);
     var ownership = shares / (totalShares + shares);
     var amount = ownership * Number(value);    
     $("#daily").text("$" + formatter.format(amount / 30));
@@ -134,8 +142,8 @@ export function calculateNoSetter(value, shares, totalShares = 1000000) {
     $("#monthly").text("$" + formatter.format(amount));
     $("#yearly").text("$" + formatter.format(amount * 52));    
 }
-export function ScrollToNft(id) {
-    var scrollVal = id < 7 ? id + 1 : id;
+export function ScrollToNft(id) {    
+    var scrollVal = id == 1 ? id : id + 1;    
 
     if (window.innerWidth <= 1024) {
         scrollVal = id;
@@ -148,6 +156,19 @@ export function ScrollToNft(id) {
     document.getElementById("nfttab" + id).classList.add("active");
     activeTab = id;
 }
+
+var lastId = 0;
+export function SelectTab(id) {
+    id = id > 8 ? 8 : id;
+    if (id == lastId) { return; }
+    lastId = id;    
+    if (document.getElementById("nfttab" + activeTab).classList.contains("active")) {
+        document.getElementById("nfttab" + activeTab).classList.remove("active");
+    }    
+    document.getElementById("nfttab" + id).classList.add("active");
+    activeTab = id;
+}
+
 export function OpenModal(id) {
     try {
         document.body.style.overflow = "hidden";

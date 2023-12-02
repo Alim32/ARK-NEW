@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-//import { getTotalShares, getContributions, getMaxSupply } from "@/scripts/legacy";
+import { abi, ca, getCurrentBoostOfLevel } from "@/scripts/legacy";
 import { formatter, formatterNoDec, calculate, calculateNoSetter, getInitValues, setNewNFT, openDropDown } from '@/scripts/home';
 import { useState } from 'react';
-import { ScrollVisibility } from '@/components/ScrollVisibility'
-import { initialize } from "next/dist/server/lib/render-server";
+import { ScrollVisibility } from '@/components/ScrollVisibility';
+import { useContractRead, readContracts, useContractReads } from 'wagmi'
 
 const DropItem = ({
     image,
@@ -53,19 +53,24 @@ const Calculator = ({
 }: any) => {
     const [sliderVal, setSliderVal] = useState(100000);
     const [inputVal, setInputVal] = useState(100000);
-    const [shares, setShares] = useState(10000);
-
+    const [shares, setShares] = useState(1000000);
     var activeId = 1;
-    var totalShares = 0;//getTotalShares();
-    var values = getInitValues(sliderVal, shares, totalShares);
-    var totalContribution = 0;//getContributions();
-    var maxSupply = 0;//getMaxSupply();
+    var level = 6;
+    var activeTierId = 0;
+    const { data: totalShareData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'totalShares', watch: true });
+    const { data: contributionData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'totalContributions', watch: true });
+    const { data: maxSupplyData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'maxSupply', watch: true });
+    const totalShares = Number(totalShareData);
+    const totalContribution = Number(contributionData) / Math.pow(10, 6);
+    const maxSupply = Number(maxSupplyData) / Math.pow(10, 6);
+    
+    
     var percentage = 0;
-    var activeTier = "Tier 1";
+    var activeTier = "Tier 1";    
     var activePercentage = 25;
     //End of Tiers
-    var tiers = {1: 2000000, 2: 3300000, 3: 4300000, 4: 5000000, 5: 5500000, 6: 6000000};
-
+    var tiers = { 1: 2000000, 2: 3300000, 3: 4300000, 4: 5000000, 5: 5500000, 6: 6000000 };
+    
     function GetTierPercentage(tier = -1) {
         switch (tier) {
             case 1:
@@ -88,21 +93,25 @@ const Calculator = ({
     for (const [key, value] of Object.entries(tiers)) {
         if (totalContribution <= value) {
             activeId = Number(key);            
-            percentage = totalContribution / maxSupply * 100;
-            GetTierPercentage;
+            percentage = totalContribution / maxSupply * 100;            
             activeTier = `Tier ${key}`;
+            activeTierId = Number(key);
             activePercentage = GetTierPercentage(Number(key));
             break;
         }
     }
 
     function changeShares(amount = 0, id = 1) {
+        amount = amount * 100;
         setShares(amount);
         setSliderVal(sliderVal);
         setInputVal(sliderVal);
-        calculateNoSetter(sliderVal, shares, totalShares);
+        calculateNoSetter(sliderVal, shares, totalShares, getCurrentBoostOfLevel(level, activeTierId));
+        level = id;
         setNewNFT(id);        
     }
+
+    var values = getInitValues(sliderVal, shares, totalShares, getCurrentBoostOfLevel(level, activeTierId));
 
     return (
         <ScrollVisibility>
@@ -128,13 +137,14 @@ const Calculator = ({
                             <DropItem clickEvent={() => changeShares(1000, 4)} text={"SILVER"} image={"/images/silver.png"} />
                             <DropItem clickEvent={() => changeShares(4000, 5)} text={"GOLD"} image={"/images/gold.png"} />
                             <DropItem clickEvent={() => changeShares(10000, 6)} text={"PLATINUM"} image={"/images/platinum.png"} />
-                            <DropItem clickEvent={() => changeShares(50000, 7)} text={"DIAMOND"} image={"/images/platinum.png"} />
+                            <DropItem clickEvent={() => changeShares(50000, 7)} text={"IRIDIUM"} image={"/images/iridium.png"} />
+                            <DropItem clickEvent={() => changeShares(100000, 8)} text={"DIAMOND"} image={"/images/diamond.png"} />
                         </div>
 
                         <p className="text-white-30 text-lg text-center mt-[75px]">Utility Products Profits<br /><span className='text-sm'>(Monthly)</span></p>
                         <div className="flex flex-row items-center justify-between 2xl:mt-5 mt-10 w-[85%]">
                             <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$100k</p>
-                            <input type="range" className="slider mx-3" id="range1" max={10000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares, totalShares)} />
+                            <input type="range" className="slider mx-3" id="range1" max={10000000} min={100000} value={sliderVal} step={100000} onChange={(e) => calculate(e, setSliderVal, setInputVal, shares, totalShares, getCurrentBoostOfLevel(level, activeTierId))} />
                             <p className="text-white-60 ws-nowrap mb-0 hide-xs 2xl:text-base xl:text-sm text-xs">$10m</p>
                         </div>
                         <div className="flex flex-row items-center justify-center mt-10">

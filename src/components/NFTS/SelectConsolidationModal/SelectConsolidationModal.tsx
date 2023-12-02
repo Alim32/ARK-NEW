@@ -18,7 +18,7 @@ const SelectConsolidationModal = ({
         return (
             <div className='flex flex-row mt-4 items-center justify-between cp mx-2 console-bar px-5' onClick={() => selector(level)}>
                 <Image
-                    src={`/images/${name.toLowerCase()}.jpg`}
+                    src={`/images/${name.toLowerCase()}.png`}
                     alt="nft level"
                     width={35}
                     height={35}

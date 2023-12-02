@@ -1,11 +1,13 @@
 'use client';
 import Image from "next/image";
-import { formatterNoDec, formatter, openDropDown } from "@/scripts/home";
-import { getUSDTBalance } from "@/scripts/general";
-import { getCurrentBoostOfLevel } from "@/scripts/legacy";
+import { formatter, openDropDown } from "@/scripts/home";
+import { caUSDT, abiUSDT } from "@/scripts/general";
+import { getCurrentBoostOfLevel, ca, abi } from "@/scripts/legacy";
 import { MintButton } from "@/components/Layout/MintButton";
 import { setMintNFT } from "@/scripts/home";
 import { useState } from 'react';
+import { useContractRead } from "wagmi";
+import { ApproveButton } from "@/components/Layout/ApproveButton";
 
 const DropItem = ({
     image,
@@ -34,9 +36,14 @@ const HomeMintModal = ({
     address
 }: any) => {
     const [level, setLevel] = useState(8);
-    var currentTier = 0;//getCurrentTier();
-    var price = 0;//getPriceOfLevel(level);
-    var usdtBalance = getUSDTBalance(address);
+    const { data: tierData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getCurrentTier', watch: true });    
+    const { data: priceData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'nftPriceOfLevel', args: [level], watch: true });
+    const { data: usdtData = 0 } = useContractRead({ chainId: 137, address: caUSDT, abi: abiUSDT, functionName: 'balanceOf', args: [address], watch: true });
+    const { data: approvalData = 0 } = useContractRead({ chainId: 137, address: caUSDT, abi: abiUSDT, functionName: 'allowance', args: [address, ca], watch: true });
+    const currentTier = Number(tierData);
+    var approvalBalance = Number(approvalData) / Math.pow(10, 6);
+    const price = Number(priceData) / Math.pow(10,6);
+    const usdtBalance = Number(usdtData) / Math.pow(10, 6);    
     var boost = getCurrentBoostOfLevel(level, currentTier);
 
     var usedCredit = 0;
@@ -73,8 +80,8 @@ const HomeMintModal = ({
                         <DropItem clickEvent={() => setMintNFT(4, setLevel)} text={"SILVER"} image={"/images/silver.png"} />
                         <DropItem clickEvent={() => setMintNFT(5, setLevel)} text={"GOLD"} image={"/images/gold.png"} />
                         <DropItem clickEvent={() => setMintNFT(6, setLevel)} text={"PLATINUM"} image={"/images/platinum.png"} />
-                        <DropItem clickEvent={() => setMintNFT(7, setLevel)} text={"IRIDIUM"} image={"/images/platinum.png"} />
-                        <DropItem clickEvent={() => setMintNFT(8, setLevel)} text={"DIAMOND"} image={"/images/platinum.png"} />
+                        <DropItem clickEvent={() => setMintNFT(7, setLevel)} text={"IRIDIUM"} image={"/images/iridium.png"} />
+                        <DropItem clickEvent={() => setMintNFT(8, setLevel)} text={"DIAMOND"} image={"/images/diamond.png"} />
                     </div>
                     <div className='flex flex-col h-[100%]'>
                         <div className='flex flex-row justify-between items-center mt-10'>
@@ -149,6 +156,19 @@ const HomeMintModal = ({
                         }
                         <hr className='mt-5' />
                         <div className='flex flex-row justify-between items-center mt-5'>
+                            <h4 className='text-white-30'>Approved USDT</h4>
+                            <h4 className='text-white flex flex-row items-center'>
+                                ${formatter.format(approvalBalance)}
+                                <Image
+                                    alt="usdt"
+                                    src="/icons/usdt.png"
+                                    width={28}
+                                    height={28}
+                                    className='ml-3'
+                                />
+                            </h4>
+                        </div>
+                        <div className='flex flex-row justify-between items-center mt-5'>
                             <h4 className='text-white-30'>Total</h4>
                             <h4 className='text-white flex flex-row items-center'>
                                 ${formatter.format(price - usedCredit)}
@@ -162,7 +182,12 @@ const HomeMintModal = ({
                             </h4>
                         </div>
                         <div className='flex flex-row h-[100%] md:justify-end md:items-end md:mt-0 mt-5'>
-                            <MintButton level={level} address={address} />
+                            {
+                                (price - usedCredit) <= approvalBalance ?
+                                    <MintButton level={level} address={address} disabled={price - usedCredit > usdtBalance} disabletext="INSUFFICIENT USDT" />
+                                    :
+                                    <ApproveButton address={address} amount={price - usedCredit}/>
+                            }
                         </div>
                     </div>
                 </div>

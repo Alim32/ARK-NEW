@@ -1,25 +1,30 @@
 "use client";
 import Image from "next/image";
-import { ca, abi } from "@/scripts/legacy"; //getNFTBalance, getShares, getLifetimeRewards, getClaimableRewards, getMintCredit,
+import { ca, abi, caBsc, abiBsc } from "@/scripts/legacy"; //getNFTBalance, getShares, getLifetimeRewards, getClaimableRewards, getMintCredit,
 import { readContract } from '@wagmi/core'
 import { formatter, formatterNoDec, OpenModal, CloseModal } from '@/scripts/home';
 import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { HomeStatsModal } from '@/components/Home/HomeStatsModal';
 import { HomeMintModal } from '@/components/Home/HomeMintModal';
 import { HomeClaimModal } from '@/components/Home/HomeClaimModal';
-import { MintButton } from "@/components/Layout/MintButton";
-import { ClaimButton } from "@/components/Layout/ClaimButton";
+import { useContractRead, readContracts, useContractReads } from 'wagmi'
 import { useEffect, useState } from "react";
 
 const Hero = ({
     address
 }: any) => {
     const [nftBalances, setNftBalances] = useState([]);
-    var shares = 0;//getShares(address);
-    var balance = 0;//getNFTBalance(address);
-    var rewards = 0;//getClaimableRewards(address);
-    var claimedRewards = 0;//getLifetimeRewards(address);
-    var mintCredit = 0;//getMintCredit(address);
+    const { data: balanceData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'balanceOf', args: [address], watch: true });
+    const { data: shareData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getShares', args: [address], watch: true });    
+    const { data: rewardsData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getClaimableRewards', args: [address], watch: true });
+    const { data: lifetimeData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getLifetimeRewards', args: [address], watch: true });    
+    const { data: lifetimeBscData = 0 } = useContractRead({ chainId: 56, address: caBsc, abi: abiBsc, functionName: 'getLifetimeRewards', args: [address], watch: true });    
+    const { data: creditData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'mintCredit', args: [address], watch: true });    
+    const shares = Number(shareData) / Math.pow(10, 2);
+    const balance = Number(balanceData);
+    const rewards = Number(rewardsData) / Math.pow(10, 6);
+    const claimedRewards = (Number(lifetimeData) / Math.pow(10, 6)) + (Number(lifetimeBscData) / Math.pow(10, 18));    
+    const mintCredit = Number(creditData) / Math.pow(10, 6);
 
     var width = window.innerWidth;
     var filename = "/images/arc_main.png";
@@ -29,35 +34,39 @@ const Hero = ({
 
     useEffect(() => {
         async function tokenOfOwnerByIndex(id: number) {
-            var returnVal = 0;
+            try {
+                var returnVal = 0;
 
-            const data: any = await readContract({
-                chainId: 137,
-                address: ca,
-                abi: abi,
-                functionName: 'tokenOfOwnerByIndex',
-                args: [address, id]
-            }).then((data: any) => {
-                returnVal = Number(data);
-            });
+                const data: any = await readContract({ chainId: 137, address: ca, abi: abi, functionName: 'tokenOfOwnerByIndex', args: [address, id] })
+                    .then((data: any) => {
+                        returnVal = Number(data);
+                    });
 
-            return returnVal;
+                return returnVal;
+            }
+            catch {
+                return -1;
+            }
         }
 
         async function fetchData() {
             var nftData: any = [];
             for (let i = 0; i < balance; i++) {
                 var tokenId = Number(await tokenOfOwnerByIndex(i));
+                if (tokenId == -1) { continue; }
                 nftData.push(Number(tokenId));
             }
 
+            console.log(nftData);
             setNftBalances(nftData);
         }
 
+        
         if (nftBalances.length !== balance) {
+            console.log("test");
             fetchData();
         }
-    }, [balance])
+    }, [balance, nftBalances.length, address])
 
     return (
         <div>
@@ -65,8 +74,8 @@ const Hero = ({
                 <div className='flex flex-col w-100 justify-center items-center lg:pt-[2.5vh] 2xl:pb-[20vh] lg:pb-[5vh]'>
                     <h1 className="text-white text-center md:tracking-[0.1em] my-5 mt-4 cp" onClick={() => OpenModal("modal-myacc")}>
                         <span className='text-white-30 mr-[1rem]'>$</span>
-                        <span className='text-white'>{formatterNoDec.format(shares + claimedRewards + mintCredit)}</span>
-                        <span className='text-white-30 sm:inline hidden'>{formatter.format(shares).substring(formatter.format(shares).indexOf("."), formatter.format(shares).length)}</span>
+                        <span className='text-white'>{formatterNoDec.format(Number(shares) + claimedRewards + mintCredit)}</span>
+                        <span className='text-white-30 sm:inline hidden'>{formatter.format(Number(shares)).substring(formatter.format(Number(shares)).indexOf("."), formatter.format(Number(shares)).length)}</span>
                     </h1>
                     <h3 className='text-white ls-wide cp' onClick={() => OpenModal("modal-myacc")}>{balance} <span className='ml-[11px] text-white-30'>NFT(s)</span></h3>
                     <Image
@@ -103,12 +112,12 @@ const Hero = ({
                         </div>
                     </div>
                 </div>
-                <HomeStatsModal id={"modal-myacc"} closeEvent={() => CloseModal("modal-myacc")} balance={balance} address={address} claimedRewards={claimedRewards} pendingRewards={rewards} nftsInWallet={nftBalances} credit={mintCredit} />
+                <HomeStatsModal id={"modal-myacc"} closeEvent={() => CloseModal("modal-myacc")} balance={balance} shares={shares} address={address} claimedRewards={claimedRewards} pendingRewards={Number(rewards)} nftsInWallet={nftBalances} credit={mintCredit} />
                 <HomeMintModal id={"modal-mint"} closeEvent={() => CloseModal("modal-mint")} credit={mintCredit} address={address} />
-                <HomeClaimModal id={"modal-claim"} closeEvent={() => CloseModal("modal-claim")} rewards={rewards} address={address} />
+                <HomeClaimModal id={"modal-claim"} closeEvent={() => CloseModal("modal-claim")} rewards={Number(rewards)} address={address} />
             </ScrollVisibility>
             <div className='rewards-box cp' onClick={() => OpenModal("modal-claim")}>
-                <p className='text-black font-bold'>${formatter.format(rewards)}</p>
+                <p className='text-black font-bold'>${formatter.format(Number(rewards))}</p>
             </div>
         </div>
     );
