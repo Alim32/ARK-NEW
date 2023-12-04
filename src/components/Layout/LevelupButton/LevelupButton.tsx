@@ -1,0 +1,85 @@
+"use client";
+import Image from "next/image";
+import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from 'wagmi'
+import { ca, abi } from "@/scripts/legacy";
+
+const LevelupButton = ({
+    address,
+    uid,
+    level,
+    disabled = false,
+    disabletext
+}: any) => {
+    const { data, write } = useContractWrite({
+        address: ca,
+        abi: abi,
+        functionName: 'levelUp',
+        onMutate() {
+            var item = document.getElementById(`level-btn-${uid}`) as HTMLButtonElement;
+            var item2 = document.getElementById(`level-loader-${uid}`) as HTMLElement;
+            item.style.display = "none";
+            item2.style.display = "block";
+        },
+        onError(error) {
+            console.log(error);
+            var item = document.getElementById(`level-btn-${uid}`) as HTMLButtonElement;
+            var item2 = document.getElementById(`level-loader-${uid}`) as HTMLElement;
+            item.style.display = "block";
+            item2.style.display = "none";
+        },
+        args: [uid, level]
+    });
+
+    const wait = useWaitForTransaction({
+        hash: data?.hash,
+        onSuccess() {
+            var item = document.getElementById(`level-btn-${uid}`) as HTMLButtonElement;
+            var item2 = document.getElementById(`level-loader-${uid}`) as HTMLElement;
+            var item3 = document.getElementById(`level-success-${uid}`) as HTMLElement;
+            item.style.display = "none";
+            item2.style.display = "none";
+            item3.style.display = "block";
+
+            setTimeout(function () {
+                item.style.display = "block";
+                item2.style.display = "none";
+                item3.style.display = "none";
+            }, 3000);
+        }
+    })
+
+    function ShowPurchase() {
+        var item = document.getElementById(`level-btn-${uid}`) as HTMLButtonElement;
+        var item2 = document.getElementById(`level-loader-${uid}`) as HTMLElement;
+        var item3 = document.getElementById(`level-success-${uid}`) as HTMLElement;
+        item.style.display = "block";
+        item2.style.display = "none";
+        item3.style.display = "none";
+    }
+
+    return (
+        <div className='flex flex-col w-[100%]'>
+            <button id={`level-btn-${uid}`} className='btn-purple-og px-3 py-1 mb-5 w-[100%] h-fit ls-wide font-semibold lg:text-base text-sm mt-5' disabled={disabled} onClick={() => write()}>
+                {disabled ? disabletext : "LEVEL UP"}
+            </button>
+            <div className='flex flex-col items-center w-[100%] hidden mb-10 mt-4' id={`level-loader-${uid}`}>
+                <div className="loader">
+                    <div className="loaderBar"></div>
+                </div>
+                <p className='text-sm text-white-60 ls-wide text-center mt-3'>Awaiting Transaction...</p>
+            </div>
+            <div className='flex flex-col items-center justify-center w-100% hidden mb-10 mt-4' id={`level-success-${uid}`}>
+                <Image
+                    src={"/images/checkmark.png"}
+                    width={30}
+                    height={30}
+                    alt="checkmark"
+                    className='mx-auto'
+                />
+                <p className='text-base text-white ls-wide text-center mt-3'>Transaction Succesful!</p>
+            </div>
+        </div>
+    );
+};
+
+export default LevelupButton;

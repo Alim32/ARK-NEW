@@ -7,6 +7,7 @@ import { ScrollVisibility } from '@/components/ScrollVisibility'
 import { useEffect, useState } from "react";
 import { readContracts, useContractRead } from "wagmi";
 import { TransferModal } from "@/components/NFTS/TransferModal";
+import { LevelUpModal } from "@/components/NFTS/LevelUpModal";
 
 const Hero = ({
     address
@@ -22,6 +23,11 @@ const Hero = ({
     function OpenTransfer(id: any) {
         setSelectedToken(id);
         OpenModal("modal-transfer");
+    }
+
+    function OpenLevelUp(id: any) {
+        setSelectedToken(id);
+        OpenModal("modal-levelup");
     }
 
     const NftBlock = ({
@@ -55,8 +61,12 @@ const Hero = ({
                         <p className='text-white-60 mt-2 sm:text-base text-sm font-semibold ml-3'>{boostperc}%</p>
                     </div>
                     <button className='btn-white-2 py-0 sm:text-base text-sm font-semibold mt-5 w-[90%] mx-auto' onClick={() => OpenTransfer(id)}> Transfer</button>
-                    {/*<button className='btn-purple-og py-0 sm:text-base text-sm font-semibold mt-2 w-[90%] mx-auto' onClick={() => OpenModal("modal-consolidate")}>Level Up</button>*/}
-
+                    {
+                        type !== "Diamond" ?
+                            <button className='btn-purple-og py-0 sm:text-base text-sm font-semibold mt-2 w-[90%] mx-auto' onClick={() => OpenLevelUp(id)}>Level Up</button>
+                            :
+                            <button className='btn-purple-og py-0 sm:text-base text-sm font-semibold mt-2 w-[90%] mx-auto' disabled={true} onClick={() => OpenLevelUp(id)}>Max Level</button>        
+                    }                    
                 </div>
 
             </div>
@@ -99,7 +109,7 @@ const Hero = ({
         if (nftBalances.length < balance) {
             fetchData();
         }
-    }, [balance]);
+    }, [balance, address, nftBalances.length]);
 
     useEffect(() => {
         var _data: any = {};
@@ -168,7 +178,7 @@ const Hero = ({
         if (nftBalances.length > dataLength) {
             fetchData();
         }
-    }, [nftBalances]);
+    }, [nftBalances, dataLength]);
 
     var listNFTs;
 
@@ -231,6 +241,7 @@ const Hero = ({
             {/*<SelectConsolidationModal id="modal-selectconsolidate" closeEvent={() => CloseModal("modal-selectconsolidate")} selector={OpenConsolidation} />*/}
             {/*<ConsolidateModal id="modal-consolidate" closeEvent={() => CloseModal("modal-consolidate")} address={address} data={nftData} />*/}
             <TransferModal address={address} id="modal-transfer" closeEvent={() => CloseModal("modal-transfer")} selectedToken={selectedToken} />
+            <LevelUpModal address={address} id="modal-levelup" closeEvent={() => CloseModal("modal-levelup")} selectedToken={selectedToken} />
         </ScrollVisibility>
     );
 };

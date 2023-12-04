@@ -995,3 +995,7 @@ input[type=number] {
 .iserror {
     border-color: #f13939 !important;
 }
+
+.invert-50{
+    filter:invert(0.5);
+}

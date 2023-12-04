@@ -985,12 +985,6 @@ video {
 .pt-\[60px\]{
   padding-top: 60px;
 }
-.pb-\[5vh\]{
-  padding-bottom: 5vh;
-}
-.pb-\[10vh\]{
-  padding-bottom: 10vh;
-}
 .text-center{
   text-align: center;
 }
@@ -2055,6 +2049,10 @@ input[type=number] {
 
 .iserror {
     border-color: #f13939 !important;
+}
+
+.invert-50{
+    filter:invert(0.5);
 }
 
 @media (min-width: 640px){

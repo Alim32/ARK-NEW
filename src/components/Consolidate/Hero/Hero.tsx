@@ -49,12 +49,12 @@ const Hero = ({
     const { data: priceData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'nftPriceOfLevel', args: [level], watch: true });
     const { data: usdtData = 0 } = useContractRead({ chainId: 137, address: caUSDT, abi: abiUSDT, functionName: 'balanceOf', args: [address], watch: true });
     const { data: approvalData = 0 } = useContractRead({ chainId: 137, address: caUSDT, abi: abiUSDT, functionName: 'allowance', args: [address, ca], watch: true });
-    const { data: tierData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getCurrentTier', watch: true });
+    const { data: tierData = 0 } = useContractRead({ chainId: 137, address: ca, abi: abi, functionName: 'getCurrentTier', watch: true });    
     const currentTier = Number(tierData);
     const [selectedTier, setSelectedTier] = useState(currentTier);
     const credit = Number(creditData) / Math.pow(10, 6);
     const balance = Number(balanceData);
-    const price = Number(priceData) / Math.pow(10, 6);
+    const price = Number(priceData) / Math.pow(10, 6);  
     var usdtBalance = Number(usdtData) / Math.pow(10, 6);
     var approvalBalance = Number(approvalData) / Math.pow(10, 6);
 
@@ -378,11 +378,11 @@ const Hero = ({
                         <hr className='my-5' />
                         <div className='flex flex-row justify-between items-center'>
                             <h5 className='text-white-60'>Price:</h5>
-                            <h5 className='text-white'>$10,000</h5>
+                            <h5 className='text-white'>${formatterNoDec.format(price)}</h5>
                         </div>
                         <div className='flex flex-row justify-between items-center mt-4'>
                             <h5 className='text-white-60'>Used Credit:</h5>
-                            <h5 className='text-danger'>-${formatterNoDec.format(usedCredit)}</h5>
+                            <h5 className='text-danger'>-${formatter.format(usedCredit)}</h5>
                         </div>
                         <div className='flex flex-row justify-between items-center mt-4'>
                             <h5 className='text-white-60'>Consolidation:</h5>
@@ -401,11 +401,11 @@ const Hero = ({
                             <h5 className='text-white-60'>To Pay:</h5>
                             <h5 className='text-white'>${formatter.format(price - usedCredit - nftValue)}</h5>
                         </div>
-
+                        
                         <div className='flex flex-row items-center justify-center mt-[100px] w-[100%]'>
                             <input id='checkAgree' type='checkbox' className='checkbox-1' onChange={EnableButton} />
                             <p className='text-white-60 text-center ml-5'>I understand NFTs cannot be recovered after consolidation.</p>
-                        </div>
+                        </div>                        
                         {
                             (price - usedCredit - nftValue) <= approvalBalance ?
                                 <ConsolidateButton address={address} selection={selectedNFTs} targetLevel={level} disable={disabled} usdt={usdtBalance} price={price - usedCredit - nftValue} />

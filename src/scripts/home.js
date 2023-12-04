@@ -133,6 +133,14 @@ export function openDropDown(id) {
     }    
 }
 
+export function closeDropDown(id) {
+    if (window.innerWidth < 1024) {
+        RollOut(id);
+    } else {
+        $(`#${id}`).slideToggle(300);
+    }
+}
+
 export function calculateNoSetter(value, shares, totalShares = 1000000, boost) {
     shares = shares * ((100 + boost) / 100);
     var ownership = shares / (totalShares + shares);
