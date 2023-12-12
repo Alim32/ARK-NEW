@@ -15,6 +15,7 @@ const Sidebar = () => {
                     className="brand-img" src="/images/logo.png"
                 />
                 <a id='tabhome' className={`menu-item mt-[75px] mb-3 ${pathname == "/" ? "active" : ""}`} href="/">Home</a>
+                <a id='tabbridge' className={`menu-item my-3 ${pathname == "/bridge" ? "active" : ""}`} href="/bridge">Bridge</a>
                 <a id='tablegacy' className={`menu-item my-3 ${pathname == "/legacy" ? "active" : ""}`} href="/legacy">Legacy NFT</a>
                 {/*<a id='tabmarketplace' className={`menu-item my-3 ${pathname == "/marketplace" ? "active" : ""}`} href="/marketplace">Marketplace</a>                
                 <a id='tabnetwork' className={`menu-item my-3 ${pathname == "/network" ? "active" : ""}`} href="/network">Network</a>*/}
