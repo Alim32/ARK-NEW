@@ -27,7 +27,7 @@ export default function App() {
             integratorAddress: "0x70f4416A7ACe9e659C7aBDd63cb3Fd2B72382964",
             fee: 75
         }
-    } as AppConfig;
+    };
 
     return (
         <div className='container h-[100%] w-[100%] mx-auto'>
